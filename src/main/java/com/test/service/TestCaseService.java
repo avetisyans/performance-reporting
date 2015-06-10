@@ -9,7 +9,7 @@ public interface TestCaseService {
 	
 	TestCase save(TestCase testCase);
 
-	TestCase save(String name, TestCase testCase);
+	TestCase save(TestCase testCase, String name);
 
 	TestCase findByName(String name);
 

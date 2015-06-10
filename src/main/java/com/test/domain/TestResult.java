@@ -3,7 +3,6 @@ package com.test.domain;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -35,7 +34,7 @@ public class TestResult {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date endTime;
 	
-	@OneToMany(mappedBy="testResult", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="testResult")
 	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
 	
 	public Date getEndTime() {

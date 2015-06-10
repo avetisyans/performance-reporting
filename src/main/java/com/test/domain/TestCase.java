@@ -20,11 +20,11 @@ public class TestCase {
 	
 	private String name;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="testSuite_id")
 	private TestSuite testSuite;
 	
-	@OneToMany(mappedBy="testCase", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="testCase")
 	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
 
 	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {

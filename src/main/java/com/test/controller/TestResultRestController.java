@@ -20,6 +20,7 @@ import com.test.domain.Env_TestCase_TestResult;
 import com.test.domain.Environment;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
+import com.test.domain.TestSuite;
 import com.test.service.Env_TestCase_TestResultService;
 import com.test.service.EnvironmentService;
 import com.test.service.TestCaseService;
@@ -29,89 +30,101 @@ import com.test.service.TestSuiteService;
 @RestController
 @RequestMapping("/rest")
 public class TestResultRestController {
-	
+
 	@Autowired
 	private Env_TestCase_TestResultService env_TestCase_TestResultService;
-	
+
 	@Autowired
 	private EnvironmentService environmentService;
-	
+
 	@Autowired
-	private TestCaseService testCaseService;	
-	
+	private TestCaseService testCaseService;
+
 	@Autowired
 	private TestResultService testResultService;
-	
+
 	@Autowired
 	private TestSuiteService testSuiteService;
-	
+
 	@Autowired
 	private Env_TestCase_TestResultDao env_TestCase_TestResultDao;
-	
+
 	@Autowired
 	private EnvironmentDao environmentDao;
-	
+
 	@Autowired
-	private TestCaseDao testCaseDao;	
-	
+	private TestCaseDao testCaseDao;
+
 	@Autowired
 	private TestResultDao testResultDao;
-	
+
 	@Autowired
 	private TestSuiteDao testSuiteDao;
-	
-	
-	@RequestMapping(value="/testJson", method=RequestMethod.POST) 
+
+	@RequestMapping(value = "/testJson", method = RequestMethod.POST)
 	public JsonNode showTestClass(@RequestBody JsonNode envObj) {
-		
+
 		return envObj;
 	}
-	
-	@RequestMapping(value="/testData", method=RequestMethod.POST) 
-	public Env_TestCase_TestResult showTestClass(@RequestBody Env_TestCase_TestResult env_TestCase_TestResult) {
-		
-		
-		
-/*		Environment environment = new Environment(); env_TestCase_TestResult.getEnvironment();
-		TestCase testCase = new TestCase(); env_TestCase_TestResult.getTestCase();
-		TestResult testResult = new TestResult(); env_TestCase_TestResult.getTestResult();*/
-	//	TestSuite testSuite = /*new TestSuite();*/ testCase.getTestSuite();
-		//testCase.setName("FFFtestCase");
-		//testCase.setTestSuite(testSuite);
-		//environment.setName("FFFenv");
-/*		testSuiteService.save(testSuite);
-		testResultService.save(testResult);
+
+	@RequestMapping(value = "/testData", method = RequestMethod.POST)
+	public Env_TestCase_TestResult showTestClass(
+			@RequestBody Env_TestCase_TestResult env_TestCase_TestResult) {
+
+		Environment environment = env_TestCase_TestResult.getEnvironment();
+		TestResult testResult = env_TestCase_TestResult.getTestResult();
+		TestCase testCase = env_TestCase_TestResult.getTestCase();
+		TestSuite testSuite = testCase.getTestSuite();
+
+		if (testSuiteService.save(testSuite, testSuite.getName()) == null) {
+
+			if (testCaseService.save(testCase, testCase.getName()) == null) {
+
+				TestCase findedTestCase = testCaseService.findByName(testCase
+						.getName());
+
+				System.out.println("finded is: " + findedTestCase);
+
+				Env_TestCase_TestResult completeResult = env_TestCase_TestResultService
+						.saveWithEntities(environment, testResult,
+								findedTestCase);
+
+				// env_TestCase_TestResultService.save(completeResult);
+
+				// env_TestCase_TestResult.setEnvironment(completeResult.getEnvironment());
+				// env_TestCase_TestResult.setTestCase(completeResult.getTestCase());
+				// env_TestCase_TestResult.setTestResult(completeResult.getTestResult());
+
+				return env_TestCase_TestResult;
+			}
+
+			TestSuite findedTestSuite = testSuiteService.findByName(testSuite.getName());
+			
+			
+			testCase.setTestSuite(findedTestSuite);
+			testCaseService.save(testCase);
+			
+			env_TestCase_TestResultService.saveWithEntities(environment, testResult, testCase);
+			
+			return env_TestCase_TestResult;
+
+		}
+
+		System.out.println("aaaaa_______+++++++++");
+
+		environmentService.save(environment);
+		testSuiteDao.save(testSuite);
+		testCase.setTestSuite(testSuite);
 		testCaseService.save(testCase);
-		environmentService.save(environment);*/
-		
-/*		TestCase testCase1 = testCaseDao.findOne((long) 1);
-		testCase1.setName("aaa");
-		testCaseDao.save(testCase1);*/
-		
-		//Environment environment1 = environmentDao.findOne((long) 1);
-		
-		//Env_TestCase_TestResult newEnv_Test_Result = new Env_TestCase_TestResult();
-		
-/*		env_TestCase_TestResult.setEnvironment(environment);
-		
+		testResultService.save(testResult);
+
+		env_TestCase_TestResult.setEnvironment(environment);
+		env_TestCase_TestResult.setTestCase(testCase);
 		env_TestCase_TestResult.setTestResult(testResult);
-		
-		List<Env_TestCase_TestResult> env_TestCase_TestResults = new ArrayList<Env_TestCase_TestResult>();
-		env_TestCase_TestResults.add(env_TestCase_TestResult);
-		testCase1.setEnv_TestCase_TestResults(env_TestCase_TestResults);
-		
-		testCase1.setEnv_TestCase_TestResults(env_TestCase_TestResults);
-		testCaseDao.save(testCase1);
-		env_TestCase_TestResult.setTestCase(testCase1);*/
+
 		env_TestCase_TestResultService.save(env_TestCase_TestResult);
-		
-		
-		//System.out.println("finished!!!");
+
 		return env_TestCase_TestResult;
 	}
-	
-	
-	
+
 }
-
-

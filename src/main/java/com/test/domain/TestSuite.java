@@ -2,7 +2,6 @@ package com.test.domain;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,7 +20,7 @@ public class TestSuite {
 /*	@ManyToMany(mappedBy="testClasses")
 	private List<TestSet> testSets;*/
 	
-	@OneToMany(mappedBy="testSuite", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="testSuite")
 	private List<TestCase> testCases;
 
 	public Long getId() {

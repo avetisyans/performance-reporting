@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dao.TestSuiteDao;
+import com.test.domain.TestCase;
 import com.test.domain.TestSuite;
 import com.test.service.TestSuiteService;
 
@@ -30,6 +31,7 @@ public class TestSuiteServiceImpl implements TestSuiteService {
 
 	@Override
 	public TestSuite findByName(String name) {
+		System.out.println("aaaaaa_________finding________________++++++++++++++");
 		return testSuiteDao.findByName(name);
 	}
 
@@ -41,6 +43,18 @@ public class TestSuiteServiceImpl implements TestSuiteService {
 			return testSuiteDao.save(testSuite);
 		}
 		
+		return null;
+	}
+
+	@Override
+	public TestSuite save(TestSuite testSuite, String name) {
+		TestSuite foundTestSuite = testSuiteDao.findByName(name);
+		
+		if (foundTestSuite == null) {
+			System.out.println("Saving Test Suite");
+			return testSuiteDao.save(testSuite);
+		}
+
 		return null;
 	}
 	

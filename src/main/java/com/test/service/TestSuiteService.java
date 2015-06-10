@@ -13,5 +13,7 @@ public interface TestSuiteService {
 	TestSuite save(String name, TestSuite testSuite);
 
 	TestSuite findByName(String name);
+
+	TestSuite save(TestSuite testSuite, String name);
 	
 }

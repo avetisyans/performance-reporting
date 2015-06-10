@@ -16,15 +16,15 @@ public class Env_TestCase_TestResult {
 	@GeneratedValue
 	private Long id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne/*(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="environment_id")
 	private Environment environment;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne/*(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="testCase_id")
 	private TestCase testCase;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne/*(cascade=CascadeType.ALL)*/
 	@JoinColumn(name="testResult_id")
 	private TestResult testResult;
 	

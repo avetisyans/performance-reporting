@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dao.TestCaseDao;
+import com.test.dao.TestSuiteDao;
 import com.test.domain.TestCase;
 import com.test.domain.TestSuite;
 import com.test.service.TestCaseService;
@@ -18,6 +19,9 @@ public class TestCaseServiceImpl implements TestCaseService {
 
 	@Autowired
 	private TestCaseDao testCaseDao;
+	
+	@Autowired	
+	private TestSuiteDao testSuiteDao;
 	
 	@Override
 	public List<TestCase> findAll() {
@@ -30,13 +34,15 @@ public class TestCaseServiceImpl implements TestCaseService {
 	}
 
 	@Override
-	public TestCase save(String name, TestCase testCase) {
+	public TestCase save(TestCase testCase, String name) {
 		TestCase findedTestCase = testCaseDao.findByName(name);
 		
 		if (findedTestCase == null) {
+			//TestSuite  testSuite = testCase.getTestSuite();
+			//testSuiteDao.save(testSuite);
 			return testCaseDao.save(testCase);
 		}
-		
+
 		return null;
 	}
 

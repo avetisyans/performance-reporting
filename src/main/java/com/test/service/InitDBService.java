@@ -90,6 +90,9 @@ public class InitDBService {
 		environment.setName("Environment 1");
 		//environmentDao.save(environment);
 		
+		//environment.setName("After save");
+		
+		
 		TestResult testResult1 = new TestResult();
 		testResult1.setName("Test Result 1");
 		testResult1.setResult("Success");
@@ -101,12 +104,14 @@ public class InitDBService {
 		// Link Env, TestResult and TestCase
 		
 		Env_TestCase_TestResult env_TestCase_TestResult = new Env_TestCase_TestResult();
+		//env_TestCase_TestResult.setTestCase(testCase1);
 		env_TestCase_TestResult.setEnvironment(environment);
-		env_TestCase_TestResult.setTestCase(testCase1);
-		env_TestCase_TestResult.setTestResult(testResult1);
-		env_TestCase_TestResultDao.save(env_TestCase_TestResult);
-		
-		
+		//env_TestCase_TestResult.setTestResult(testResult1);
+		//env_TestCase_TestResultDao.save(env_TestCase_TestResult);
+	//	testSuiteDao.save(testSuite1);
+	//	testCaseDao.save(testCase1);
+	//	environmentDao.save(environment);
+	//	testResultDao.save(testResult1);
 /*		// SECOND Stage
 		
 		TestSuite testSuite2 = new TestSuite();
