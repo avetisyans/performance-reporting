@@ -28,4 +28,15 @@ public class EnvironmentServiceImpl implements EnvironmentService {
 		return environmentDao.save(environment);
 	}
 
+	@Override
+	public Environment saveToDB(Environment environment) {
+		Environment environmentFromDB = environmentDao.findByBuildNumberAndMaster(environment.getBuildNumber(), environment.getMaster());
+		
+		if (environmentFromDB == null) {
+			return environmentDao.save(environment);
+		}
+		
+		return environmentFromDB;
+	}
+
 }

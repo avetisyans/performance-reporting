@@ -60,6 +60,12 @@ public class Env_TestCase_TestResult {
 	public void setTestResult(TestResult testResult) {
 		this.testResult = testResult;
 	}
+
+	@Override
+	public String toString() {
+		return "Env_TestCase_TestResult [environment=" + environment.getName()
+				+ ", testCase=" + testCase.getName() + ", testResult=" + testResult.getName() + "]";
+	}
 	
 	
 	

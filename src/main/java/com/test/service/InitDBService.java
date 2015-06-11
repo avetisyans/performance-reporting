@@ -3,7 +3,6 @@ package com.test.service;
 import java.sql.Timestamp;
 import java.util.Date;
 
-import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;

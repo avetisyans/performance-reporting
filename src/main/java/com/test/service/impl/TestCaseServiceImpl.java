@@ -19,10 +19,10 @@ public class TestCaseServiceImpl implements TestCaseService {
 
 	@Autowired
 	private TestCaseDao testCaseDao;
-	
-	@Autowired	
+
+	@Autowired
 	private TestSuiteDao testSuiteDao;
-	
+
 	@Override
 	public List<TestCase> findAll() {
 		return testCaseDao.findAll();
@@ -34,24 +34,44 @@ public class TestCaseServiceImpl implements TestCaseService {
 	}
 
 	@Override
-	public TestCase save(TestCase testCase, String name) {
-		TestCase findedTestCase = testCaseDao.findByName(name);
-		
-		if (findedTestCase == null) {
-			//TestSuite  testSuite = testCase.getTestSuite();
-			//testSuiteDao.save(testSuite);
-			return testCaseDao.save(testCase);
-		}
-
-		return null;
-	}
-
-	@Override
 	public TestCase findByName(String name) {
 		return testCaseDao.findByName(name);
 	}
 
+	@Override
+	public TestCase saveToItsTestSuite(TestCase testCase) {
+		TestCase testCaseFromDB = testCaseDao.findByName(testCase.getName());
 
+		if (testCaseFromDB != null) {
+			
+			return testCaseFromDB;
+			
+		} else {
 
+			TestSuite testSuite = testCase.getTestSuite();
+			TestSuite testSuiteFromDB = testSuiteDao.findByName(testSuite.getName());
+
+			if (testSuiteFromDB == null) {
+				testSuiteDao.save(testSuite);
+				return testCaseDao.save(testCase);
+			}
+
+			testCase.setTestSuite(testSuiteFromDB);
+
+			return testCaseDao.save(testCase);
+		}
+	}
+
+	/*
+	 * public Car saveToItsGarage(Car car1) { Garage garage = car1.getGarage();
+	 * Garage garage2 = garageDao.findByName(garage.getName());
+	 * 
+	 * if (garage2 == null) { garageDao.save(garage); return carDao.save(car1);
+	 * }
+	 * 
+	 * car1.setGarage(garage2); return carDao.save(car1);
+	 * 
+	 * }
+	 */
 
 }

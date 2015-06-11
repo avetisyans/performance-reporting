@@ -9,8 +9,8 @@ public interface TestCaseService {
 	
 	TestCase save(TestCase testCase);
 
-	TestCase save(TestCase testCase, String name);
-
 	TestCase findByName(String name);
+
+	TestCase saveToItsTestSuite(TestCase testCase);
 
 }

@@ -9,4 +9,6 @@ public interface EnvironmentService {
 	List<Environment> findAll();
 	
 	Environment save(Environment environment);
+
+	Environment saveToDB(Environment environment);
 }
