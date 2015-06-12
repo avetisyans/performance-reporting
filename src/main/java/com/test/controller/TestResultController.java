@@ -53,7 +53,7 @@ public class TestResultController {
 		return testResult.getStartTime().toString();
 	}
 	
-	@RequestMapping("/")
+/*	@RequestMapping("/")
 	public String displayHome() {
 		System.out.println("aa________----+++++++++++++++++++_____------______aa");
 		//List<TestResult> testresults = testResultService.findTestResultByName();
@@ -61,7 +61,7 @@ public class TestResultController {
 		//model.addAttribute("testResults", testresults);
 		
 		return "home";
-	}
+	}*/
 
 	
 	@RequestMapping("/init")

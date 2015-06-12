@@ -1,5 +1,6 @@
 package com.test.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -7,9 +8,12 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.test.dao.Env_TestCase_TestResultDao;
 import com.test.dao.TestCaseDao;
 import com.test.dao.TestSuiteDao;
+import com.test.domain.Env_TestCase_TestResult;
 import com.test.domain.TestCase;
+import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
 import com.test.service.TestCaseService;
 
@@ -22,6 +26,9 @@ public class TestCaseServiceImpl implements TestCaseService {
 
 	@Autowired
 	private TestSuiteDao testSuiteDao;
+
+	@Autowired
+	private Env_TestCase_TestResultDao env_TestCase_TestResultDao;
 
 	@Override
 	public List<TestCase> findAll() {
@@ -43,13 +50,14 @@ public class TestCaseServiceImpl implements TestCaseService {
 		TestCase testCaseFromDB = testCaseDao.findByName(testCase.getName());
 
 		if (testCaseFromDB != null) {
-			
+
 			return testCaseFromDB;
-			
+
 		} else {
 
 			TestSuite testSuite = testCase.getTestSuite();
-			TestSuite testSuiteFromDB = testSuiteDao.findByName(testSuite.getName());
+			TestSuite testSuiteFromDB = testSuiteDao.findByName(testSuite
+					.getName());
 
 			if (testSuiteFromDB == null) {
 				testSuiteDao.save(testSuite);
@@ -60,6 +68,16 @@ public class TestCaseServiceImpl implements TestCaseService {
 
 			return testCaseDao.save(testCase);
 		}
+	}
+
+	@Override
+	public TestCase findOneWithResults(long id) {
+		TestCase testCase = testCaseDao.findOne(id);
+
+		List<Env_TestCase_TestResult> env_TestCase_TestResults = env_TestCase_TestResultDao.findByTestCase(testCase);
+		testCase.setEnv_TestCase_TestResults(env_TestCase_TestResults);
+
+		return testCase;
 	}
 
 	/*

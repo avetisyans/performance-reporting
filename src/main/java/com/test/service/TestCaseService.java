@@ -13,4 +13,6 @@ public interface TestCaseService {
 
 	TestCase saveToItsTestSuite(TestCase testCase);
 
+	TestCase findOneWithResults(long id);
+
 }
