@@ -18,6 +18,7 @@
 		<tiles:insertAttribute name="body" />
 		
 		<br /><br /><br /><br />
+		
 		<div style="text-align: center">
 			<tiles:insertAttribute name="footer" />
 		</div>

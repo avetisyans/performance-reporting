@@ -1,117 +1,152 @@
-[2015-06-12 18:18:31,003]DEBUG331408[http-bio-8080-exec-7] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Env_TestCase_TestResult as generatedAlias0 left join generatedAlias0.testCase as generatedAlias1 where generatedAlias1=:param0
-[2015-06-12 18:18:31,003]DEBUG331408[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
-[2015-06-12 18:18:31,004]DEBUG331409[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
-[2015-06-12 18:18:31,004]DEBUG331409[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestCase.env_TestCase_TestResults#1], was: [com.test.domain.TestCase.env_TestCase_TestResults#1] (uninitialized)
-[2015-06-12 18:18:31,004]DEBUG331409[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestSuite.testCases#1], was: [com.test.domain.TestSuite.testCases#1] (uninitialized)
-[2015-06-12 18:18:31,005]DEBUG331410[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
-[2015-06-12 18:18:31,005]DEBUG331410[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
-[2015-06-12 18:18:31,005]DEBUG331410[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
-[2015-06-12 18:18:31,005]DEBUG331410[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestCase{testSuite=com.test.domain.TestSuite#1, name=loadDefaultRecommendationsPage, id=1, env_TestCase_TestResults=<uninitialized>}
-[2015-06-12 18:18:31,006]DEBUG331411[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestSuite{testCases=<uninitialized>, name=OOTBDashboardTest, id=1}
-[2015-06-12 18:18:31,006]DEBUG331411[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        env_testca0_.id as id1_0_,
-        env_testca0_.environment_id as environm2_0_,
-        env_testca0_.testCase_id as testCase3_0_,
-        env_testca0_.testResult_id as testResu4_0_ 
-    from
-        Env_TestCase_TestResult env_testca0_ 
-    left outer join
-        TestCase testcase1_ 
-            on env_testca0_.testCase_id=testcase1_.id 
-    where
-        testcase1_.id=?
-[2015-06-12 18:18:31,007]DEBUG331412[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-06-12 18:18:31,007]DEBUG331412[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Env_TestCase_TestResult#1]
-[2015-06-12 18:18:31,008]DEBUG331413[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 1
-[2015-06-12 18:18:31,008]DEBUG331413[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Env_TestCase_TestResult#5]
-[2015-06-12 18:18:31,008]DEBUG331413[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Env_TestCase_TestResult#1]
-[2015-06-12 18:18:31,009]DEBUG331414[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        environmen0_.id as id1_1_0_,
-        environmen0_.branch as branch2_1_0_,
-        environmen0_.buildNumber as buildNum3_1_0_,
-        environmen0_.datanodes as datanode4_1_0_,
-        environmen0_.haEnabled as haEnable5_1_0_,
-        environmen0_.master as master6_1_0_,
-        environmen0_.name as name7_1_0_,
-        environmen0_.productName as productN8_1_0_ 
-    from
-        Environment environmen0_ 
-    where
-        environmen0_.id=?
-[2015-06-12 18:18:31,010]DEBUG331415[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-06-12 18:18:31,010]DEBUG331415[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
-[2015-06-12 18:18:31,010]DEBUG331415[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Environment#1]
-[2015-06-12 18:18:31,011]DEBUG331416[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Environment#1]
-[2015-06-12 18:18:31,013]DEBUG331418[http-bio-8080-exec-7] - org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:208) - Done entity load : com.test.domain.Environment#1
-[2015-06-12 18:18:31,013]DEBUG331418[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        testresult0_.id as id1_3_0_,
-        testresult0_.endTime as endTime2_3_0_,
-        testresult0_.name as name3_3_0_,
-        testresult0_.result as result4_3_0_,
-        testresult0_.startTime as startTim5_3_0_,
-        testresult0_.testType as testType6_3_0_ 
-    from
-        TestResult testresult0_ 
-    where
-        testresult0_.id=?
-[2015-06-12 18:18:31,014]DEBUG331419[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-06-12 18:18:31,015]DEBUG331420[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
-[2015-06-12 18:18:31,015]DEBUG331420[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#1]
-[2015-06-12 18:18:31,015]DEBUG331420[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#1]
-[2015-06-12 18:18:31,016]DEBUG331421[http-bio-8080-exec-7] - org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:208) - Done entity load : com.test.domain.TestResult#1
-[2015-06-12 18:18:31,017]DEBUG331422[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Env_TestCase_TestResult#1]
-[2015-06-12 18:18:31,017]DEBUG331422[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Env_TestCase_TestResult#5]
-[2015-06-12 18:18:31,017]DEBUG331422[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        testresult0_.id as id1_3_0_,
-        testresult0_.endTime as endTime2_3_0_,
-        testresult0_.name as name3_3_0_,
-        testresult0_.result as result4_3_0_,
-        testresult0_.startTime as startTim5_3_0_,
-        testresult0_.testType as testType6_3_0_ 
-    from
-        TestResult testresult0_ 
-    where
-        testresult0_.id=?
-[2015-06-12 18:18:31,019]DEBUG331424[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-06-12 18:18:31,019]DEBUG331424[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
-[2015-06-12 18:18:31,020]DEBUG331425[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#5]
-[2015-06-12 18:18:31,020]DEBUG331425[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#5]
-[2015-06-12 18:18:31,021]DEBUG331426[http-bio-8080-exec-7] - org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:208) - Done entity load : com.test.domain.TestResult#5
-[2015-06-12 18:18:31,022]DEBUG331427[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Env_TestCase_TestResult#5]
-[2015-06-12 18:18:31,023]DEBUG331428[http-bio-8080-exec-7] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
-[2015-06-12 18:18:31,023]DEBUG331428[http-bio-8080-exec-7] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@1eabe282]
-[2015-06-12 18:18:31,023]DEBUG331428[http-bio-8080-exec-7] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
-[2015-06-12 18:18:31,023]DEBUG331428[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
-[2015-06-12 18:18:31,023]DEBUG331428[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
-[2015-06-12 18:18:31,024]DEBUG331429[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.TestCase.env_TestCase_TestResults#1], was: [<unreferenced>] (initialized)
-[2015-06-12 18:18:31,024]DEBUG331429[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestSuite.testCases#1], was: [com.test.domain.TestSuite.testCases#1] (uninitialized)
-[2015-06-12 18:18:31,024]DEBUG331429[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Environment.env_TestCase_TestResults#1], was: [com.test.domain.Environment.env_TestCase_TestResults#1] (uninitialized)
-[2015-06-12 18:18:31,025]DEBUG331430[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestResult.env_TestCase_TestResults#1], was: [com.test.domain.TestResult.env_TestCase_TestResults#1] (uninitialized)
-[2015-06-12 18:18:31,025]DEBUG331430[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestResult.env_TestCase_TestResults#5], was: [com.test.domain.TestResult.env_TestCase_TestResults#5] (uninitialized)
-[2015-06-12 18:18:31,025]DEBUG331430[http-bio-8080-exec-7] - org.hibernate.engine.internal.Collections.processDereferencedCollection(Collections.java:77) - Collection dereferenced: [com.test.domain.TestCase.env_TestCase_TestResults#1]
-[2015-06-12 18:18:31,025]DEBUG331430[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 7 objects
-[2015-06-12 18:18:31,026]DEBUG331431[http-bio-8080-exec-7] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 1 (re)creations, 0 updates, 1 removals to 6 collections
-[2015-06-12 18:18:31,026]DEBUG331431[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
-[2015-06-12 18:18:31,026]DEBUG331431[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestCase{testSuite=com.test.domain.TestSuite#1, name=loadDefaultRecommendationsPage, id=1, env_TestCase_TestResults=[com.test.domain.Env_TestCase_TestResult#1, com.test.domain.Env_TestCase_TestResult#5]}
-[2015-06-12 18:18:31,026]DEBUG331431[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestSuite{testCases=<uninitialized>, name=OOTBDashboardTest, id=1}
-[2015-06-12 18:18:31,026]DEBUG331431[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Env_TestCase_TestResult{environment=com.test.domain.Environment#1, id=1, testResult=com.test.domain.TestResult#1, testCase=com.test.domain.TestCase#1}
-[2015-06-12 18:18:31,026]DEBUG331431[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Environment{name=singleSlice_with_5k_objects, id=1, branch=main, buildNumber=5075695, productName=vRops6.1, datanodes=null, env_TestCase_TestResults=<uninitialized>, haEnabled=false, master=10.143.121.100}
-[2015-06-12 18:18:31,027]DEBUG331432[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestResult{result=1, name=null, testType=0, startTime=2015-06-11 17:01:15.0, id=1, endTime=2015-06-11 17:02:03.0, env_TestCase_TestResults=<uninitialized>}
-[2015-06-12 18:18:31,027]DEBUG331432[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Env_TestCase_TestResult{environment=com.test.domain.Environment#1, id=5, testResult=com.test.domain.TestResult#5, testCase=com.test.domain.TestCase#1}
-[2015-06-12 18:18:31,027]DEBUG331432[http-bio-8080-exec-7] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestResult{result=1, name=null, testType=0, startTime=2015-06-11 17:23:08.0, id=5, endTime=2015-06-11 17:23:57.0, env_TestCase_TestResults=<uninitialized>}
-[2015-06-12 18:18:31,028]DEBUG331433[http-bio-8080-exec-7] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
-[2015-06-12 18:18:31,028]DEBUG331433[http-bio-8080-exec-7] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
-[2015-06-12 18:18:31,028]DEBUG331433[http-bio-8080-exec-7] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@1eabe282] after transaction
-[2015-06-12 18:18:31,029]DEBUG331434[http-bio-8080-exec-7] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-12 18:18:31,029]DEBUG331434[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
-[2015-06-12 18:18:31,029]DEBUG331434[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
-[2015-06-12 18:18:31,030]DEBUG331435[http-bio-8080-exec-7] - org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1241) - Rendering view [org.springframework.web.servlet.view.tiles3.TilesView: name 'index'; URL [index]] in DispatcherServlet with name 'dispatcherServlet'
-[2015-06-12 18:18:31,030]DEBUG331435[http-bio-8080-exec-7] - org.springframework.web.servlet.view.AbstractView.exposeModelAsRequestAttributes(AbstractView.java:432) - Added model object 'results' of type [java.util.ArrayList] to request in view with name 'index'
-[2015-06-12 18:18:31,030]DEBUG331435[http-bio-8080-exec-7] - org.springframework.web.servlet.view.AbstractView.exposeModelAsRequestAttributes(AbstractView.java:432) - Added model object 'testCase' of type [com.test.domain.TestCase] to request in view with name 'index'
-[2015-06-12 18:18:31,030]DEBUG331435[http-bio-8080-exec-7] - org.springframework.web.servlet.view.AbstractView.exposeModelAsRequestAttributes(AbstractView.java:432) - Added model object 'org.springframework.validation.BindingResult.testCase' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name 'index'
-[2015-06-12 18:18:31,030]DEBUG331435[http-bio-8080-exec-7] - org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:213) - Render request received for definition 'index'
-[2015-06-12 18:18:31,198]DEBUG331603[http-bio-8080-exec-7] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
+[2015-06-15 15:27:49,251]DEBUG107706[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,252]DEBUG107707[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.begin(ObjectCreateRule.java:200) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute}New org.apache.tiles.Attribute
+[2015-06-15 15:27:49,252]DEBUG107707[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,252]DEBUG107707[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,252]DEBUG107707[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,252]DEBUG107707[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,253]DEBUG107708[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,253]DEBUG107708[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,253]DEBUG107708[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,253]DEBUG107708[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,253]DEBUG107708[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,254]DEBUG107709[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,254]DEBUG107709[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,254]DEBUG107709[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,254]DEBUG107709[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute} Pop org.apache.tiles.Attribute
+[2015-06-15 15:27:49,254]DEBUG107709[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+		)
+[2015-06-15 15:27:49,254]DEBUG107709[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1520) - startElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,255]DEBUG107710[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1527) -   Pushing body text ''
+[2015-06-15 15:27:49,255]DEBUG107710[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1546) -   New match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,255]DEBUG107710[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,255]DEBUG107710[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.begin(ObjectCreateRule.java:200) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute}New org.apache.tiles.Attribute
+[2015-06-15 15:27:49,256]DEBUG107711[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,256]DEBUG107711[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,256]DEBUG107711[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,256]DEBUG107711[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,256]DEBUG107711[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,256]DEBUG107711[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,257]DEBUG107712[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,257]DEBUG107712[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,257]DEBUG107712[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,257]DEBUG107712[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,257]DEBUG107712[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,258]DEBUG107713[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,258]DEBUG107713[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute} Pop org.apache.tiles.Attribute
+[2015-06-15 15:27:49,258]DEBUG107713[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+	)
+[2015-06-15 15:27:49,258]DEBUG107713[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,definition,definition)
+[2015-06-15 15:27:49,258]DEBUG107713[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition'
+[2015-06-15 15:27:49,258]DEBUG107713[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,259]DEBUG107714[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Definition, attributeName=null]
+[2015-06-15 15:27:49,259]DEBUG107714[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillDefinitionRule@3e2e5a28
+[2015-06-15 15:27:49,259]DEBUG107714[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for SetNextRule[methodName=addDefinition, paramType=org.apache.tiles.Definition]
+[2015-06-15 15:27:49,259]DEBUG107714[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,259]DEBUG107714[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for SetNextRule[methodName=addDefinition, paramType=org.apache.tiles.Definition]
+[2015-06-15 15:27:49,260]DEBUG107715[http-bio-8080-exec-4] - org.apache.commons.digester.SetNextRule.end(SetNextRule.java:195) - [SetNextRule]{tiles-definitions/definition} Call org.apache.tiles.definition.digester.DigesterDefinitionsReader.addDefinition({name=index, template=null, role=null, preparerInstance=null, attributes={current=index, title=Home Page, body=/WEB-INF/jsp/index.jsp}})
+[2015-06-15 15:27:49,260]DEBUG107715[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillDefinitionRule@3e2e5a28
+[2015-06-15 15:27:49,260]DEBUG107715[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Definition, attributeName=null]
+[2015-06-15 15:27:49,260]DEBUG107715[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition} Pop org.apache.tiles.Definition
+[2015-06-15 15:27:49,260]DEBUG107715[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+
+	)
+[2015-06-15 15:27:49,261]DEBUG107716[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1520) - startElement(,definition,definition)
+[2015-06-15 15:27:49,261]DEBUG107716[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1527) -   Pushing body text ''
+[2015-06-15 15:27:49,261]DEBUG107716[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1546) -   New match='tiles-definitions/definition'
+[2015-06-15 15:27:49,261]DEBUG107716[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for ObjectCreateRule[className=org.apache.tiles.Definition, attributeName=null]
+[2015-06-15 15:27:49,261]DEBUG107716[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.begin(ObjectCreateRule.java:200) - [ObjectCreateRule]{tiles-definitions/definition}New org.apache.tiles.Definition
+[2015-06-15 15:27:49,262]DEBUG107717[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillDefinitionRule@3e2e5a28
+[2015-06-15 15:27:49,262]DEBUG107717[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for SetNextRule[methodName=addDefinition, paramType=org.apache.tiles.Definition]
+[2015-06-15 15:27:49,262]DEBUG107717[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+		)
+[2015-06-15 15:27:49,262]DEBUG107717[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1520) - startElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,262]DEBUG107717[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1527) -   Pushing body text ''
+[2015-06-15 15:27:49,262]DEBUG107717[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1546) -   New match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,263]DEBUG107718[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,263]DEBUG107718[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.begin(ObjectCreateRule.java:200) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute}New org.apache.tiles.Attribute
+[2015-06-15 15:27:49,263]DEBUG107718[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,263]DEBUG107718[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,263]DEBUG107718[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,264]DEBUG107719[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,264]DEBUG107719[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,264]DEBUG107719[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,264]DEBUG107719[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,264]DEBUG107719[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,264]DEBUG107719[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,265]DEBUG107720[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,265]DEBUG107720[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,265]DEBUG107720[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,265]DEBUG107720[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute} Pop org.apache.tiles.Attribute
+[2015-06-15 15:27:49,266]DEBUG107721[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+		)
+[2015-06-15 15:27:49,266]DEBUG107721[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1520) - startElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,266]DEBUG107721[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1527) -   Pushing body text ''
+[2015-06-15 15:27:49,266]DEBUG107721[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1546) -   New match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,268]DEBUG107723[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,268]DEBUG107723[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.begin(ObjectCreateRule.java:200) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute}New org.apache.tiles.Attribute
+[2015-06-15 15:27:49,268]DEBUG107723[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,268]DEBUG107723[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,268]DEBUG107723[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,269]DEBUG107724[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,270]DEBUG107725[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,270]DEBUG107725[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,270]DEBUG107725[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,270]DEBUG107725[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,270]DEBUG107725[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,270]DEBUG107725[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,271]DEBUG107726[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,271]DEBUG107726[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,271]DEBUG107726[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute} Pop org.apache.tiles.Attribute
+[2015-06-15 15:27:49,271]DEBUG107726[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+		)
+[2015-06-15 15:27:49,271]DEBUG107726[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1520) - startElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,272]DEBUG107727[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1527) -   Pushing body text ''
+[2015-06-15 15:27:49,272]DEBUG107727[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1546) -   New match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,272]DEBUG107727[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,272]DEBUG107727[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.begin(ObjectCreateRule.java:200) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute}New org.apache.tiles.Attribute
+[2015-06-15 15:27:49,272]DEBUG107727[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,273]DEBUG107728[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.startElement(Digester.java:1561) -   Fire begin() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,273]DEBUG107728[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,put-attribute,put-attribute)
+[2015-06-15 15:27:49,273]DEBUG107728[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition/put-attribute'
+[2015-06-15 15:27:49,273]DEBUG107728[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,273]DEBUG107728[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,273]DEBUG107728[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,274]DEBUG107729[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,274]DEBUG107729[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,274]DEBUG107729[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$PutAttributeRule@7b308fdb
+[2015-06-15 15:27:49,274]DEBUG107729[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillAttributeRule@6a6bcb4b
+[2015-06-15 15:27:49,274]DEBUG107729[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Attribute, attributeName=null]
+[2015-06-15 15:27:49,275]DEBUG107730[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition/put-attribute} Pop org.apache.tiles.Attribute
+[2015-06-15 15:27:49,275]DEBUG107730[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+	)
+[2015-06-15 15:27:49,275]DEBUG107730[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,definition,definition)
+[2015-06-15 15:27:49,275]DEBUG107730[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions/definition'
+[2015-06-15 15:27:49,275]DEBUG107730[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,276]DEBUG107731[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for ObjectCreateRule[className=org.apache.tiles.Definition, attributeName=null]
+[2015-06-15 15:27:49,276]DEBUG107731[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillDefinitionRule@3e2e5a28
+[2015-06-15 15:27:49,276]DEBUG107731[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1300) -   Fire body() for SetNextRule[methodName=addDefinition, paramType=org.apache.tiles.Definition]
+[2015-06-15 15:27:49,276]DEBUG107731[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,276]DEBUG107731[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for SetNextRule[methodName=addDefinition, paramType=org.apache.tiles.Definition]
+[2015-06-15 15:27:49,276]DEBUG107731[http-bio-8080-exec-4] - org.apache.commons.digester.SetNextRule.end(SetNextRule.java:195) - [SetNextRule]{tiles-definitions/definition} Call org.apache.tiles.definition.digester.DigesterDefinitionsReader.addDefinition({name=results, template=null, role=null, preparerInstance=null, attributes={current=results, title=Test Results, body=/WEB-INF/jsp/results.jsp}})
+[2015-06-15 15:27:49,277]DEBUG107732[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for org.apache.tiles.definition.digester.DigesterDefinitionsReader$FillDefinitionRule@3e2e5a28
+[2015-06-15 15:27:49,277]DEBUG107732[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1330) -   Fire end() for ObjectCreateRule[className=org.apache.tiles.Definition, attributeName=null]
+[2015-06-15 15:27:49,277]DEBUG107732[http-bio-8080-exec-4] - org.apache.commons.digester.ObjectCreateRule.end(ObjectCreateRule.java:219) - [ObjectCreateRule]{tiles-definitions/definition} Pop org.apache.tiles.Definition
+[2015-06-15 15:27:49,277]DEBUG107732[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.ignorableWhitespace(Digester.java:1397) - ignorableWhitespace(
+
+)
+[2015-06-15 15:27:49,277]DEBUG107732[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1274) - endElement(,tiles-definitions,tiles-definitions)
+[2015-06-15 15:27:49,278]DEBUG107733[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1277) -   match='tiles-definitions'
+[2015-06-15 15:27:49,278]DEBUG107733[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1278) -   bodyText=''
+[2015-06-15 15:27:49,278]DEBUG107733[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1313) -   No rules found matching 'tiles-definitions'.
+[2015-06-15 15:27:49,278]DEBUG107733[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endElement(Digester.java:1320) -   Popping body text ''
+[2015-06-15 15:27:49,278]DEBUG107733[http-bio-8080-exec-4] - org.apache.commons.digester.Digester.endDocument(Digester.java:1226) - endDocument()
+[2015-06-15 15:27:49,279]DEBUG107734[http-bio-8080-exec-4] - org.apache.tiles.definition.dao.BaseLocaleUrlDefinitionDAO.loadDefinitionsFromResource(BaseLocaleUrlDefinitionDAO.java:154) - File Resource jndi:/localhost/performance-reporting/WEB-INF/tile_definitions/general_en.xml at jndi:/localhost/performance-reporting/WEB-INF/tile_definitions/general_en.xml not found, continue
+[2015-06-15 15:27:49,280]DEBUG107735[http-bio-8080-exec-4] - org.apache.tiles.definition.dao.BaseLocaleUrlDefinitionDAO.loadDefinitionsFromResource(BaseLocaleUrlDefinitionDAO.java:154) - File Resource jndi:/localhost/performance-reporting/WEB-INF/tile_definitions/general_en_US.xml at jndi:/localhost/performance-reporting/WEB-INF/tile_definitions/general_en_US.xml not found, continue
+[2015-06-15 15:27:49,281]DEBUG107736[http-bio-8080-exec-4] - org.apache.tiles.definition.dao.ResolvingLocaleUrlDefinitionDAO.resolveInheritance(ResolvingLocaleUrlDefinitionDAO.java:132) - Resolve definition for child name='index' extends='common.
+[2015-06-15 15:27:49,281]DEBUG107736[http-bio-8080-exec-4] - org.apache.tiles.definition.dao.ResolvingLocaleUrlDefinitionDAO.resolveInheritance(ResolvingLocaleUrlDefinitionDAO.java:132) - Resolve definition for child name='results' extends='common.
+[2015-06-15 15:27:49,282]DEBUG107737[http-bio-8080-exec-4] - org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1241) - Rendering view [org.springframework.web.servlet.view.tiles3.TilesView: name 'index'; URL [index]] in DispatcherServlet with name 'dispatcherServlet'
+[2015-06-15 15:27:49,282]DEBUG107737[http-bio-8080-exec-4] - org.springframework.web.servlet.view.AbstractView.exposeModelAsRequestAttributes(AbstractView.java:432) - Added model object 'results' of type [java.util.ArrayList] to request in view with name 'index'
+[2015-06-15 15:27:49,288]DEBUG107743[http-bio-8080-exec-4] - org.springframework.web.servlet.view.AbstractView.exposeModelAsRequestAttributes(AbstractView.java:432) - Added model object 'testCase' of type [com.test.domain.TestCase] to request in view with name 'index'
+[2015-06-15 15:27:49,288]DEBUG107743[http-bio-8080-exec-4] - org.springframework.web.servlet.view.AbstractView.exposeModelAsRequestAttributes(AbstractView.java:432) - Added model object 'org.springframework.validation.BindingResult.testCase' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name 'index'
+[2015-06-15 15:27:49,295]DEBUG107750[http-bio-8080-exec-4] - org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:213) - Render request received for definition 'index'
+[2015-06-15 15:27:50,638]DEBUG109093[http-bio-8080-exec-4] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
