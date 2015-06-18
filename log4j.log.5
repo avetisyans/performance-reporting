@@ -1,41 +1,116 @@
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3687) -  Insert 0: insert into Env_TestCase_TestResult (environment_id, testCase_id, testResult_id, id) values (?, ?, ?, ?)
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3688) -  Update 0: update Env_TestCase_TestResult set environment_id=?, testCase_id=?, testResult_id=? where id=?
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3689) -  Delete 0: delete from Env_TestCase_TestResult where id=?
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3692) -  Identity insert: insert into Env_TestCase_TestResult (environment_id, testCase_id, testResult_id) values (?, ?, ?)
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1f1838f2]
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1a771af0]
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.branch
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.buildNumber
-[2015-06-15 15:26:05,555]DEBUG  4010[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7927d709]
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@426c8b69]
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@46af62bb]
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.name
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,785]DEBUG  4465[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3c34f831]
+[2015-06-18 20:30:07,786]DEBUG  4466[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : startTime
+[2015-06-18 20:30:07,786]DEBUG  4466[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : tag
+[2015-06-18 20:30:07,786]DEBUG  4466[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuites
+[2015-06-18 20:30:07,786]DEBUG  4466[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,787]DEBUG  4467[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,788]DEBUG  4468[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Run)
+    - Returns
+       - EntityReturnImpl(entity=com.test.domain.Run, querySpaceUid=<gen:0>, path=com.test.domain.Run)
+          - CollectionAttributeFetchImpl(collection=com.test.domain.Run.children, querySpaceUid=<gen:1>, path=com.test.domain.Run.children)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Run, querySpaceUid=<gen:2>, path=com.test.domain.Run.children.<elements>)
+          - EntityAttributeFetchImpl(entity=com.test.domain.Run, querySpaceUid=<gen:3>, path=com.test.domain.Run.parent)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Run)
+          - SQL table alias mapping - run0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_5_0_}
+
+[2015-06-18 20:30:07,789]DEBUG  4469[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Run [PESSIMISTIC_FORCE_INCREMENT]: select run0_.id as id1_5_0_, run0_.buildNumber as buildNum2_5_0_, run0_.endTime as endTime3_5_0_, run0_.parent_id as parent_i6_5_0_, run0_.startTime as startTim4_5_0_, run0_.tag as tag5_5_0_ from Run run0_ where run0_.id=? for update
+[2015-06-18 20:30:07,789]DEBUG  4469[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@43029e4b]
+[2015-06-18 20:30:07,789]DEBUG  4469[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : buildNumber
+[2015-06-18 20:30:07,790]DEBUG  4470[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : children
+[2015-06-18 20:30:07,790]DEBUG  4470[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@63e07edd]
+[2015-06-18 20:30:07,790]DEBUG  4470[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@788ef7e0]
+[2015-06-18 20:30:07,790]DEBUG  4470[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : endTime
+[2015-06-18 20:30:07,791]DEBUG  4471[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent
+[2015-06-18 20:30:07,791]DEBUG  4471[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2fa9de7c]
+[2015-06-18 20:30:07,791]DEBUG  4471[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : startTime
+[2015-06-18 20:30:07,791]DEBUG  4471[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : tag
+[2015-06-18 20:30:07,792]DEBUG  4472[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuites
+[2015-06-18 20:30:07,792]DEBUG  4472[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,792]DEBUG  4472[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,792]DEBUG  4472[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Run)
+    - Returns
+       - EntityReturnImpl(entity=com.test.domain.Run, querySpaceUid=<gen:0>, path=com.test.domain.Run)
+          - CollectionAttributeFetchImpl(collection=com.test.domain.Run.children, querySpaceUid=<gen:1>, path=com.test.domain.Run.children)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Run, querySpaceUid=<gen:2>, path=com.test.domain.Run.children.<elements>)
+          - EntityAttributeFetchImpl(entity=com.test.domain.Run, querySpaceUid=<gen:3>, path=com.test.domain.Run.parent)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Run)
+          - SQL table alias mapping - run0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_5_0_}
+
+[2015-06-18 20:30:07,793]DEBUG  4473[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Run [OPTIMISTIC]: select run0_.id as id1_5_0_, run0_.buildNumber as buildNum2_5_0_, run0_.endTime as endTime3_5_0_, run0_.parent_id as parent_i6_5_0_, run0_.startTime as startTim4_5_0_, run0_.tag as tag5_5_0_ from Run run0_ where run0_.id=?
+[2015-06-18 20:30:07,793]DEBUG  4473[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@14dbb254]
+[2015-06-18 20:30:07,793]DEBUG  4473[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : buildNumber
+[2015-06-18 20:30:07,793]DEBUG  4473[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : children
+[2015-06-18 20:30:07,794]DEBUG  4474[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@7b13f806]
+[2015-06-18 20:30:07,794]DEBUG  4474[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1a288326]
+[2015-06-18 20:30:07,794]DEBUG  4474[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : endTime
+[2015-06-18 20:30:07,794]DEBUG  4474[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent
+[2015-06-18 20:30:07,795]DEBUG  4475[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@53a8cb25]
+[2015-06-18 20:30:07,795]DEBUG  4475[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : startTime
+[2015-06-18 20:30:07,795]DEBUG  4475[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : tag
+[2015-06-18 20:30:07,795]DEBUG  4475[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuites
+[2015-06-18 20:30:07,796]DEBUG  4476[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,798]DEBUG  4478[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,799]DEBUG  4479[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Run)
+    - Returns
+       - EntityReturnImpl(entity=com.test.domain.Run, querySpaceUid=<gen:0>, path=com.test.domain.Run)
+          - CollectionAttributeFetchImpl(collection=com.test.domain.Run.children, querySpaceUid=<gen:1>, path=com.test.domain.Run.children)
+             - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Run, querySpaceUid=<gen:2>, path=com.test.domain.Run.children.<elements>)
+          - EntityAttributeFetchImpl(entity=com.test.domain.Run, querySpaceUid=<gen:3>, path=com.test.domain.Run.parent)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Run)
+          - SQL table alias mapping - run0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_5_0_}
+
+[2015-06-18 20:30:07,799]DEBUG  4479[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Run [OPTIMISTIC_FORCE_INCREMENT]: select run0_.id as id1_5_0_, run0_.buildNumber as buildNum2_5_0_, run0_.endTime as endTime3_5_0_, run0_.parent_id as parent_i6_5_0_, run0_.startTime as startTim4_5_0_, run0_.tag as tag5_5_0_ from Run run0_ where run0_.id=?
+[2015-06-18 20:30:07,799]DEBUG  4479[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_MERGE on entity com.test.domain.Run: select run0_.id as id1_5_0_, run0_.buildNumber as buildNum2_5_0_, run0_.endTime as endTime3_5_0_, run0_.parent_id as parent_i6_5_0_, run0_.startTime as startTim4_5_0_, run0_.tag as tag5_5_0_ from Run run0_ where run0_.id=?
+[2015-06-18 20:30:07,800]DEBUG  4480[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_REFRESH on entity com.test.domain.Run: select run0_.id as id1_5_0_, run0_.buildNumber as buildNum2_5_0_, run0_.endTime as endTime3_5_0_, run0_.parent_id as parent_i6_5_0_, run0_.startTime as startTim4_5_0_, run0_.tag as tag5_5_0_ from Run run0_ where run0_.id=?
+[2015-06-18 20:30:07,800]DEBUG  4480[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3676) - Static SQL for entity: com.test.domain.Env_TestCase_TestResult
+[2015-06-18 20:30:07,800]DEBUG  4480[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3681) -  Version select: select id from Env_TestCase_TestResult where id =?
+[2015-06-18 20:30:07,800]DEBUG  4480[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3684) -  Snapshot select: select env_testca_.id, env_testca_.environment_id as environm2_2_, env_testca_.testCase_id as testCase3_2_, env_testca_.testResult_id as testResu4_2_ from Env_TestCase_TestResult env_testca_ where env_testca_.id=?
+[2015-06-18 20:30:07,800]DEBUG  4480[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3687) -  Insert 0: insert into Env_TestCase_TestResult (environment_id, testCase_id, testResult_id, id) values (?, ?, ?, ?)
+[2015-06-18 20:30:07,801]DEBUG  4481[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3688) -  Update 0: update Env_TestCase_TestResult set environment_id=?, testCase_id=?, testResult_id=? where id=?
+[2015-06-18 20:30:07,801]DEBUG  4481[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3689) -  Delete 0: delete from Env_TestCase_TestResult where id=?
+[2015-06-18 20:30:07,801]DEBUG  4481[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3692) -  Identity insert: insert into Env_TestCase_TestResult (environment_id, testCase_id, testResult_id) values (?, ?, ?)
+[2015-06-18 20:30:07,801]DEBUG  4481[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4e9cf8c4]
+[2015-06-18 20:30:07,801]DEBUG  4481[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,802]DEBUG  4482[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@74c46d09]
+[2015-06-18 20:30:07,802]DEBUG  4482[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.builds
+[2015-06-18 20:30:07,802]DEBUG  4482[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
+[2015-06-18 20:30:07,802]DEBUG  4482[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,802]DEBUG  4482[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,803]DEBUG  4483[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
+[2015-06-18 20:30:07,803]DEBUG  4483[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
+[2015-06-18 20:30:07,803]DEBUG  4483[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
+[2015-06-18 20:30:07,803]DEBUG  4483[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
+[2015-06-18 20:30:07,803]DEBUG  4483[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,804]DEBUG  4484[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@48d3ff6f]
+[2015-06-18 20:30:07,804]DEBUG  4484[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,804]DEBUG  4484[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,804]DEBUG  4484[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
+[2015-06-18 20:30:07,805]DEBUG  4485[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
+[2015-06-18 20:30:07,805]DEBUG  4485[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6aa02719]
+[2015-06-18 20:30:07,805]DEBUG  4485[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
+[2015-06-18 20:30:07,805]DEBUG  4485[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.runs
+[2015-06-18 20:30:07,806]DEBUG  4486[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
+[2015-06-18 20:30:07,806]DEBUG  4486[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
+[2015-06-18 20:30:07,806]DEBUG  4486[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,806]DEBUG  4486[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5f976726]
+[2015-06-18 20:30:07,807]DEBUG  4487[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
+[2015-06-18 20:30:07,807]DEBUG  4487[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,807]DEBUG  4487[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,807]DEBUG  4487[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
+[2015-06-18 20:30:07,808]DEBUG  4488[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
+[2015-06-18 20:30:07,808]DEBUG  4488[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
+[2015-06-18 20:30:07,808]DEBUG  4488[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,808]DEBUG  4488[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,810]DEBUG  4490[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -46,63 +121,62 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
           - JOIN (JoinDefinedByMetadata(environment)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Environment)
                 - SQL table alias mapping - environmen1_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_1_1_}
+                - suffixed key columns - {id1_3_1_}
           - JOIN (JoinDefinedByMetadata(testCase)) : <gen:0> -> <gen:2>
              - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.TestCase)
                 - SQL table alias mapping - testcase2_
                 - alias suffix - 2_
-                - suffixed key columns - {id1_2_2_}
+                - suffixed key columns - {id1_6_2_}
                 - JOIN (JoinDefinedByMetadata(testSuite)) : <gen:2> -> <gen:3>
                    - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.test.domain.TestSuite)
                       - SQL table alias mapping - testsuite3_
                       - alias suffix - 3_
-                      - suffixed key columns - {id1_4_3_}
+                      - suffixed key columns - {id1_8_3_}
           - JOIN (JoinDefinedByMetadata(testResult)) : <gen:0> -> <gen:4>
              - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.test.domain.TestResult)
                 - SQL table alias mapping - testresult4_
                 - alias suffix - 4_
-                - suffixed key columns - {id1_3_4_}
+                - suffixed key columns - {id1_7_4_}
 
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [NONE]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_, environmen1_.id as id1_1_1_, environmen1_.branch as branch2_1_1_, environmen1_.buildNumber as buildNum3_1_1_, environmen1_.datanodes as datanode4_1_1_, environmen1_.haEnabled as haEnable5_1_1_, environmen1_.master as master6_1_1_, environmen1_.name as name7_1_1_, environmen1_.productName as productN8_1_1_, testcase2_.id as id1_2_2_, testcase2_.name as name2_2_2_, testcase2_.testSuite_id as testSuit3_2_2_, testsuite3_.id as id1_4_3_, testsuite3_.name as name2_4_3_, testresult4_.id as id1_3_4_, testresult4_.endTime as endTime2_3_4_, testresult4_.name as name3_3_4_, testresult4_.result as result4_3_4_, testresult4_.startTime as startTim5_3_4_, testresult4_.testType as testType6_3_4_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestCase testcase2_ on env_testca0_.testCase_id=testcase2_.id left outer join TestSuite testsuite3_ on testcase2_.testSuite_id=testsuite3_.id left outer join TestResult testresult4_ on env_testca0_.testResult_id=testresult4_.id where env_testca0_.id=?
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@35cd534c]
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@633a5475]
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.branch
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.buildNumber
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,565]DEBUG  4020[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6322589e]
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@46e67817]
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5aedd16d]
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.name
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,810]DEBUG  4490[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [NONE]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_, environmen1_.id as id1_3_1_, environmen1_.datanodes as datanode2_3_1_, environmen1_.haEnabled as haEnable3_3_1_, environmen1_.master as master4_3_1_, environmen1_.name as name5_3_1_, environmen1_.productName as productN6_3_1_, testcase2_.id as id1_6_2_, testcase2_.name as name2_6_2_, testcase2_.testSuite_id as testSuit3_6_2_, testsuite3_.id as id1_8_3_, testsuite3_.name as name2_8_3_, testresult4_.id as id1_7_4_, testresult4_.endTime as endTime2_7_4_, testresult4_.result as result3_7_4_, testresult4_.startTime as startTim4_7_4_, testresult4_.testType as testType5_7_4_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestCase testcase2_ on env_testca0_.testCase_id=testcase2_.id left outer join TestSuite testsuite3_ on testcase2_.testSuite_id=testsuite3_.id left outer join TestResult testresult4_ on env_testca0_.testResult_id=testresult4_.id where env_testca0_.id=?
+[2015-06-18 20:30:07,810]DEBUG  4490[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@54934289]
+[2015-06-18 20:30:07,811]DEBUG  4491[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,811]DEBUG  4491[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7e314527]
+[2015-06-18 20:30:07,811]DEBUG  4491[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.builds
+[2015-06-18 20:30:07,811]DEBUG  4491[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
+[2015-06-18 20:30:07,811]DEBUG  4491[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,812]DEBUG  4492[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,812]DEBUG  4492[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
+[2015-06-18 20:30:07,812]DEBUG  4492[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
+[2015-06-18 20:30:07,812]DEBUG  4492[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
+[2015-06-18 20:30:07,812]DEBUG  4492[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
+[2015-06-18 20:30:07,813]DEBUG  4493[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,813]DEBUG  4493[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@eb291c4]
+[2015-06-18 20:30:07,813]DEBUG  4493[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,813]DEBUG  4493[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,813]DEBUG  4493[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
+[2015-06-18 20:30:07,814]DEBUG  4494[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
+[2015-06-18 20:30:07,814]DEBUG  4494[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3d1a9888]
+[2015-06-18 20:30:07,814]DEBUG  4494[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
+[2015-06-18 20:30:07,814]DEBUG  4494[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.runs
+[2015-06-18 20:30:07,815]DEBUG  4495[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
+[2015-06-18 20:30:07,815]DEBUG  4495[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
+[2015-06-18 20:30:07,815]DEBUG  4495[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,815]DEBUG  4495[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3f7d0bf9]
+[2015-06-18 20:30:07,816]DEBUG  4496[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
+[2015-06-18 20:30:07,816]DEBUG  4496[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,816]DEBUG  4496[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,816]DEBUG  4496[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
+[2015-06-18 20:30:07,816]DEBUG  4496[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
+[2015-06-18 20:30:07,816]DEBUG  4496[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
+[2015-06-18 20:30:07,817]DEBUG  4497[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,817]DEBUG  4497[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,819]DEBUG  4499[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -113,39 +187,39 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
           - JOIN (JoinDefinedByMetadata(environment)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Environment)
                 - SQL table alias mapping - environmen1_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_1_1_}
+                - suffixed key columns - {id1_3_1_}
           - JOIN (JoinDefinedByMetadata(testCase)) : <gen:0> -> <gen:2>
              - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.TestCase)
                 - SQL table alias mapping - testcase2_
                 - alias suffix - 2_
-                - suffixed key columns - {id1_2_2_}
+                - suffixed key columns - {id1_6_2_}
                 - JOIN (JoinDefinedByMetadata(testSuite)) : <gen:2> -> <gen:3>
                    - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.test.domain.TestSuite)
                       - SQL table alias mapping - testsuite3_
                       - alias suffix - 3_
-                      - suffixed key columns - {id1_4_3_}
+                      - suffixed key columns - {id1_8_3_}
           - JOIN (JoinDefinedByMetadata(testResult)) : <gen:0> -> <gen:4>
              - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.test.domain.TestResult)
                 - SQL table alias mapping - testresult4_
                 - alias suffix - 4_
-                - suffixed key columns - {id1_3_4_}
+                - suffixed key columns - {id1_7_4_}
 
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [READ]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_, environmen1_.id as id1_1_1_, environmen1_.branch as branch2_1_1_, environmen1_.buildNumber as buildNum3_1_1_, environmen1_.datanodes as datanode4_1_1_, environmen1_.haEnabled as haEnable5_1_1_, environmen1_.master as master6_1_1_, environmen1_.name as name7_1_1_, environmen1_.productName as productN8_1_1_, testcase2_.id as id1_2_2_, testcase2_.name as name2_2_2_, testcase2_.testSuite_id as testSuit3_2_2_, testsuite3_.id as id1_4_3_, testsuite3_.name as name2_4_3_, testresult4_.id as id1_3_4_, testresult4_.endTime as endTime2_3_4_, testresult4_.name as name3_3_4_, testresult4_.result as result4_3_4_, testresult4_.startTime as startTim5_3_4_, testresult4_.testType as testType6_3_4_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestCase testcase2_ on env_testca0_.testCase_id=testcase2_.id left outer join TestSuite testsuite3_ on testcase2_.testSuite_id=testsuite3_.id left outer join TestResult testresult4_ on env_testca0_.testResult_id=testresult4_.id where env_testca0_.id=?
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@286c491c]
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,575]DEBUG  4030[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@63ea98bc]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@43d65cf9]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@938d936]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,819]DEBUG  4499[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [READ]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_, environmen1_.id as id1_3_1_, environmen1_.datanodes as datanode2_3_1_, environmen1_.haEnabled as haEnable3_3_1_, environmen1_.master as master4_3_1_, environmen1_.name as name5_3_1_, environmen1_.productName as productN6_3_1_, testcase2_.id as id1_6_2_, testcase2_.name as name2_6_2_, testcase2_.testSuite_id as testSuit3_6_2_, testsuite3_.id as id1_8_3_, testsuite3_.name as name2_8_3_, testresult4_.id as id1_7_4_, testresult4_.endTime as endTime2_7_4_, testresult4_.result as result3_7_4_, testresult4_.startTime as startTim4_7_4_, testresult4_.testType as testType5_7_4_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestCase testcase2_ on env_testca0_.testCase_id=testcase2_.id left outer join TestSuite testsuite3_ on testcase2_.testSuite_id=testsuite3_.id left outer join TestResult testresult4_ on env_testca0_.testResult_id=testresult4_.id where env_testca0_.id=?
+[2015-06-18 20:30:07,819]DEBUG  4499[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@28e55794]
+[2015-06-18 20:30:07,819]DEBUG  4499[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,820]DEBUG  4500[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@623d915]
+[2015-06-18 20:30:07,820]DEBUG  4500[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,820]DEBUG  4500[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@556ded06]
+[2015-06-18 20:30:07,820]DEBUG  4500[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,821]DEBUG  4501[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@57b659c8]
+[2015-06-18 20:30:07,821]DEBUG  4501[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,821]DEBUG  4501[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,822]DEBUG  4502[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -155,19 +229,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [UPGRADE]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1c79392b]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5a21dd71]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@159f5e6a]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@407a9d93]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,822]DEBUG  4502[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [UPGRADE]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
+[2015-06-18 20:30:07,822]DEBUG  4502[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@37901f31]
+[2015-06-18 20:30:07,822]DEBUG  4502[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,823]DEBUG  4503[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@155c4e80]
+[2015-06-18 20:30:07,823]DEBUG  4503[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,823]DEBUG  4503[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@70c12dfa]
+[2015-06-18 20:30:07,823]DEBUG  4503[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,824]DEBUG  4504[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@471fcd44]
+[2015-06-18 20:30:07,824]DEBUG  4504[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,824]DEBUG  4504[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,825]DEBUG  4505[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -177,19 +251,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [UPGRADE_NOWAIT]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6050f281]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5b4d1542]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4fcf8dbd]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@286cba3f]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,825]DEBUG  4505[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [UPGRADE_NOWAIT]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
+[2015-06-18 20:30:07,825]DEBUG  4505[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@745280bb]
+[2015-06-18 20:30:07,826]DEBUG  4506[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,826]DEBUG  4506[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7adaab89]
+[2015-06-18 20:30:07,826]DEBUG  4506[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,826]DEBUG  4506[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@43162c7b]
+[2015-06-18 20:30:07,826]DEBUG  4506[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,827]DEBUG  4507[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@23212bfa]
+[2015-06-18 20:30:07,827]DEBUG  4507[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,827]DEBUG  4507[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,827]DEBUG  4507[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -199,19 +273,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [UPGRADE_SKIPLOCKED]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6fe87594]
-[2015-06-15 15:26:05,585]DEBUG  4040[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6fad5671]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@225da4f9]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@e3531f3]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,828]DEBUG  4508[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [UPGRADE_SKIPLOCKED]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
+[2015-06-18 20:30:07,828]DEBUG  4508[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4f076561]
+[2015-06-18 20:30:07,828]DEBUG  4508[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,828]DEBUG  4508[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@12298471]
+[2015-06-18 20:30:07,828]DEBUG  4508[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,829]DEBUG  4509[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@387d1335]
+[2015-06-18 20:30:07,829]DEBUG  4509[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,829]DEBUG  4509[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4c254536]
+[2015-06-18 20:30:07,829]DEBUG  4509[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,830]DEBUG  4510[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,830]DEBUG  4510[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -221,19 +295,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [FORCE]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@366037f1]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7ccee168]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5bd3fdab]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6cbb869f]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,830]DEBUG  4510[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [FORCE]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
+[2015-06-18 20:30:07,831]DEBUG  4511[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5cd4ec08]
+[2015-06-18 20:30:07,831]DEBUG  4511[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,831]DEBUG  4511[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@52b4ae21]
+[2015-06-18 20:30:07,832]DEBUG  4512[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,832]DEBUG  4512[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@345e5db4]
+[2015-06-18 20:30:07,832]DEBUG  4512[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,832]DEBUG  4512[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4f91539b]
+[2015-06-18 20:30:07,833]DEBUG  4513[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,833]DEBUG  4513[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,833]DEBUG  4513[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -243,19 +317,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [PESSIMISTIC_READ]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? lock in share mode
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@a08deb]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4f147355]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7f2b8b56]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7be08e8d]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,834]DEBUG  4514[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [PESSIMISTIC_READ]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? lock in share mode
+[2015-06-18 20:30:07,834]DEBUG  4514[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a1b4c0f]
+[2015-06-18 20:30:07,834]DEBUG  4514[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,834]DEBUG  4514[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7bdc7f27]
+[2015-06-18 20:30:07,835]DEBUG  4515[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,835]DEBUG  4515[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3e94f64c]
+[2015-06-18 20:30:07,835]DEBUG  4515[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,835]DEBUG  4515[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2effbea5]
+[2015-06-18 20:30:07,836]DEBUG  4516[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,836]DEBUG  4516[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,836]DEBUG  4516[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -265,19 +339,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [PESSIMISTIC_WRITE]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7bbef9e]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@480bedf1]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3760869b]
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,595]DEBUG  4050[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6fff58f6]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,837]DEBUG  4517[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [PESSIMISTIC_WRITE]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
+[2015-06-18 20:30:07,837]DEBUG  4517[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5a144adf]
+[2015-06-18 20:30:07,837]DEBUG  4517[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,837]DEBUG  4517[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5b168b72]
+[2015-06-18 20:30:07,838]DEBUG  4518[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,838]DEBUG  4518[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@8cf1c23]
+[2015-06-18 20:30:07,838]DEBUG  4518[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,838]DEBUG  4518[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7075fd57]
+[2015-06-18 20:30:07,839]DEBUG  4519[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,839]DEBUG  4519[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,839]DEBUG  4519[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -287,19 +361,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [PESSIMISTIC_FORCE_INCREMENT]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@49d7497c]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6d4350d3]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@78ee8d65]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@b01a7ad]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,840]DEBUG  4520[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [PESSIMISTIC_FORCE_INCREMENT]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=? for update
+[2015-06-18 20:30:07,840]DEBUG  4520[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7b488e6f]
+[2015-06-18 20:30:07,841]DEBUG  4521[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,841]DEBUG  4521[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6434efd5]
+[2015-06-18 20:30:07,841]DEBUG  4521[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,841]DEBUG  4521[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3b742941]
+[2015-06-18 20:30:07,842]DEBUG  4522[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,842]DEBUG  4522[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4f0e3b6]
+[2015-06-18 20:30:07,842]DEBUG  4522[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,843]DEBUG  4523[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,843]DEBUG  4523[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -309,19 +383,19 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [OPTIMISTIC]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@77d7ddde]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@c6cfef3]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@ad60c1c]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@43a609b5]
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
+[2015-06-18 20:30:07,843]DEBUG  4523[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [OPTIMISTIC]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
+[2015-06-18 20:30:07,843]DEBUG  4523[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@46639df8]
+[2015-06-18 20:30:07,844]DEBUG  4524[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,844]DEBUG  4524[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1fce876b]
+[2015-06-18 20:30:07,844]DEBUG  4524[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,844]DEBUG  4524[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1c203a77]
+[2015-06-18 20:30:07,844]DEBUG  4524[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,845]DEBUG  4525[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4676e856]
+[2015-06-18 20:30:07,845]DEBUG  4525[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,845]DEBUG  4525[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,845]DEBUG  4525[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.Env_TestCase_TestResult)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:0>, path=com.test.domain.Env_TestCase_TestResult)
           - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=com.test.domain.Env_TestCase_TestResult.environment)
@@ -331,29 +405,30 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.Env_TestCase_TestResult)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_0_0_}
+          - suffixed key columns - {id1_2_0_}
 
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [OPTIMISTIC_FORCE_INCREMENT]: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_MERGE on entity com.test.domain.Env_TestCase_TestResult: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
-[2015-06-15 15:26:05,605]DEBUG  4060[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_REFRESH on entity com.test.domain.Env_TestCase_TestResult: select env_testca0_.id as id1_0_0_, env_testca0_.environment_id as environm2_0_0_, env_testca0_.testCase_id as testCase3_0_0_, env_testca0_.testResult_id as testResu4_0_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3676) - Static SQL for entity: com.test.domain.TestCase
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3681) -  Version select: select id from TestCase where id =?
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3684) -  Snapshot select: select testcase_.id, testcase_.name as name2_2_, testcase_.testSuite_id as testSuit3_2_ from TestCase testcase_ where testcase_.id=?
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3687) -  Insert 0: insert into TestCase (name, testSuite_id, id) values (?, ?, ?)
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3688) -  Update 0: update TestCase set name=?, testSuite_id=? where id=?
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3689) -  Delete 0: delete from TestCase where id=?
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3692) -  Identity insert: insert into TestCase (name, testSuite_id) values (?, ?)
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6d1c33c8]
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3c6099d3]
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.name
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.testCases
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuite.testCases
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,846]DEBUG  4526[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.Env_TestCase_TestResult [OPTIMISTIC_FORCE_INCREMENT]: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
+[2015-06-18 20:30:07,846]DEBUG  4526[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_MERGE on entity com.test.domain.Env_TestCase_TestResult: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
+[2015-06-18 20:30:07,846]DEBUG  4526[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_REFRESH on entity com.test.domain.Env_TestCase_TestResult: select env_testca0_.id as id1_2_0_, env_testca0_.environment_id as environm2_2_0_, env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.testResult_id as testResu4_2_0_ from Env_TestCase_TestResult env_testca0_ where env_testca0_.id=?
+[2015-06-18 20:30:07,846]DEBUG  4526[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3676) - Static SQL for entity: com.test.domain.TestCase
+[2015-06-18 20:30:07,847]DEBUG  4527[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3681) -  Version select: select id from TestCase where id =?
+[2015-06-18 20:30:07,847]DEBUG  4527[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3684) -  Snapshot select: select testcase_.id, testcase_.name as name2_6_, testcase_.testSuite_id as testSuit3_6_ from TestCase testcase_ where testcase_.id=?
+[2015-06-18 20:30:07,847]DEBUG  4527[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3687) -  Insert 0: insert into TestCase (name, testSuite_id, id) values (?, ?, ?)
+[2015-06-18 20:30:07,847]DEBUG  4527[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3688) -  Update 0: update TestCase set name=?, testSuite_id=? where id=?
+[2015-06-18 20:30:07,847]DEBUG  4527[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3689) -  Delete 0: delete from TestCase where id=?
+[2015-06-18 20:30:07,847]DEBUG  4527[localhost-startStop-1] - org.hibernate.persister.entity.AbstractEntityPersister.logStaticSQL(AbstractEntityPersister.java:3692) -  Identity insert: insert into TestCase (name, testSuite_id) values (?, ?)
+[2015-06-18 20:30:07,848]DEBUG  4528[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@17886786]
+[2015-06-18 20:30:07,848]DEBUG  4528[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,848]DEBUG  4528[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,848]DEBUG  4528[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,848]DEBUG  4528[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@61f831b4]
+[2015-06-18 20:30:07,848]DEBUG  4528[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.name
+[2015-06-18 20:30:07,849]DEBUG  4529[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.runs
+[2015-06-18 20:30:07,849]DEBUG  4529[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.testCases
+[2015-06-18 20:30:07,849]DEBUG  4529[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuite.testCases
+[2015-06-18 20:30:07,849]DEBUG  4529[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,849]DEBUG  4529[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,850]DEBUG  4530[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -361,25 +436,26 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
           - JOIN (JoinDefinedByMetadata(testSuite)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.TestSuite)
                 - SQL table alias mapping - testsuite1_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_4_1_}
+                - suffixed key columns - {id1_8_1_}
 
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [NONE]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_, testsuite1_.id as id1_4_1_, testsuite1_.name as name2_4_1_ from TestCase testcase0_ left outer join TestSuite testsuite1_ on testcase0_.testSuite_id=testsuite1_.id where testcase0_.id=?
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@43763c1f]
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1b735f12]
-[2015-06-15 15:26:05,615]DEBUG  4070[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.name
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.testCases
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuite.testCases
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,850]DEBUG  4530[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [NONE]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_, testsuite1_.id as id1_8_1_, testsuite1_.name as name2_8_1_ from TestCase testcase0_ left outer join TestSuite testsuite1_ on testcase0_.testSuite_id=testsuite1_.id where testcase0_.id=?
+[2015-06-18 20:30:07,850]DEBUG  4530[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@445db043]
+[2015-06-18 20:30:07,850]DEBUG  4530[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,851]DEBUG  4531[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,851]DEBUG  4531[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,851]DEBUG  4531[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2a2e7226]
+[2015-06-18 20:30:07,851]DEBUG  4531[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.name
+[2015-06-18 20:30:07,851]DEBUG  4531[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.runs
+[2015-06-18 20:30:07,852]DEBUG  4532[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite.testCases
+[2015-06-18 20:30:07,852]DEBUG  4532[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuite.testCases
+[2015-06-18 20:30:07,852]DEBUG  4532[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,852]DEBUG  4532[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,853]DEBUG  4533[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -387,22 +463,22 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
           - JOIN (JoinDefinedByMetadata(testSuite)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.TestSuite)
                 - SQL table alias mapping - testsuite1_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_4_1_}
+                - suffixed key columns - {id1_8_1_}
 
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [READ]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_, testsuite1_.id as id1_4_1_, testsuite1_.name as name2_4_1_ from TestCase testcase0_ left outer join TestSuite testsuite1_ on testcase0_.testSuite_id=testsuite1_.id where testcase0_.id=?
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@60c45a34]
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6d824bc8]
-[2015-06-15 15:26:05,625]DEBUG  4080[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,853]DEBUG  4533[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [READ]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_, testsuite1_.id as id1_8_1_, testsuite1_.name as name2_8_1_ from TestCase testcase0_ left outer join TestSuite testsuite1_ on testcase0_.testSuite_id=testsuite1_.id where testcase0_.id=?
+[2015-06-18 20:30:07,853]DEBUG  4533[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79935268]
+[2015-06-18 20:30:07,853]DEBUG  4533[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,853]DEBUG  4533[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,854]DEBUG  4534[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,854]DEBUG  4534[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@76e203e5]
+[2015-06-18 20:30:07,854]DEBUG  4534[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,854]DEBUG  4534[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,855]DEBUG  4535[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -410,17 +486,17 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [UPGRADE]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? for update
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7f656111]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1102b833]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,855]DEBUG  4535[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [UPGRADE]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? for update
+[2015-06-18 20:30:07,856]DEBUG  4536[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@f02d361]
+[2015-06-18 20:30:07,856]DEBUG  4536[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,856]DEBUG  4536[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,856]DEBUG  4536[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,856]DEBUG  4536[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6436f1f5]
+[2015-06-18 20:30:07,857]DEBUG  4537[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,857]DEBUG  4537[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,857]DEBUG  4537[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -428,17 +504,17 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [UPGRADE_NOWAIT]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? for update
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6ea16dd0]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@130a4185]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,867]DEBUG  4547[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [UPGRADE_NOWAIT]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? for update
+[2015-06-18 20:30:07,867]DEBUG  4547[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2ad2bbd]
+[2015-06-18 20:30:07,867]DEBUG  4547[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,867]DEBUG  4547[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,867]DEBUG  4547[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,867]DEBUG  4547[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79a914d4]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -446,17 +522,17 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [UPGRADE_SKIPLOCKED]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? for update
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@17cda0f7]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@f253587]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [UPGRADE_SKIPLOCKED]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? for update
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2ac3eb4d]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@314fcbeb]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -464,17 +540,17 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [FORCE]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? for update
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4e624b8f]
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,626]DEBUG  4081[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7afae81d]
-[2015-06-15 15:26:05,627]DEBUG  4082[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,627]DEBUG  4082[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,627]DEBUG  4082[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [FORCE]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? for update
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@f166a2]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@32694c37]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -482,17 +558,17 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,627]DEBUG  4082[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [PESSIMISTIC_READ]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? lock in share mode
-[2015-06-15 15:26:05,628]DEBUG  4083[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5cd573c8]
-[2015-06-15 15:26:05,628]DEBUG  4083[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,628]DEBUG  4083[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,629]DEBUG  4084[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,629]DEBUG  4084[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@20c052a4]
-[2015-06-15 15:26:05,629]DEBUG  4084[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,630]DEBUG  4085[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,631]DEBUG  4086[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [PESSIMISTIC_READ]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? lock in share mode
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7db6d902]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@28992821]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -500,17 +576,17 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,631]DEBUG  4086[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [PESSIMISTIC_WRITE]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? for update
-[2015-06-15 15:26:05,631]DEBUG  4086[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@d57fca1]
-[2015-06-15 15:26:05,631]DEBUG  4086[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,632]DEBUG  4087[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,632]DEBUG  4087[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,632]DEBUG  4087[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@41480746]
-[2015-06-15 15:26:05,632]DEBUG  4087[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,633]DEBUG  4088[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,633]DEBUG  4088[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [PESSIMISTIC_WRITE]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? for update
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5069d1f1]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@263bc148]
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,877]DEBUG  4557[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,887]DEBUG  4567[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
     - Returns
        - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
           - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
@@ -518,99 +594,6 @@
        - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
           - SQL table alias mapping - testcase0_
           - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
+          - suffixed key columns - {id1_6_0_}
 
-[2015-06-15 15:26:05,634]DEBUG  4089[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [PESSIMISTIC_FORCE_INCREMENT]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=? for update
-[2015-06-15 15:26:05,634]DEBUG  4089[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@63bf28b9]
-[2015-06-15 15:26:05,635]DEBUG  4090[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,635]DEBUG  4090[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,635]DEBUG  4090[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,635]DEBUG  4090[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@775d3959]
-[2015-06-15 15:26:05,635]DEBUG  4090[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,636]DEBUG  4091[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,636]DEBUG  4091[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
-    - Returns
-       - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
-          - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
-          - SQL table alias mapping - testcase0_
-          - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
-
-[2015-06-15 15:26:05,636]DEBUG  4091[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [OPTIMISTIC]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=?
-[2015-06-15 15:26:05,637]DEBUG  4092[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@762e62c3]
-[2015-06-15 15:26:05,637]DEBUG  4092[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,637]DEBUG  4092[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,637]DEBUG  4092[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,637]DEBUG  4092[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@464f7af7]
-[2015-06-15 15:26:05,638]DEBUG  4093[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,638]DEBUG  4093[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,638]DEBUG  4093[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
-    - Returns
-       - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
-          - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
-          - SQL table alias mapping - testcase0_
-          - alias suffix - 0_
-          - suffixed key columns - {id1_2_0_}
-
-[2015-06-15 15:26:05,638]DEBUG  4093[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [OPTIMISTIC_FORCE_INCREMENT]: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=?
-[2015-06-15 15:26:05,639]DEBUG  4094[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_MERGE on entity com.test.domain.TestCase: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=?
-[2015-06-15 15:26:05,639]DEBUG  4094[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_REFRESH on entity com.test.domain.TestCase: select testcase0_.id as id1_2_0_, testcase0_.name as name2_2_0_, testcase0_.testSuite_id as testSuit3_2_0_ from TestCase testcase0_ where testcase0_.id=?
-[2015-06-15 15:26:05,654]DEBUG  4109[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4386660c]
-[2015-06-15 15:26:05,654]DEBUG  4109[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@655d0894]
-[2015-06-15 15:26:05,657]DEBUG  4112[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,657]DEBUG  4112[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@178cedbe]
-[2015-06-15 15:26:05,657]DEBUG  4112[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.branch
-[2015-06-15 15:26:05,658]DEBUG  4113[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.buildNumber
-[2015-06-15 15:26:05,658]DEBUG  4113[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
-[2015-06-15 15:26:05,658]DEBUG  4113[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,658]DEBUG  4113[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,658]DEBUG  4113[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
-[2015-06-15 15:26:05,659]DEBUG  4114[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
-[2015-06-15 15:26:05,659]DEBUG  4114[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
-[2015-06-15 15:26:05,659]DEBUG  4114[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
-[2015-06-15 15:26:05,659]DEBUG  4114[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,659]DEBUG  4114[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase
-[2015-06-15 15:26:05,660]DEBUG  4115[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,660]DEBUG  4115[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7bceefd4]
-[2015-06-15 15:26:05,660]DEBUG  4115[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
-[2015-06-15 15:26:05,660]DEBUG  4115[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,660]DEBUG  4115[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,660]DEBUG  4115[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.name
-[2015-06-15 15:26:05,661]DEBUG  4116[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
-[2015-06-15 15:26:05,661]DEBUG  4116[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
-[2015-06-15 15:26:05,661]DEBUG  4116[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
-[2015-06-15 15:26:05,661]DEBUG  4116[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,666]DEBUG  4121[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,667]DEBUG  4122[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestCase.env_TestCase_TestResults)
-    - Returns
-       - CollectionReturnImpl(collection=com.test.domain.TestCase.env_TestCase_TestResults, querySpaceUid=<gen:0>, path=[com.test.domain.TestCase.env_TestCase_TestResults])
-          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:1>, path=[com.test.domain.TestCase.env_TestCase_TestResults].<elements>)
-             - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:2>, path=[com.test.domain.TestCase.env_TestCase_TestResults].<elements>.environment)
-             - EntityAttributeFetchImpl(entity=com.test.domain.TestResult, querySpaceUid=<gen:3>, path=[com.test.domain.TestCase.env_TestCase_TestResults].<elements>.testResult)
-    - QuerySpaces
-       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.TestCase.env_TestCase_TestResults)
-          - SQL table alias mapping - env_testca0_
-          - alias suffix - 0_
-          - suffixed key columns - {testCase3_2_0_}
-          - entity-element alias suffix - 1_
-          - 1_entity-element suffixed key columns - id1_0_1_
-          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
-             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Env_TestCase_TestResult)
-                - SQL table alias mapping - env_testca0_
-                - alias suffix - 1_
-                - suffixed key columns - {id1_0_1_}
-                - JOIN (JoinDefinedByMetadata(environment)) : <gen:1> -> <gen:2>
-                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.Environment)
-                      - SQL table alias mapping - environmen1_
-                      - alias suffix - 2_
-                      - suffixed key columns - {id1_1_2_}
-                - JOIN (JoinDefinedByMetadata(testResult)) : <gen:1> -> <gen:3>
-                   - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.test.domain.TestResult)
-                      - SQL table alias mapping - testresult2_
-                      - alias suffix - 3_
-                      - suffixed key columns - {id1_3_3_}
-
+[2015-06-18 20:30:07,887]DEBUG  4567[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [PESSIMISTIC_FORCE_INCREMENT]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=? for update

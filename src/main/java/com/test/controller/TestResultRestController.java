@@ -1,20 +1,27 @@
 package com.test.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.test.dao.Env_TestCase_TestResultDao;
 import com.test.dao.EnvironmentDao;
 import com.test.dao.TestCaseDao;
 import com.test.dao.TestResultDao;
 import com.test.dao.TestSuiteDao;
+import com.test.domain.Branch;
+import com.test.domain.Build;
 import com.test.domain.Env_TestCase_TestResult;
 import com.test.domain.Environment;
+import com.test.domain.Run;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
+import com.test.domain.TestSuite;
 import com.test.service.Env_TestCase_TestResultService;
 import com.test.service.EnvironmentService;
 import com.test.service.TestCaseService;
@@ -61,6 +68,22 @@ public class TestResultRestController {
 		return envObj;
 	}
 
+	@RequestMapping(value = "/runData", method = RequestMethod.POST)
+	public String showRunData(@RequestBody Run runData) {
+		
+		System.out.println("runData.getBuildNumber() is: " + runData.getBuildNumber());
+		
+		return runData.toString();
+	}
+	
+	@RequestMapping(value = "/buildData", method = RequestMethod.POST)
+	public String showBuildData(@RequestBody Build buildData) {
+		
+		System.out.println("buildData.getBuildNumber() is: " + buildData.getBuildNumber());
+		
+		return buildData.toString();
+	}
+	
 	@RequestMapping(value = "/testData", method = RequestMethod.POST)
 	public String showResultJson(@RequestBody Env_TestCase_TestResult env_TestCase_TestResult) {
 
@@ -68,17 +91,35 @@ public class TestResultRestController {
 		TestResult testResult = env_TestCase_TestResult.getTestResult();
 		TestCase testCase = env_TestCase_TestResult.getTestCase();
 		
+		List<Build> builds = environment.getBuilds();
+		
+		Branch branch = builds.get(0).getBranch();
+		
+		TestSuite testSuite = testCase.getTestSuite();
+		
+		List<Run> runs = testSuite.getRuns();
+		
+		Run run = runs.get(0);
+		
+		
 		TestCase testCaseDB = testCaseService.saveToItsTestSuite(testCase);
-		Environment environmentDB = environmentService.saveToDB(environment);
-		testResultService.save(testResult);
+		
+		System.out.println("TestCase has been saved !!!");
 		
 		
-		env_TestCase_TestResult.setEnvironment(environmentDB);
-		env_TestCase_TestResult.setTestResult(testResult);
-		env_TestCase_TestResult.setTestCase(testCaseDB);
 		
-		env_TestCase_TestResultService.save(env_TestCase_TestResult);
-
+		//Environment environmentDB = environmentService.saveToDB(environment);
+		
+		
+		//testResultService.save(testResult);
+		
+		
+		//env_TestCase_TestResult.setEnvironment(environmentDB);
+		//env_TestCase_TestResult.setTestResult(testResult);
+		//env_TestCase_TestResult.setTestCase(testCaseDB);
+		
+		//env_TestCase_TestResultService.save(env_TestCase_TestResult);
+		
 		return env_TestCase_TestResult.toString();
 	}
 

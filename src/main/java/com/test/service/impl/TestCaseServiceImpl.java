@@ -16,6 +16,7 @@ import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
 import com.test.service.TestCaseService;
+import com.test.service.TestSuiteService;
 
 @Service("testCaseService")
 @Transactional
@@ -26,6 +27,9 @@ public class TestCaseServiceImpl implements TestCaseService {
 
 	@Autowired
 	private TestSuiteDao testSuiteDao;
+	
+	@Autowired
+	private TestSuiteService testSuiteService;
 
 	@Autowired
 	private Env_TestCase_TestResultDao env_TestCase_TestResultDao;
@@ -47,25 +51,36 @@ public class TestCaseServiceImpl implements TestCaseService {
 
 	@Override
 	public TestCase saveToItsTestSuite(TestCase testCase) {
-		TestCase testCaseFromDB = testCaseDao.findByName(testCase.getName());
+		TestSuite testSuiteFromTestCase = testCase.getTestSuite();
+		
+		TestSuite savedTestSuite = testSuiteService.saveToItsRun(testSuiteFromTestCase);
+		
+		
+		
+/*		TestCase testCaseFromDB = testCaseDao.findByName(testCase.getName());
 
 		if (testCaseFromDB != null) {
-
+			//testCaseFromDB.getTestSuite().getRuns().get(0).getBuildNumber();
 			return testCaseFromDB;
 
 		} else {
 
 			TestSuite testSuite = testCase.getTestSuite();
-			TestSuite testSuiteFromDB = testSuiteDao.findByName(testSuite
-					.getName());
+			
+			TestSuite savedTestSuite = testSuiteService.saveToItsRun(testSuite);
 
-			if (testSuiteFromDB == null) {
-				testSuiteDao.save(testSuite);
-				return testCaseDao.save(testCase);
-			}
+			testCase.setTestSuite(savedTestSuite);
 
-			testCase.setTestSuite(testSuiteFromDB);
-
+			return testCaseDao.save(testCase);
+		}*/
+		
+		TestCase testCaseByName = testCaseDao.findByName(testCase.getName());
+		
+		if (testCaseByName != null) {
+			testCaseByName.setTestSuite(savedTestSuite);
+			return testCaseByName;
+		} else {
+			testCase.setTestSuite(savedTestSuite);
 			return testCaseDao.save(testCase);
 		}
 	}

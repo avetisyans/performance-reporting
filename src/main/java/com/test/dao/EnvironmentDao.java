@@ -8,6 +8,6 @@ import com.test.domain.Environment;
 @Repository("environmentDao")
 public interface EnvironmentDao extends JpaRepository<Environment, Long> {
 
-	Environment findByBuildNumberAndMaster(String buildNumber, String master);
+	Environment findByNameAndMaster(String name, String master);
 	
 }

@@ -5,11 +5,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table
 public class TestSuite {
 	@Id
 	@GeneratedValue
@@ -22,6 +21,17 @@ public class TestSuite {
 	
 	@OneToMany(mappedBy="testSuite")
 	private List<TestCase> testCases;
+	
+	@ManyToMany
+	private List<Run> runs;
+
+	public List<Run> getRuns() {
+		return runs;
+	}
+
+	public void setRuns(List<Run> runs) {
+		this.runs = runs;
+	}
 
 	public Long getId() {
 		return id;

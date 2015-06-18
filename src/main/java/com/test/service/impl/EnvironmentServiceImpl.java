@@ -30,7 +30,7 @@ public class EnvironmentServiceImpl implements EnvironmentService {
 
 	@Override
 	public Environment saveToDB(Environment environment) {
-		Environment environmentFromDB = environmentDao.findByBuildNumberAndMaster(environment.getBuildNumber(), environment.getMaster());
+		Environment environmentFromDB = environmentDao.findByNameAndMaster(environment.getName(), environment.getMaster());
 		
 		if (environmentFromDB == null) {
 			return environmentDao.save(environment);

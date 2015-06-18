@@ -1,30 +1,255 @@
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestCase.env_TestCase_TestResults: select env_testca0_.testCase_id as testCase3_2_0_, env_testca0_.id as id1_0_0_, env_testca0_.id as id1_0_1_, env_testca0_.environment_id as environm2_0_1_, env_testca0_.testCase_id as testCase3_0_1_, env_testca0_.testResult_id as testResu4_0_1_, environmen1_.id as id1_1_2_, environmen1_.branch as branch2_1_2_, environmen1_.buildNumber as buildNum3_1_2_, environmen1_.datanodes as datanode4_1_2_, environmen1_.haEnabled as haEnable5_1_2_, environmen1_.master as master6_1_2_, environmen1_.name as name7_1_2_, environmen1_.productName as productN8_1_2_, testresult2_.id as id1_3_3_, testresult2_.endTime as endTime2_3_3_, testresult2_.name as name3_3_3_, testresult2_.result as result4_3_3_, testresult2_.startTime as startTim5_3_3_, testresult2_.testType as testType6_3_3_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestResult testresult2_ on env_testca0_.testResult_id=testresult2_.id where env_testca0_.testCase_id=?
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@78b0a942]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@28d39e76]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1afe0ef3]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7087c4c1]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@373fc101]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.name
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Environment.env_TestCase_TestResults)
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@47023d8e]
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@21bf681a]
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+    - Returns
+       - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
+          - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
+          - SQL table alias mapping - testcase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [OPTIMISTIC]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=?
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5976cce4]
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@26f738c]
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(entity=com.test.domain.TestCase)
+    - Returns
+       - EntityReturnImpl(entity=com.test.domain.TestCase, querySpaceUid=<gen:0>, path=com.test.domain.TestCase)
+          - EntityAttributeFetchImpl(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=com.test.domain.TestCase.testSuite)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.test.domain.TestCase)
+          - SQL table alias mapping - testcase0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.entity.plan.EntityLoader.<init>(EntityLoader.java:146) - Static select for entity com.test.domain.TestCase [OPTIMISTIC_FORCE_INCREMENT]: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=?
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_MERGE on entity com.test.domain.TestCase: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=?
+[2015-06-18 20:30:07,897]DEBUG  4577[localhost-startStop-1] - org.hibernate.loader.entity.CascadeEntityLoader.<init>(CascadeEntityLoader.java:56) - Static select for action ACTION_REFRESH on entity com.test.domain.TestCase: select testcase0_.id as id1_6_0_, testcase0_.name as name2_6_0_, testcase0_.testSuite_id as testSuit3_6_0_ from TestCase testcase0_ where testcase0_.id=?
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@3dbf6bad]
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4849aef6]
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : runs
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : runs
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCases
+[2015-06-18 20:30:07,907]DEBUG  4587[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Run.testSuites)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.Run.testSuites, querySpaceUid=<gen:0>, path=[com.test.domain.Run.testSuites])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.TestSuite, querySpaceUid=<gen:1>, path=[com.test.domain.Run.testSuites].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.Run.testSuites)
+          - SQL table alias mapping - testsuites0_
+          - alias suffix - 0_
+          - suffixed key columns - {runs_id2_5_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_8_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.TestSuite)
+                - SQL table alias mapping - testsuite1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_8_1_}
+
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Run.testSuites: select testsuites0_.runs_id as runs_id2_5_0_, testsuites0_.testSuites_id as testSuit1_9_0_, testsuite1_.id as id1_8_1_, testsuite1_.name as name2_8_1_ from TestSuite_Run testsuites0_ inner join TestSuite testsuite1_ on testsuites0_.testSuites_id=testsuite1_.id where testsuites0_.runs_id=?
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@38ba18b0]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@68eea36f]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : branch
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : branch
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : buildNumber
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environments
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Branch.builds)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.Branch.builds, querySpaceUid=<gen:0>, path=[com.test.domain.Branch.builds])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Build, querySpaceUid=<gen:1>, path=[com.test.domain.Branch.builds].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.Branch.builds)
+          - SQL table alias mapping - builds0_
+          - alias suffix - 0_
+          - suffixed key columns - {branch_i3_0_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Build)
+                - SQL table alias mapping - builds0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_1_1_}
+
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Branch.builds: select builds0_.branch_id as branch_i3_0_0_, builds0_.id as id1_1_0_, builds0_.id as id1_1_1_, builds0_.branch_id as branch_i3_1_1_, builds0_.buildNumber as buildNum2_1_1_ from Build builds0_ where builds0_.branch_id=?
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@77dece28]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@378992be]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : buildNumber
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : children
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : children
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : endTime
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : parent
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : startTime
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : tag
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuites
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Run.children)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.Run.children, querySpaceUid=<gen:0>, path=[com.test.domain.Run.children])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Run, querySpaceUid=<gen:1>, path=[com.test.domain.Run.children].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.Run.children)
+          - SQL table alias mapping - children0_
+          - alias suffix - 0_
+          - suffixed key columns - {parent_i6_5_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_5_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Run)
+                - SQL table alias mapping - children0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_5_1_}
+
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Run.children: select children0_.parent_id as parent_i6_5_0_, children0_.id as id1_5_0_, children0_.id as id1_5_1_, children0_.buildNumber as buildNum2_5_1_, children0_.endTime as endTime3_5_1_, children0_.parent_id as parent_i6_5_1_, children0_.startTime as startTim4_5_1_, children0_.tag as tag5_5_1_ from Run children0_ where children0_.parent_id=?
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@61dc0522]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1abb77c5]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@69aea37e]
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.builds
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,917]DEBUG  4597[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5d9aefc4]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestCase.env_TestCase_TestResults)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.TestCase.env_TestCase_TestResults, querySpaceUid=<gen:0>, path=[com.test.domain.TestCase.env_TestCase_TestResults])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:1>, path=[com.test.domain.TestCase.env_TestCase_TestResults].<elements>)
+             - EntityAttributeFetchImpl(entity=com.test.domain.Environment, querySpaceUid=<gen:2>, path=[com.test.domain.TestCase.env_TestCase_TestResults].<elements>.environment)
+             - EntityAttributeFetchImpl(entity=com.test.domain.TestResult, querySpaceUid=<gen:3>, path=[com.test.domain.TestCase.env_TestCase_TestResults].<elements>.testResult)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.TestCase.env_TestCase_TestResults)
+          - SQL table alias mapping - env_testca0_
+          - alias suffix - 0_
+          - suffixed key columns - {testCase3_6_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_2_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Env_TestCase_TestResult)
+                - SQL table alias mapping - env_testca0_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_2_1_}
+                - JOIN (JoinDefinedByMetadata(environment)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.Environment)
+                      - SQL table alias mapping - environmen1_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_3_2_}
+                - JOIN (JoinDefinedByMetadata(testResult)) : <gen:1> -> <gen:3>
+                   - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.test.domain.TestResult)
+                      - SQL table alias mapping - testresult2_
+                      - alias suffix - 3_
+                      - suffixed key columns - {id1_7_3_}
+
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestCase.env_TestCase_TestResults: select env_testca0_.testCase_id as testCase3_6_0_, env_testca0_.id as id1_2_0_, env_testca0_.id as id1_2_1_, env_testca0_.environment_id as environm2_2_1_, env_testca0_.testCase_id as testCase3_2_1_, env_testca0_.testResult_id as testResu4_2_1_, environmen1_.id as id1_3_2_, environmen1_.datanodes as datanode2_3_2_, environmen1_.haEnabled as haEnable3_3_2_, environmen1_.master as master4_3_2_, environmen1_.name as name5_3_2_, environmen1_.productName as productN6_3_2_, testresult2_.id as id1_7_3_, testresult2_.endTime as endTime2_7_3_, testresult2_.result as result3_7_3_, testresult2_.startTime as startTim4_7_3_, testresult2_.testType as testType5_7_3_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestResult testresult2_ on env_testca0_.testResult_id=testresult2_.id where env_testca0_.testCase_id=?
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@7ba16827]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@49257ee]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : buildNumber
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : children
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5dd01dd6]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4beb1ca5]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : endTime
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2699de7b]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.buildNumber
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.children
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : parent.children
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.endTime
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.parent
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : parent.parent
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.startTime
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.tag
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : parent.testSuites
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : parent.testSuites
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : startTime
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : tag
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuites
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuites
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestSuite.runs)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.TestSuite.runs, querySpaceUid=<gen:0>, path=[com.test.domain.TestSuite.runs])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Run, querySpaceUid=<gen:1>, path=[com.test.domain.TestSuite.runs].<elements>)
+             - CollectionAttributeFetchImpl(collection=com.test.domain.Run.children, querySpaceUid=<gen:2>, path=[com.test.domain.TestSuite.runs].<elements>.children)
+                - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Run, querySpaceUid=<gen:3>, path=[com.test.domain.TestSuite.runs].<elements>.children.<elements>)
+             - EntityAttributeFetchImpl(entity=com.test.domain.Run, querySpaceUid=<gen:4>, path=[com.test.domain.TestSuite.runs].<elements>.parent)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.TestSuite.runs)
+          - SQL table alias mapping - runs0_
+          - alias suffix - 0_
+          - suffixed key columns - {testSuit1_8_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_5_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Run)
+                - SQL table alias mapping - run1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_5_1_}
+                - JOIN (JoinDefinedByMetadata(parent)) : <gen:1> -> <gen:4>
+                   - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.test.domain.Run)
+                      - SQL table alias mapping - run2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_5_2_}
+
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestSuite.runs: select runs0_.testSuites_id as testSuit1_8_0_, runs0_.runs_id as runs_id2_9_0_, run1_.id as id1_5_1_, run1_.buildNumber as buildNum2_5_1_, run1_.endTime as endTime3_5_1_, run1_.parent_id as parent_i6_5_1_, run1_.startTime as startTim4_5_1_, run1_.tag as tag5_5_1_, run2_.id as id1_5_2_, run2_.buildNumber as buildNum2_5_2_, run2_.endTime as endTime3_5_2_, run2_.parent_id as parent_i6_5_2_, run2_.startTime as startTim4_5_2_, run2_.tag as tag5_5_2_ from TestSuite_Run runs0_ inner join Run run1_ on runs0_.runs_id=run1_.id left outer join Run run2_ on run1_.parent_id=run2_.id where runs0_.testSuites_id=?
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@53d2287c]
+[2015-06-18 20:30:07,927]DEBUG  4607[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@40cf1897]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@697ae048]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1220026e]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.runs
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a4defae]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.endTime
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult.env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.result
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.startTime
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult.testType
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Environment.env_TestCase_TestResults)
     - Returns
        - CollectionReturnImpl(collection=com.test.domain.Environment.env_TestCase_TestResults, querySpaceUid=<gen:0>, path=[com.test.domain.Environment.env_TestCase_TestResults])
           - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:1>, path=[com.test.domain.Environment.env_TestCase_TestResults].<elements>)
@@ -35,40 +260,40 @@
        - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.Environment.env_TestCase_TestResults)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {environm2_1_0_}
+          - suffixed key columns - {environm2_3_0_}
           - entity-element alias suffix - 1_
-          - 1_entity-element suffixed key columns - id1_0_1_
+          - 1_entity-element suffixed key columns - id1_2_1_
           - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Env_TestCase_TestResult)
                 - SQL table alias mapping - env_testca0_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_0_1_}
+                - suffixed key columns - {id1_2_1_}
                 - JOIN (JoinDefinedByMetadata(testCase)) : <gen:1> -> <gen:2>
                    - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.TestCase)
                       - SQL table alias mapping - testcase1_
                       - alias suffix - 2_
-                      - suffixed key columns - {id1_2_2_}
+                      - suffixed key columns - {id1_6_2_}
                       - JOIN (JoinDefinedByMetadata(testSuite)) : <gen:2> -> <gen:3>
                          - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.test.domain.TestSuite)
                             - SQL table alias mapping - testsuite2_
                             - alias suffix - 3_
-                            - suffixed key columns - {id1_4_3_}
+                            - suffixed key columns - {id1_8_3_}
                 - JOIN (JoinDefinedByMetadata(testResult)) : <gen:1> -> <gen:4>
                    - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.test.domain.TestResult)
                       - SQL table alias mapping - testresult3_
                       - alias suffix - 4_
-                      - suffixed key columns - {id1_3_4_}
+                      - suffixed key columns - {id1_7_4_}
 
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Environment.env_TestCase_TestResults: select env_testca0_.environment_id as environm2_1_0_, env_testca0_.id as id1_0_0_, env_testca0_.id as id1_0_1_, env_testca0_.environment_id as environm2_0_1_, env_testca0_.testCase_id as testCase3_0_1_, env_testca0_.testResult_id as testResu4_0_1_, testcase1_.id as id1_2_2_, testcase1_.name as name2_2_2_, testcase1_.testSuite_id as testSuit3_2_2_, testsuite2_.id as id1_4_3_, testsuite2_.name as name2_4_3_, testresult3_.id as id1_3_4_, testresult3_.endTime as endTime2_3_4_, testresult3_.name as name3_3_4_, testresult3_.result as result4_3_4_, testresult3_.startTime as startTim5_3_4_, testresult3_.testType as testType6_3_4_ from Env_TestCase_TestResult env_testca0_ left outer join TestCase testcase1_ on env_testca0_.testCase_id=testcase1_.id left outer join TestSuite testsuite2_ on testcase1_.testSuite_id=testsuite2_.id left outer join TestResult testresult3_ on env_testca0_.testResult_id=testresult3_.id where env_testca0_.environment_id=?
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@7db759a]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3c122a93]
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuite
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,697]DEBUG  4152[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestSuite.testCases)
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Environment.env_TestCase_TestResults: select env_testca0_.environment_id as environm2_3_0_, env_testca0_.id as id1_2_0_, env_testca0_.id as id1_2_1_, env_testca0_.environment_id as environm2_2_1_, env_testca0_.testCase_id as testCase3_2_1_, env_testca0_.testResult_id as testResu4_2_1_, testcase1_.id as id1_6_2_, testcase1_.name as name2_6_2_, testcase1_.testSuite_id as testSuit3_6_2_, testsuite2_.id as id1_8_3_, testsuite2_.name as name2_8_3_, testresult3_.id as id1_7_4_, testresult3_.endTime as endTime2_7_4_, testresult3_.result as result3_7_4_, testresult3_.startTime as startTim4_7_4_, testresult3_.testType as testType5_7_4_ from Env_TestCase_TestResult env_testca0_ left outer join TestCase testcase1_ on env_testca0_.testCase_id=testcase1_.id left outer join TestSuite testsuite2_ on testcase1_.testSuite_id=testsuite2_.id left outer join TestResult testresult3_ on env_testca0_.testResult_id=testresult3_.id where env_testca0_.environment_id=?
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@438c1048]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6ee4dc6f]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testSuite
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testSuite
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestSuite.testCases)
     - Returns
        - CollectionReturnImpl(collection=com.test.domain.TestSuite.testCases, querySpaceUid=<gen:0>, path=[com.test.domain.TestSuite.testCases])
           - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.TestCase, querySpaceUid=<gen:1>, path=[com.test.domain.TestSuite.testCases].<elements>)
@@ -76,44 +301,44 @@
        - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.TestSuite.testCases)
           - SQL table alias mapping - testcases0_
           - alias suffix - 0_
-          - suffixed key columns - {testSuit3_4_0_}
+          - suffixed key columns - {testSuit3_8_0_}
           - entity-element alias suffix - 1_
-          - 1_entity-element suffixed key columns - id1_2_1_
+          - 1_entity-element suffixed key columns - id1_6_1_
           - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.TestCase)
                 - SQL table alias mapping - testcases0_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_2_1_}
+                - suffixed key columns - {id1_6_1_}
 
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestSuite.testCases: select testcases0_.testSuite_id as testSuit3_4_0_, testcases0_.id as id1_2_0_, testcases0_.id as id1_2_1_, testcases0_.name as name2_2_1_, testcases0_.testSuite_id as testSuit3_2_1_ from TestCase testcases0_ where testcases0_.testSuite_id=?
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@4097ac74]
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6dfc4047]
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7cb98c66]
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.branch
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.buildNumber
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6067c379]
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@521e906d]
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestResult.env_TestCase_TestResults)
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestSuite.testCases: select testcases0_.testSuite_id as testSuit3_8_0_, testcases0_.id as id1_6_0_, testcases0_.id as id1_6_1_, testcases0_.name as name2_6_1_, testcases0_.testSuite_id as testSuit3_6_1_ from TestCase testcases0_ where testcases0_.testSuite_id=?
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@53918251]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1bde2be8]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@12ff548f]
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.builds
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.datanodes
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environment.env_TestCase_TestResults
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.haEnabled
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.master
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.name
+[2015-06-18 20:30:07,937]DEBUG  4617[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environment.productName
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:3> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7d119805]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.env_TestCase_TestResults
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.name
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:4> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@46f1b168]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.name
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.runs
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testCase.testSuite.testCases
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testCase.testSuite.testCases
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : testResult
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : testResult
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.TestResult.env_TestCase_TestResults)
     - Returns
        - CollectionReturnImpl(collection=com.test.domain.TestResult.env_TestCase_TestResults, querySpaceUid=<gen:0>, path=[com.test.domain.TestResult.env_TestCase_TestResults])
           - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Env_TestCase_TestResult, querySpaceUid=<gen:1>, path=[com.test.domain.TestResult.env_TestCase_TestResults].<elements>)
@@ -124,333 +349,365 @@
        - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.TestResult.env_TestCase_TestResults)
           - SQL table alias mapping - env_testca0_
           - alias suffix - 0_
-          - suffixed key columns - {testResu4_3_0_}
+          - suffixed key columns - {testResu4_7_0_}
           - entity-element alias suffix - 1_
-          - 1_entity-element suffixed key columns - id1_0_1_
+          - 1_entity-element suffixed key columns - id1_2_1_
           - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
              - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Env_TestCase_TestResult)
                 - SQL table alias mapping - env_testca0_
                 - alias suffix - 1_
-                - suffixed key columns - {id1_0_1_}
+                - suffixed key columns - {id1_2_1_}
                 - JOIN (JoinDefinedByMetadata(environment)) : <gen:1> -> <gen:2>
                    - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.Environment)
                       - SQL table alias mapping - environmen1_
                       - alias suffix - 2_
-                      - suffixed key columns - {id1_1_2_}
+                      - suffixed key columns - {id1_3_2_}
                 - JOIN (JoinDefinedByMetadata(testCase)) : <gen:1> -> <gen:3>
                    - EntityQuerySpaceImpl(uid=<gen:3>, entity=com.test.domain.TestCase)
                       - SQL table alias mapping - testcase2_
                       - alias suffix - 3_
-                      - suffixed key columns - {id1_2_3_}
+                      - suffixed key columns - {id1_6_3_}
                       - JOIN (JoinDefinedByMetadata(testSuite)) : <gen:3> -> <gen:4>
                          - EntityQuerySpaceImpl(uid=<gen:4>, entity=com.test.domain.TestSuite)
                             - SQL table alias mapping - testsuite3_
                             - alias suffix - 4_
-                            - suffixed key columns - {id1_4_4_}
+                            - suffixed key columns - {id1_8_4_}
 
-[2015-06-15 15:26:05,707]DEBUG  4162[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestResult.env_TestCase_TestResults: select env_testca0_.testResult_id as testResu4_3_0_, env_testca0_.id as id1_0_0_, env_testca0_.id as id1_0_1_, env_testca0_.environment_id as environm2_0_1_, env_testca0_.testCase_id as testCase3_0_1_, env_testca0_.testResult_id as testResu4_0_1_, environmen1_.id as id1_1_2_, environmen1_.branch as branch2_1_2_, environmen1_.buildNumber as buildNum3_1_2_, environmen1_.datanodes as datanode4_1_2_, environmen1_.haEnabled as haEnable5_1_2_, environmen1_.master as master6_1_2_, environmen1_.name as name7_1_2_, environmen1_.productName as productN8_1_2_, testcase2_.id as id1_2_3_, testcase2_.name as name2_2_3_, testcase2_.testSuite_id as testSuit3_2_3_, testsuite3_.id as id1_4_4_, testsuite3_.name as name2_4_4_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestCase testcase2_ on env_testca0_.testCase_id=testcase2_.id left outer join TestSuite testsuite3_ on testcase2_.testSuite_id=testsuite3_.id where env_testca0_.testResult_id=?
-[2015-06-15 15:26:05,717]DEBUG  4172[localhost-startStop-1] - org.hibernate.internal.SessionFactoryRegistry.<init>(SessionFactoryRegistry.java:67) - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@11a09a74
-[2015-06-15 15:26:05,717]DEBUG  4172[localhost-startStop-1] - org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:89) - Registering SessionFactory: 692f768f-9fa3-4789-9361-5dbf2e096a1f (<unnamed>)
-[2015-06-15 15:26:05,717]DEBUG  4172[localhost-startStop-1] - org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:96) - Not binding SessionFactory to JNDI, no JNDI name configured
-[2015-06-15 15:26:05,717]DEBUG  4172[localhost-startStop-1] - org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:505) - Instantiated session factory
-[2015-06-15 15:26:05,727] INFO  4182[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:207) - HHH000228: Running hbm2ddl schema update
-[2015-06-15 15:26:05,727] INFO  4182[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:218) - HHH000102: Fetching database metadata
-[2015-06-15 15:26:05,727] INFO  4182[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:230) - HHH000396: Updating schema
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration$MetadataSourceQueue.processHbmXmlQueue(Configuration.java:3805) - Processing hbm.xml files
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3835) - Process annotated classes
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.processFkSecondPassInOrder(Configuration.java:1484) - Processing fk mappings (*ToOne and JoinedSubclass)
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1689) - Processing extends queue
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.processExtendsQueue(Configuration.java:1747) - Processing extends queue
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1692) - Processing collection mappings
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1702) - Processing native query and ResultSetMapping mappings
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1710) - Processing association property references
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1732) - Creating tables' unique integer identifiers
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1733) - Processing foreign key constraints
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Environment
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestCase
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestResult
-[2015-06-15 15:26:05,727]DEBUG  4182[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestSuite
-[2015-06-15 15:26:05,809] INFO  4264[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:65) - HHH000261: Table found: fortest.env_testcase_testresult
-[2015-06-15 15:26:05,809] INFO  4264[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:66) - HHH000037: Columns: [environment_id, id, testcase_id, testresult_id]
-[2015-06-15 15:26:05,809] INFO  4264[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:68) - HHH000108: Foreign keys: [fk_mcf0kgg930tjphh3cgc3nj41m, fk_bis4aw6ockf7x73eptu3f79li, fk_s6cgj2auurbc8yme0dckhtylr]
-[2015-06-15 15:26:05,809] INFO  4264[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:69) - HHH000126: Indexes: [fk_mcf0kgg930tjphh3cgc3nj41m, fk_bis4aw6ockf7x73eptu3f79li, fk_s6cgj2auurbc8yme0dckhtylr, primary]
-[2015-06-15 15:26:05,829] INFO  4284[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:65) - HHH000261: Table found: fortest.environment
-[2015-06-15 15:26:05,829] INFO  4284[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:66) - HHH000037: Columns: [buildnumber, haenabled, name, productname, id, branch, datanodes, master]
-[2015-06-15 15:26:05,829] INFO  4284[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:68) - HHH000108: Foreign keys: []
-[2015-06-15 15:26:05,829] INFO  4284[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:69) - HHH000126: Indexes: [primary]
-[2015-06-15 15:26:05,839] INFO  4294[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:65) - HHH000261: Table found: fortest.testcase
-[2015-06-15 15:26:05,839] INFO  4294[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:66) - HHH000037: Columns: [name, id, testsuite_id]
-[2015-06-15 15:26:05,839] INFO  4294[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:68) - HHH000108: Foreign keys: [fk_9f5gxn8b6uddta6s9td2ao755]
-[2015-06-15 15:26:05,839] INFO  4294[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:69) - HHH000126: Indexes: [primary, fk_9f5gxn8b6uddta6s9td2ao755]
-[2015-06-15 15:26:05,840] INFO  4295[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:65) - HHH000261: Table found: fortest.testresult
-[2015-06-15 15:26:05,840] INFO  4295[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:66) - HHH000037: Columns: [result, name, testtype, endtime, id, starttime]
-[2015-06-15 15:26:05,840] INFO  4295[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:68) - HHH000108: Foreign keys: []
-[2015-06-15 15:26:05,840] INFO  4295[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:69) - HHH000126: Indexes: [primary]
-[2015-06-15 15:26:05,846] INFO  4301[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:65) - HHH000261: Table found: fortest.testsuite
-[2015-06-15 15:26:05,846] INFO  4301[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:66) - HHH000037: Columns: [name, id]
-[2015-06-15 15:26:05,846] INFO  4301[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:68) - HHH000108: Foreign keys: []
-[2015-06-15 15:26:05,846] INFO  4301[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.TableMetadata.<init>(TableMetadata.java:69) - HHH000126: Indexes: [primary]
-[2015-06-15 15:26:05,847]DEBUG  4302[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
-[2015-06-15 15:26:05,847]DEBUG  4302[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
-[2015-06-15 15:26:05,848]DEBUG  4303[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
-[2015-06-15 15:26:05,848]DEBUG  4303[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
-[2015-06-15 15:26:05,848]DEBUG  4303[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
-[2015-06-15 15:26:05,848] INFO  4303[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:267) - HHH000232: Schema update complete
-[2015-06-15 15:26:05,849]DEBUG  4304[localhost-startStop-1] - org.hibernate.internal.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:155) - Checking 0 named HQL queries
-[2015-06-15 15:26:05,849]DEBUG  4304[localhost-startStop-1] - org.hibernate.internal.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:171) - Checking 0 named SQL queries
-[2015-06-15 15:26:05,862]DEBUG  4317[localhost-startStop-1] - org.hibernate.stat.internal.StatisticsInitiator.initiateServiceInternal(StatisticsInitiator.java:110) - Statistics initialized [enabled=false]
-[2015-06-15 15:26:05,886]DEBUG  4341[localhost-startStop-1] - org.hibernate.jpa.internal.schemagen.JpaSchemaGenerator$Generation.execute(JpaSchemaGenerator.java:115) - No actions specified; doing nothing
-[2015-06-15 15:26:05,960]DEBUG  4415[localhost-startStop-1] - org.hibernate.jpa.internal.EntityManagerFactoryRegistry.<init>(EntityManagerFactoryRegistry.java:56) - Initializing EntityManagerFactoryRegistry : org.hibernate.jpa.internal.EntityManagerFactoryRegistry@12b2ad37
-[2015-06-15 15:26:05,960]DEBUG  4415[localhost-startStop-1] - org.hibernate.jpa.internal.EntityManagerFactoryRegistry.addEntityManagerFactory(EntityManagerFactoryRegistry.java:66) - Registering EntityManagerFactory: default 
-[2015-06-15 15:26:05,965]DEBUG  4420[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:05,966]DEBUG  4421[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'entityManagerFactory'
-[2015-06-15 15:26:05,966]DEBUG  4421[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:724) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b916169: defining beans [environmentService,env_TestCase_TestResultService,testCaseService,testResultService,testSuiteService,initDBService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,dataSource,entityManagerFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor,foo,jpaMappingContext,testResultDao,environmentDao,testSuiteDao,testCaseDao,env_TestCase_TestResultDao,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,org.springframework.orm.jpa.SharedEntityManagerCreator#0]; root of factory hierarchy
-[2015-06-15 15:26:05,966]DEBUG  4421[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'environmentService'
-[2015-06-15 15:26:05,966]DEBUG  4421[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'environmentService'
-[2015-06-15 15:26:05,970]DEBUG  4425[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [com.test.service.impl.EnvironmentServiceImpl]: AutowiredFieldElement for private com.test.dao.EnvironmentDao com.test.service.impl.EnvironmentServiceImpl.environmentDao
-[2015-06-15 15:26:05,970]DEBUG  4425[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'environmentService' to allow for resolving potential circular references
-[2015-06-15 15:26:05,975]DEBUG  4430[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'environmentService': AutowiredFieldElement for private com.test.dao.EnvironmentDao com.test.service.impl.EnvironmentServiceImpl.environmentDao
-[2015-06-15 15:26:05,998]DEBUG  4453[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'environmentDao'
-[2015-06-15 15:26:05,998]DEBUG  4453[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'environmentDao'
-[2015-06-15 15:26:06,028]DEBUG  4483[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]: PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)
-[2015-06-15 15:26:06,028]DEBUG  4483[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'environmentDao' to allow for resolving potential circular references
-[2015-06-15 15:26:06,028]DEBUG  4483[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'environmentDao': PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)
-[2015-06-15 15:26:06,028]DEBUG  4483[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#5966671e'
-[2015-06-15 15:26:06,028]DEBUG  4483[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#1043d193'
-[2015-06-15 15:26:06,048]DEBUG  4503[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name '(inner bean)#1043d193'
-[2015-06-15 15:26:06,048]DEBUG  4503[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,048]DEBUG  4503[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#1043d193'
-[2015-06-15 15:26:06,048]DEBUG  4503[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,058]DEBUG  4513[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,058]DEBUG  4513[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#5966671e'
-[2015-06-15 15:26:06,058]DEBUG  4513[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#70dbf49c'
-[2015-06-15 15:26:06,068]DEBUG  4523[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,068]DEBUG  4523[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#70dbf49c'
-[2015-06-15 15:26:06,068]DEBUG  4523[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#aebae9d'
-[2015-06-15 15:26:06,069]DEBUG  4524[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'entityManagerFactory'
-[2015-06-15 15:26:06,069]DEBUG  4524[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,088]DEBUG  4543[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,089]DEBUG  4544[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#aebae9d'
-[2015-06-15 15:26:06,089]DEBUG  4544[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'jpaMappingContext'
-[2015-06-15 15:26:06,090]DEBUG  4545[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'jpaMappingContext'
-[2015-06-15 15:26:06,090]DEBUG  4545[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'jpaMappingContext' to allow for resolving potential circular references
-[2015-06-15 15:26:06,128]DEBUG  4583[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name 'jpaMappingContext'
-[2015-06-15 15:26:06,129]DEBUG  4584[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,130]DEBUG  4585[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:244) - Returning eagerly cached instance of singleton bean 'jpaMappingContext' that is not fully initialized yet - a consequence of a circular reference
-[2015-06-15 15:26:06,130]DEBUG  4585[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'entityManagerFactory'
-[2015-06-15 15:26:06,242]DEBUG  4697[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'jpaMappingContext'
-[2015-06-15 15:26:06,242]DEBUG  4697[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,242]DEBUG  4697[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name 'environmentDao'
-[2015-06-15 15:26:06,262]DEBUG  4717[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,382]DEBUG  4837[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,382]DEBUG  4837[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,382]DEBUG  4837[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,382]DEBUG  4837[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,382]DEBUG  4837[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,382]DEBUG  4837[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,383]DEBUG  4838[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,383]DEBUG  4838[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,383]DEBUG  4838[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,414]DEBUG  4869[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,424]DEBUG  4879[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ThreadBoundTargetSource@58d19ba6
-[2015-06-15 15:26:06,474]DEBUG  4929[localhost-startStop-1] - org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:52) - Looking up query for method findByBuildNumberAndMaster
-[2015-06-15 15:26:06,474]DEBUG  4929[localhost-startStop-1] - org.springframework.data.jpa.repository.query.NamedQuery.lookupFrom(NamedQuery.java:119) - Looking up named query Environment.findByBuildNumberAndMaster
-[2015-06-15 15:26:06,474]DEBUG  4929[localhost-startStop-1] - org.hibernate.jpa.spi.AbstractEntityManagerImpl.markForRollbackOnly(AbstractEntityManagerImpl.java:1529) - Mark transaction for rollback
-[2015-06-15 15:26:06,484]DEBUG  4939[localhost-startStop-1] - org.springframework.data.jpa.repository.query.NamedQuery.hasNamedQuery(NamedQuery.java:102) - Did not find named query Environment.findByBuildNumberAndMaster
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,494]DEBUG  4949[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,504]DEBUG  4959[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,504]DEBUG  4959[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,544]DEBUG  4999[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,554]DEBUG  5009[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [org.springframework.data.jpa.repository.support.SimpleJpaRepository@68032544]
-[2015-06-15 15:26:06,554]DEBUG  5009[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,554]DEBUG  5009[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'environmentDao'
-[2015-06-15 15:26:06,554]DEBUG  5009[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,554]DEBUG  5009[localhost-startStop-1] - org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.registerDependentBeans(AutowiredAnnotationBeanPostProcessor.java:480) - Autowiring by type from bean name 'environmentService' to bean named 'environmentDao'
-[2015-06-15 15:26:06,554]DEBUG  5009[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:108) - Adding transactional method 'EnvironmentServiceImpl.save' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.buildAdvisors(AbstractAutoProxyCreator.java:505) - Creating implicit proxy for bean 'environmentService' with 0 common interceptors and 1 specific interceptors
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [com.test.service.impl.EnvironmentServiceImpl@2cf51063]
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'environmentService'
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'env_TestCase_TestResultService'
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'env_TestCase_TestResultService'
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [com.test.service.impl.Env_TestCase_TestResultServiceImpl]: AutowiredFieldElement for private com.test.dao.Env_TestCase_TestResultDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.env_TestCase_TestResultDao
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [com.test.service.impl.Env_TestCase_TestResultServiceImpl]: AutowiredFieldElement for private com.test.dao.EnvironmentDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.environmentDao
-[2015-06-15 15:26:06,555]DEBUG  5010[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [com.test.service.impl.Env_TestCase_TestResultServiceImpl]: AutowiredFieldElement for private com.test.dao.TestCaseDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.testCaseDao
-[2015-06-15 15:26:06,556]DEBUG  5011[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [com.test.service.impl.Env_TestCase_TestResultServiceImpl]: AutowiredFieldElement for private com.test.dao.TestResultDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.testResultDao
-[2015-06-15 15:26:06,556]DEBUG  5011[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'env_TestCase_TestResultService' to allow for resolving potential circular references
-[2015-06-15 15:26:06,562]DEBUG  5017[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'env_TestCase_TestResultService': AutowiredFieldElement for private com.test.dao.Env_TestCase_TestResultDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.env_TestCase_TestResultDao
-[2015-06-15 15:26:06,563]DEBUG  5018[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'env_TestCase_TestResultDao'
-[2015-06-15 15:26:06,563]DEBUG  5018[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'env_TestCase_TestResultDao'
-[2015-06-15 15:26:06,565]DEBUG  5020[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]: PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)
-[2015-06-15 15:26:06,565]DEBUG  5020[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'env_TestCase_TestResultDao' to allow for resolving potential circular references
-[2015-06-15 15:26:06,568]DEBUG  5023[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'env_TestCase_TestResultDao': PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)
-[2015-06-15 15:26:06,569]DEBUG  5024[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#76d59307'
-[2015-06-15 15:26:06,569]DEBUG  5024[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#5fc91c82'
-[2015-06-15 15:26:06,570]DEBUG  5025[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name '(inner bean)#5fc91c82'
-[2015-06-15 15:26:06,570]DEBUG  5025[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,571]DEBUG  5026[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#5fc91c82'
-[2015-06-15 15:26:06,571]DEBUG  5026[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,571]DEBUG  5026[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,571]DEBUG  5026[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#76d59307'
-[2015-06-15 15:26:06,572]DEBUG  5027[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#43460a32'
-[2015-06-15 15:26:06,572]DEBUG  5027[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,572]DEBUG  5027[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#43460a32'
-[2015-06-15 15:26:06,572]DEBUG  5027[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#1951f4f6'
-[2015-06-15 15:26:06,573]DEBUG  5028[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'entityManagerFactory'
-[2015-06-15 15:26:06,574]DEBUG  5029[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,574]DEBUG  5029[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#1951f4f6'
-[2015-06-15 15:26:06,574]DEBUG  5029[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'jpaMappingContext'
-[2015-06-15 15:26:06,575]DEBUG  5030[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name 'env_TestCase_TestResultDao'
-[2015-06-15 15:26:06,575]DEBUG  5030[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,575]DEBUG  5030[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,576]DEBUG  5031[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,576]DEBUG  5031[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,576]DEBUG  5031[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,576]DEBUG  5031[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,596]DEBUG  5051[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ThreadBoundTargetSource@4c8443b8
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:52) - Looking up query for method findByTestCase
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.data.jpa.repository.query.NamedQuery.lookupFrom(NamedQuery.java:119) - Looking up named query Env_TestCase_TestResult.findByTestCase
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.hibernate.jpa.spi.AbstractEntityManagerImpl.markForRollbackOnly(AbstractEntityManagerImpl.java:1529) - Mark transaction for rollback
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.data.jpa.repository.query.NamedQuery.hasNamedQuery(NamedQuery.java:102) - Did not find named query Env_TestCase_TestResult.findByTestCase
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,606]DEBUG  5061[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,616]DEBUG  5071[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,617]DEBUG  5072[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [org.springframework.data.jpa.repository.support.SimpleJpaRepository@47891060]
-[2015-06-15 15:26:06,621]DEBUG  5076[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,621]DEBUG  5076[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'env_TestCase_TestResultDao'
-[2015-06-15 15:26:06,621]DEBUG  5076[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,622]DEBUG  5077[localhost-startStop-1] - org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.registerDependentBeans(AutowiredAnnotationBeanPostProcessor.java:480) - Autowiring by type from bean name 'env_TestCase_TestResultService' to bean named 'env_TestCase_TestResultDao'
-[2015-06-15 15:26:06,623]DEBUG  5078[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'env_TestCase_TestResultService': AutowiredFieldElement for private com.test.dao.EnvironmentDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.environmentDao
-[2015-06-15 15:26:06,623]DEBUG  5078[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'environmentDao'
-[2015-06-15 15:26:06,623]DEBUG  5078[localhost-startStop-1] - org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.registerDependentBeans(AutowiredAnnotationBeanPostProcessor.java:480) - Autowiring by type from bean name 'env_TestCase_TestResultService' to bean named 'environmentDao'
-[2015-06-15 15:26:06,625]DEBUG  5080[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'env_TestCase_TestResultService': AutowiredFieldElement for private com.test.dao.TestCaseDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.testCaseDao
-[2015-06-15 15:26:06,626]DEBUG  5081[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'testCaseDao'
-[2015-06-15 15:26:06,626]DEBUG  5081[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'testCaseDao'
-[2015-06-15 15:26:06,626]DEBUG  5081[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]: PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)
-[2015-06-15 15:26:06,627]DEBUG  5082[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'testCaseDao' to allow for resolving potential circular references
-[2015-06-15 15:26:06,627]DEBUG  5082[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'testCaseDao': PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)
-[2015-06-15 15:26:06,628]DEBUG  5083[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#2a069734'
-[2015-06-15 15:26:06,628]DEBUG  5083[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#7ed357ac'
-[2015-06-15 15:26:06,629]DEBUG  5084[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name '(inner bean)#7ed357ac'
-[2015-06-15 15:26:06,630]DEBUG  5085[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,630]DEBUG  5085[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#7ed357ac'
-[2015-06-15 15:26:06,630]DEBUG  5085[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,631]DEBUG  5086[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,631]DEBUG  5086[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#2a069734'
-[2015-06-15 15:26:06,631]DEBUG  5086[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#8feaa9c'
-[2015-06-15 15:26:06,632]DEBUG  5087[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,632]DEBUG  5087[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#8feaa9c'
-[2015-06-15 15:26:06,632]DEBUG  5087[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean '(inner bean)#16df3380'
-[2015-06-15 15:26:06,632]DEBUG  5087[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'entityManagerFactory'
-[2015-06-15 15:26:06,635]DEBUG  5090[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,636]DEBUG  5091[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean '(inner bean)#16df3380'
-[2015-06-15 15:26:06,636]DEBUG  5091[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'jpaMappingContext'
-[2015-06-15 15:26:06,637]DEBUG  5092[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1616) - Invoking afterPropertiesSet() on bean with name 'testCaseDao'
-[2015-06-15 15:26:06,637]DEBUG  5092[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,638]DEBUG  5093[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,638]DEBUG  5093[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,638]DEBUG  5093[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,638]DEBUG  5093[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,639]DEBUG  5094[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,642]DEBUG  5097[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,642]DEBUG  5097[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,644]DEBUG  5099[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,645]DEBUG  5100[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,648]DEBUG  5103[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,649]DEBUG  5104[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,649]DEBUG  5104[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,652]DEBUG  5107[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,652]DEBUG  5107[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,652]DEBUG  5107[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,656]DEBUG  5111[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,657]DEBUG  5112[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,659]DEBUG  5114[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,660]DEBUG  5115[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,660]DEBUG  5115[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ThreadBoundTargetSource@7ae132fc
-[2015-06-15 15:26:06,662]DEBUG  5117[localhost-startStop-1] - org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:52) - Looking up query for method findByName
-[2015-06-15 15:26:06,662]DEBUG  5117[localhost-startStop-1] - org.springframework.data.jpa.repository.query.NamedQuery.lookupFrom(NamedQuery.java:119) - Looking up named query TestCase.findByName
-[2015-06-15 15:26:06,663]DEBUG  5118[localhost-startStop-1] - org.hibernate.jpa.spi.AbstractEntityManagerImpl.markForRollbackOnly(AbstractEntityManagerImpl.java:1529) - Mark transaction for rollback
-[2015-06-15 15:26:06,663]DEBUG  5118[localhost-startStop-1] - org.springframework.data.jpa.repository.query.NamedQuery.hasNamedQuery(NamedQuery.java:102) - Did not find named query TestCase.findByName
-[2015-06-15 15:26:06,664]DEBUG  5119[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,664]DEBUG  5119[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,664]DEBUG  5119[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,665]DEBUG  5120[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,665]DEBUG  5120[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,665]DEBUG  5120[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,668]DEBUG  5123[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,668]DEBUG  5123[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,671]DEBUG  5126[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,671]DEBUG  5126[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,671]DEBUG  5126[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,672]DEBUG  5127[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,672]DEBUG  5127[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,672]DEBUG  5127[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,673]DEBUG  5128[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,673]DEBUG  5128[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,675]DEBUG  5130[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,676]DEBUG  5131[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,678]DEBUG  5133[localhost-startStop-1] - org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:282) - Creating new EntityManager for shared EntityManager invocation
-[2015-06-15 15:26:06,688]DEBUG  5143[localhost-startStop-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-15 15:26:06,688]DEBUG  5143[localhost-startStop-1] - org.springframework.aop.framework.JdkDynamicAopProxy.getProxy(JdkDynamicAopProxy.java:117) - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [org.springframework.data.jpa.repository.support.SimpleJpaRepository@36796e95]
-[2015-06-15 15:26:06,698]DEBUG  5153[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,698]DEBUG  5153[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'testCaseDao'
-[2015-06-15 15:26:06,698]DEBUG  5153[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-[2015-06-15 15:26:06,698]DEBUG  5153[localhost-startStop-1] - org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.registerDependentBeans(AutowiredAnnotationBeanPostProcessor.java:480) - Autowiring by type from bean name 'env_TestCase_TestResultService' to bean named 'testCaseDao'
-[2015-06-15 15:26:06,698]DEBUG  5153[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'env_TestCase_TestResultService': AutowiredFieldElement for private com.test.dao.TestResultDao com.test.service.impl.Env_TestCase_TestResultServiceImpl.testResultDao
-[2015-06-15 15:26:06,698]DEBUG  5153[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'testResultDao'
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.TestResult.env_TestCase_TestResults: select env_testca0_.testResult_id as testResu4_7_0_, env_testca0_.id as id1_2_0_, env_testca0_.id as id1_2_1_, env_testca0_.environment_id as environm2_2_1_, env_testca0_.testCase_id as testCase3_2_1_, env_testca0_.testResult_id as testResu4_2_1_, environmen1_.id as id1_3_2_, environmen1_.datanodes as datanode2_3_2_, environmen1_.haEnabled as haEnable3_3_2_, environmen1_.master as master4_3_2_, environmen1_.name as name5_3_2_, environmen1_.productName as productN6_3_2_, testcase2_.id as id1_6_3_, testcase2_.name as name2_6_3_, testcase2_.testSuite_id as testSuit3_6_3_, testsuite3_.id as id1_8_4_, testsuite3_.name as name2_8_4_ from Env_TestCase_TestResult env_testca0_ left outer join Environment environmen1_ on env_testca0_.environment_id=environmen1_.id left outer join TestCase testcase2_ on env_testca0_.testCase_id=testcase2_.id left outer join TestSuite testsuite3_ on testcase2_.testSuite_id=testsuite3_.id where env_testca0_.testResult_id=?
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@6afa890f]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@52988598]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : branch
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6bed3907]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : branch.builds
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : branch.builds
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : branch.name
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : buildNumber
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : environments
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : environments
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Environment.builds)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.Environment.builds, querySpaceUid=<gen:0>, path=[com.test.domain.Environment.builds])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Build, querySpaceUid=<gen:1>, path=[com.test.domain.Environment.builds].<elements>)
+             - EntityAttributeFetchImpl(entity=com.test.domain.Branch, querySpaceUid=<gen:2>, path=[com.test.domain.Environment.builds].<elements>.branch)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.Environment.builds)
+          - SQL table alias mapping - builds0_
+          - alias suffix - 0_
+          - suffixed key columns - {environm1_3_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_1_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Build)
+                - SQL table alias mapping - build1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_1_1_}
+                - JOIN (JoinDefinedByMetadata(branch)) : <gen:1> -> <gen:2>
+                   - EntityQuerySpaceImpl(uid=<gen:2>, entity=com.test.domain.Branch)
+                      - SQL table alias mapping - branch2_
+                      - alias suffix - 2_
+                      - suffixed key columns - {id1_0_2_}
+
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Environment.builds: select builds0_.environments_id as environm1_3_0_, builds0_.builds_id as builds_i2_4_0_, build1_.id as id1_1_1_, build1_.branch_id as branch_i3_1_1_, build1_.buildNumber as buildNum2_1_1_, branch2_.id as id1_0_2_, branch2_.name as name2_0_2_ from Environment_Build builds0_ inner join Build build1_ on builds0_.builds_id=build1_.id left outer join Branch branch2_ on build1_.branch_id=branch2_.id where builds0_.environments_id=?
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@2c1545d8]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl.registerQuerySpace(QuerySpacesImpl.java:192) - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@72a87bd7]
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : builds
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:162) - Property path deemed to be circular : builds
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : datanodes
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : env_TestCase_TestResults
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : haEnabled
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : master
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : name
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.persister.walking.spi.MetamodelGraphWalker.visitAttributeDefinition(MetamodelGraphWalker.java:154) - Visiting attribute path : productName
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy.buildLoadPlan(FetchStyleLoadPlanBuildingAssociationVisitationStrategy.java:94) - Building LoadPlan...
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor.processQuerySpaceJoins(LoadQueryJoinAndFetchProcessor.java:112) - processing queryspace <gen:0>
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter.logTree(LoadPlanTreePrinter.java:72) - LoadPlan(collection=com.test.domain.Build.environments)
+    - Returns
+       - CollectionReturnImpl(collection=com.test.domain.Build.environments, querySpaceUid=<gen:0>, path=[com.test.domain.Build.environments])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.test.domain.Environment, querySpaceUid=<gen:1>, path=[com.test.domain.Build.environments].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.test.domain.Build.environments)
+          - SQL table alias mapping - environmen0_
+          - alias suffix - 0_
+          - suffixed key columns - {builds_i2_1_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - id1_3_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.test.domain.Environment)
+                - SQL table alias mapping - environmen1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_3_1_}
+
+[2015-06-18 20:30:07,947]DEBUG  4627[localhost-startStop-1] - org.hibernate.loader.collection.plan.CollectionLoader.<init>(CollectionLoader.java:114) - Static select for collection com.test.domain.Build.environments: select environmen0_.builds_id as builds_i2_1_0_, environmen0_.environments_id as environm1_4_0_, environmen1_.id as id1_3_1_, environmen1_.datanodes as datanode2_3_1_, environmen1_.haEnabled as haEnable3_3_1_, environmen1_.master as master4_3_1_, environmen1_.name as name5_3_1_, environmen1_.productName as productN6_3_1_ from Environment_Build environmen0_ inner join Environment environmen1_ on environmen0_.environments_id=environmen1_.id where environmen0_.builds_id=?
+[2015-06-18 20:30:07,957]DEBUG  4637[localhost-startStop-1] - org.hibernate.internal.SessionFactoryRegistry.<init>(SessionFactoryRegistry.java:67) - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@2acad76b
+[2015-06-18 20:30:07,957]DEBUG  4637[localhost-startStop-1] - org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:89) - Registering SessionFactory: 1c6bb403-0ccc-4b0c-80e8-65c01a6548ec (<unnamed>)
+[2015-06-18 20:30:07,957]DEBUG  4637[localhost-startStop-1] - org.hibernate.internal.SessionFactoryRegistry.addSessionFactory(SessionFactoryRegistry.java:96) - Not binding SessionFactory to JNDI, no JNDI name configured
+[2015-06-18 20:30:07,957]DEBUG  4637[localhost-startStop-1] - org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:505) - Instantiated session factory
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration$MetadataSourceQueue.processHbmXmlQueue(Configuration.java:3805) - Processing hbm.xml files
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3835) - Process annotated classes
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.processFkSecondPassInOrder(Configuration.java:1484) - Processing fk mappings (*ToOne and JoinedSubclass)
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1689) - Processing extends queue
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.processExtendsQueue(Configuration.java:1747) - Processing extends queue
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1692) - Processing collection mappings
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1702) - Processing native query and ResultSetMapping mappings
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1710) - Processing association property references
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1732) - Creating tables' unique integer identifiers
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1733) - Processing foreign key constraints
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Branch
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Environment
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestCase
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestResult
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Build
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Environment
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Run
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestSuite
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Run
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestSuite
+[2015-06-18 20:30:07,967]DEBUG  4647[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration$MetadataSourceQueue.processHbmXmlQueue(Configuration.java:3805) - Processing hbm.xml files
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3835) - Process annotated classes
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.processFkSecondPassInOrder(Configuration.java:1484) - Processing fk mappings (*ToOne and JoinedSubclass)
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1689) - Processing extends queue
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.processExtendsQueue(Configuration.java:1747) - Processing extends queue
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1692) - Processing collection mappings
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1702) - Processing native query and ResultSetMapping mappings
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1710) - Processing association property references
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1732) - Creating tables' unique integer identifiers
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.originalSecondPassCompile(Configuration.java:1733) - Processing foreign key constraints
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Branch
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Environment
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestCase
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestResult
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Build
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Environment
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Run
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestSuite
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.Run
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.cfg.Configuration.secondPassCompileForeignKeys(Configuration.java:1804) - Resolving reference to class: com.test.domain.TestSuite
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,977]DEBUG  4657[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,997]DEBUG  4677[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,997]DEBUG  4677[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,997]DEBUG  4677[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,997]DEBUG  4677[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:07,997]DEBUG  4677[localhost-startStop-1] - org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.setDialect(DefaultIdentifierGeneratorFactory.java:107) - Setting dialect [org.hibernate.dialect.MySQL5InnoDBDialect]
+[2015-06-18 20:30:08,078] INFO  4758[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaExport.execute(SchemaExport.java:344) - HHH000227: Running hbm2ddl schema export
+[2015-06-18 20:30:08,079]DEBUG  4759[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaExport.execute(SchemaExport.java:354) - Import file not found: /import.sql
+[2015-06-18 20:30:08,084]DEBUG  4764[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Build 
+        drop 
+        foreign key FK_jmwcrvfseewe71elrmor1t3ei
+[2015-06-18 20:30:08,192]DEBUG  4872[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Env_TestCase_TestResult 
+        drop 
+        foreign key FK_s6cgj2auurbc8yme0dckhtylr
+[2015-06-18 20:30:08,459]DEBUG  5139[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Env_TestCase_TestResult 
+        drop 
+        foreign key FK_bis4aw6ockf7x73eptu3f79li
+[2015-06-18 20:30:08,539]DEBUG  5219[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Env_TestCase_TestResult 
+        drop 
+        foreign key FK_mcf0kgg930tjphh3cgc3nj41m
+[2015-06-18 20:30:08,639]DEBUG  5319[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Environment_Build 
+        drop 
+        foreign key FK_k09cn4sf98gvrx6ond6s3oggk
+[2015-06-18 20:30:08,762]DEBUG  5442[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Environment_Build 
+        drop 
+        foreign key FK_m7afy2u55yubud69205qmxsci
+[2015-06-18 20:30:08,841]DEBUG  5521[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Run 
+        drop 
+        foreign key FK_l5wl6q0igxdacv6yg6rph24tf
+[2015-06-18 20:30:08,911]DEBUG  5591[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table TestCase 
+        drop 
+        foreign key FK_9f5gxn8b6uddta6s9td2ao755
+[2015-06-18 20:30:08,981]DEBUG  5661[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table TestSuite_Run 
+        drop 
+        foreign key FK_l4wlijfh0daevheic5l2a0eyy
+[2015-06-18 20:30:09,060]DEBUG  5740[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table TestSuite_Run 
+        drop 
+        foreign key FK_c3xqibcvbw7dstnqy1twald46
+[2015-06-18 20:30:09,140]DEBUG  5820[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists Branch
+[2015-06-18 20:30:09,340]DEBUG  6020[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists Build
+[2015-06-18 20:30:09,461]DEBUG  6141[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists Env_TestCase_TestResult
+[2015-06-18 20:30:09,632]DEBUG  6312[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists Environment
+[2015-06-18 20:30:09,812]DEBUG  6492[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists Environment_Build
+[2015-06-18 20:30:09,933]DEBUG  6613[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists Run
+[2015-06-18 20:30:10,375]DEBUG  7055[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists TestCase
+[2015-06-18 20:30:10,497]DEBUG  7177[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists TestResult
+[2015-06-18 20:30:10,711]DEBUG  7391[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists TestSuite
+[2015-06-18 20:30:10,940]DEBUG  7620[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    drop table if exists TestSuite_Run
+[2015-06-18 20:30:11,051]DEBUG  7731[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table Branch (
+        id bigint not null auto_increment,
+        name varchar(255),
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:11,271]DEBUG  7951[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table Build (
+        id bigint not null auto_increment,
+        buildNumber varchar(255),
+        branch_id bigint,
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:11,571]DEBUG  8251[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table Env_TestCase_TestResult (
+        id bigint not null auto_increment,
+        environment_id bigint,
+        testCase_id bigint,
+        testResult_id bigint,
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:11,841]DEBUG  8521[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table Environment (
+        id bigint not null auto_increment,
+        datanodes tinyblob,
+        haEnabled bit not null,
+        master varchar(255),
+        name varchar(255),
+        productName varchar(255),
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:12,071]DEBUG  8751[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table Environment_Build (
+        environments_id bigint not null,
+        builds_id bigint not null
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:12,582]DEBUG  9262[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table Run (
+        id bigint not null auto_increment,
+        buildNumber varchar(255),
+        endTime datetime,
+        startTime datetime,
+        tag varchar(255),
+        parent_id bigint,
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:12,814]DEBUG  9494[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table TestCase (
+        id bigint not null auto_increment,
+        name varchar(255),
+        testSuite_id bigint,
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:13,096]DEBUG  9776[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table TestResult (
+        id bigint not null auto_increment,
+        endTime datetime,
+        result varchar(255),
+        startTime datetime,
+        testType varchar(255),
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:13,367]DEBUG 10047[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table TestSuite (
+        id bigint not null auto_increment,
+        name varchar(255),
+        primary key (id)
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:13,598]DEBUG 10278[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    create table TestSuite_Run (
+        testSuites_id bigint not null,
+        runs_id bigint not null
+    ) ENGINE=InnoDB
+[2015-06-18 20:30:13,828]DEBUG 10508[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Build 
+        add constraint FK_jmwcrvfseewe71elrmor1t3ei 
+        foreign key (branch_id) 
+        references Branch (id)
+[2015-06-18 20:30:14,548]DEBUG 11228[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Env_TestCase_TestResult 
+        add constraint FK_s6cgj2auurbc8yme0dckhtylr 
+        foreign key (environment_id) 
+        references Environment (id)
+[2015-06-18 20:30:15,139]DEBUG 11819[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Env_TestCase_TestResult 
+        add constraint FK_bis4aw6ockf7x73eptu3f79li 
+        foreign key (testCase_id) 
+        references TestCase (id)
+[2015-06-18 20:30:15,907]DEBUG 12587[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Env_TestCase_TestResult 
+        add constraint FK_mcf0kgg930tjphh3cgc3nj41m 
+        foreign key (testResult_id) 
+        references TestResult (id)
+[2015-06-18 20:30:16,823]DEBUG 13503[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Environment_Build 
+        add constraint FK_k09cn4sf98gvrx6ond6s3oggk 
+        foreign key (builds_id) 
+        references Build (id)
+[2015-06-18 20:30:17,569]DEBUG 14249[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Environment_Build 
+        add constraint FK_m7afy2u55yubud69205qmxsci 
+        foreign key (environments_id) 
+        references Environment (id)
+[2015-06-18 20:30:18,170]DEBUG 14850[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table Run 
+        add constraint FK_l5wl6q0igxdacv6yg6rph24tf 
+        foreign key (parent_id) 
+        references Run (id)
+[2015-06-18 20:30:18,922]DEBUG 15602[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table TestCase 
+        add constraint FK_9f5gxn8b6uddta6s9td2ao755 
+        foreign key (testSuite_id) 
+        references TestSuite (id)
+[2015-06-18 20:30:19,558]DEBUG 16238[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table TestSuite_Run 
+        add constraint FK_l4wlijfh0daevheic5l2a0eyy 
+        foreign key (runs_id) 
+        references Run (id)
+[2015-06-18 20:30:20,314]DEBUG 16994[localhost-startStop-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    alter table TestSuite_Run 
+        add constraint FK_c3xqibcvbw7dstnqy1twald46 
+        foreign key (testSuites_id) 
+        references TestSuite (id)
+[2015-06-18 20:30:21,118] INFO 17798[localhost-startStop-1] - org.hibernate.tool.hbm2ddl.SchemaExport.execute(SchemaExport.java:406) - HHH000230: Schema export complete
+[2015-06-18 20:30:21,118]DEBUG 17798[localhost-startStop-1] - org.hibernate.internal.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:155) - Checking 0 named HQL queries
+[2015-06-18 20:30:21,118]DEBUG 17798[localhost-startStop-1] - org.hibernate.internal.NamedQueryRepository.checkNamedQueries(NamedQueryRepository.java:171) - Checking 0 named SQL queries
+[2015-06-18 20:30:21,128]DEBUG 17808[localhost-startStop-1] - org.hibernate.stat.internal.StatisticsInitiator.initiateServiceInternal(StatisticsInitiator.java:110) - Statistics initialized [enabled=false]
+[2015-06-18 20:30:21,128]DEBUG 17808[localhost-startStop-1] - org.hibernate.jpa.internal.schemagen.JpaSchemaGenerator$Generation.execute(JpaSchemaGenerator.java:115) - No actions specified; doing nothing
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.hibernate.jpa.internal.EntityManagerFactoryRegistry.<init>(EntityManagerFactoryRegistry.java:56) - Initializing EntityManagerFactoryRegistry : org.hibernate.jpa.internal.EntityManagerFactoryRegistry@528d92a0
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.hibernate.jpa.internal.EntityManagerFactoryRegistry.addEntityManagerFactory(EntityManagerFactoryRegistry.java:66) - Registering EntityManagerFactory: default 
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:478) - Finished creating instance of bean 'entityManagerFactory'
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:724) - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5f1fad25: defining beans [environmentService,env_TestCase_TestResultService,runService,testCaseService,testResultService,testSuiteService,initDBService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,dataSource,entityManagerFactory,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,transactionManager,org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor,foo,jpaMappingContext,testSuiteDao,environmentDao,buildDao,testCaseDao,env_TestCase_TestResultDao,runDao,branchDao,testResultDao,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,org.springframework.orm.jpa.SharedEntityManagerCreator#0]; root of factory hierarchy
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'environmentService'
+[2015-06-18 20:30:21,228]DEBUG 17908[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'environmentService'
+[2015-06-18 20:30:21,238]DEBUG 17918[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [com.test.service.impl.EnvironmentServiceImpl]: AutowiredFieldElement for private com.test.dao.EnvironmentDao com.test.service.impl.EnvironmentServiceImpl.environmentDao
+[2015-06-18 20:30:21,238]DEBUG 17918[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:523) - Eagerly caching bean 'environmentService' to allow for resolving potential circular references
+[2015-06-18 20:30:21,238]DEBUG 17918[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:86) - Processing injected element of bean 'environmentService': AutowiredFieldElement for private com.test.dao.EnvironmentDao com.test.service.impl.EnvironmentServiceImpl.environmentDao
+[2015-06-18 20:30:21,248]DEBUG 17928[localhost-startStop-1] - org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:221) - Creating shared instance of singleton bean 'environmentDao'
+[2015-06-18 20:30:21,248]DEBUG 17928[localhost-startStop-1] - org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:450) - Creating instance of bean 'environmentDao'
+[2015-06-18 20:30:21,278]DEBUG 17958[localhost-startStop-1] - org.springframework.beans.factory.annotation.InjectionMetadata.checkConfigMembers(InjectionMetadata.java:72) - Registered injected element on class [org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean]: PersistenceElement for public void org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.setEntityManager(javax.persistence.EntityManager)

@@ -1,15 +1,12 @@
 package com.test.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table
 public class Env_TestCase_TestResult {
 	
 	@Id
@@ -64,7 +61,7 @@ public class Env_TestCase_TestResult {
 	@Override
 	public String toString() {
 		return "Env_TestCase_TestResult [environment=" + environment.getName()
-				+ ", testCase=" + testCase.getName() + ", testResult=" + testResult.getName() + "]";
+				+ ", testCase=" + testCase.getName() + ", testResult=" + testResult.getResult() + "]";
 	}
 	
 	

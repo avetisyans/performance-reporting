@@ -5,49 +5,46 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table
 public class Environment {
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	private String buildNumber;
-
 	private String name;
 
-	private String branch;
-
 	private String productName;
-	
+
 	private String[] datanodes;
 
 	private String master;
-
-	private boolean haEnabled;
 	
+	private boolean haEnabled;
+
+	@ManyToMany
+	private List<Build> builds;
+
 	@OneToMany(mappedBy="environment")
 	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
+	
 
-	public String getBranch() {
-		return branch;
+	public List<Build> getBuilds() {
+		return builds;
 	}
 
-	public String getBuildNumber() {
-		return buildNumber;
-	}
 
 	public String[] getDatanodes() {
 		return datanodes;
 	}
 
+
 	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {
 		return env_TestCase_TestResults;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -55,7 +52,7 @@ public class Environment {
 	public String getMaster() {
 		return master;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
@@ -68,14 +65,10 @@ public class Environment {
 		return haEnabled;
 	}
 
-	public void setBranch(String branch) {
-		this.branch = branch;
+	public void setBuilds(List<Build> builds) {
+		this.builds = builds;
 	}
 
-
-	public void setBuildNumber(String buildNumber) {
-		this.buildNumber = buildNumber;
-	}
 
 	public void setDatanodes(String[] datanodes) {
 		this.datanodes = datanodes;

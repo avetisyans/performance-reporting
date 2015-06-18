@@ -79,15 +79,15 @@ public class TestResultController {
 		//testCaseService.save(testCase1);
 		
 		Environment environment = new Environment();
-		environment.setBranch("Branch1");
-		environment.setBuildNumber("1122211");
+		//environment.setBranch("Branch1");
+		//environment.setBuildNumber("1122211");
 		environment.setHaEnabled(true);
 		environment.setName("Environment 1");
 		//environmentService.save(environment);
 		
 		TestResult testResult1 = new TestResult();
-		testResult1.setName("Test Result 1 From Controller");
-		testResult1.setResult("Success");
+		//testResult1.setName("Test Result 1 From Controller");
+		//testResult1.setResult("Success");
 		testResult1.setStartTime(new Timestamp(new Date().getTime()));
 		testResult1.setEndTime(new Timestamp(new Date().getTime()));
 		testResult1.setTestType(TestType.API);

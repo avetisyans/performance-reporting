@@ -4,28 +4,32 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table
 public class TestResult {
 	public static enum TestType {
 		API, UI
+	}
+	
+	public static enum Result {
+		PASS, FAILURE, SKIPPED
 	}
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	private String name;
+	@Enumerated(EnumType.STRING)
+	private Result result;
 	
-	private String result;
-	
+	@Enumerated(EnumType.STRING)	
 	private TestType testType;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -49,14 +53,6 @@ public class TestResult {
 		return id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public String getResult() {
-		return result;
-	}
-
 	public Date getStartTime() {
 		return startTime;
 	}
@@ -77,13 +73,6 @@ public class TestResult {
 		this.id = id;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setResult(String result) {
-		this.result = result;
-	}
 
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
@@ -91,5 +80,13 @@ public class TestResult {
 
 	public void setTestType(TestType testType) {
 		this.testType = testType;
+	}
+
+	public Result getResult() {
+		return result;
+	}
+
+	public void setResult(Result result) {
+		this.result = result;
 	}
 }

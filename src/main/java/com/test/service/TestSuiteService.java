@@ -15,5 +15,7 @@ public interface TestSuiteService {
 	TestSuite findByName(String name);
 
 	TestSuite save(TestSuite testSuite, String name);
+
+	TestSuite saveToItsRun(TestSuite testSuite);
 	
 }
