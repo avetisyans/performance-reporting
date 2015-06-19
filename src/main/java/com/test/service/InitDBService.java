@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,7 +86,7 @@ public class InitDBService {
 		
 	/************* Second Block ********************/
 		TestResult testResult1 = new TestResult();
-		testResult1.setResult(Result.PASS);
+		testResult1.setResult(Result.SUCCESS);
 		testResult1.setTestType(TestType.API);
 		testResult1.setStartTime(new Date());
 		testResult1.setEndTime(new Date());

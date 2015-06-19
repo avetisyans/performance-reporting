@@ -7,4 +7,6 @@ public interface RunService {
 	Run save(Run run);
 
 	Run saveToDB(Run run);
+
+	Run addEndTimeToExistingRun(Run runData);
 }

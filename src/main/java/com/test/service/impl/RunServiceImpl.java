@@ -33,4 +33,16 @@ public class RunServiceImpl implements RunService {
 		return runDao.save(run);
 	}
 
+	@Override
+	public Run addEndTimeToExistingRun(Run runData) {
+		Run runFromDB = runDao.findByBuildNumber(runData.getBuildNumber());
+		
+		if (runFromDB != null) {
+			runFromDB.setEndTime(runData.getEndTime());
+			return runFromDB;
+		}
+		
+		return null;
+	}
+
 }

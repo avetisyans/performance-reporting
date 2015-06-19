@@ -19,7 +19,7 @@ public class TestResult {
 	}
 	
 	public static enum Result {
-		PASS, FAILURE, SKIPPED
+		NONE, SUCCESS, FAILURE, SKIPPED
 	}
 	
 	@Id

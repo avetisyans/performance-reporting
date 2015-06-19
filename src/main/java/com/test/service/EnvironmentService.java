@@ -11,4 +11,7 @@ public interface EnvironmentService {
 	Environment save(Environment environment);
 
 	Environment saveToDB(Environment environment);
+
+	Environment saveToItsBuild(Environment environment);
+
 }

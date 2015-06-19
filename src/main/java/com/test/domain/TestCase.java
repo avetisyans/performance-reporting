@@ -15,7 +15,13 @@ public class TestCase {
 	@GeneratedValue
 	private Long id;
 	
+	public static enum TestType {
+		API, UI
+	}
+	
 	private String name;
+	
+	private String description;
 	
 	@ManyToOne
 	@JoinColumn(name="testSuite_id")

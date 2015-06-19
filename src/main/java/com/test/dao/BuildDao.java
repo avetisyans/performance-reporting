@@ -7,5 +7,7 @@ import com.test.domain.Build;
 
 @Repository("buildDao")
 public interface BuildDao extends JpaRepository<Build, Long> {
+
+	Build findByBuildNumber(String buildNumber);
 	
 }
