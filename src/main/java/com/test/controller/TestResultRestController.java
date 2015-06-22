@@ -77,13 +77,13 @@ public class TestResultRestController {
 		
 		//System.out.println("runData.getBuildNumber() is: " + runData.getBuildNumber());
 		if ( runData.getEndTime() == null) {
-		Run savedRun = runService.saveToDB(runData);
+		Run savedRun = runService.saveToItsParent(runData);
 		return savedRun.toString();
 		}
 		
 		Run existingRun = runService.addEndTimeToExistingRun(runData);
 		
-		return existingRun.toString();
+		return runData.toString();
 	}
 	
 	@RequestMapping(value = "/buildData", method = RequestMethod.POST)

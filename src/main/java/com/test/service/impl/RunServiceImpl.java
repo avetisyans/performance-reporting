@@ -22,7 +22,7 @@ public class RunServiceImpl implements RunService {
 	}
 
 	@Override
-	public Run saveToDB(Run run) {
+	public Run saveToItsParent(Run run) {
 		
 		Run runFromDB = runDao.findByBuildNumber(run.getBuildNumber());
 		
@@ -30,8 +30,22 @@ public class RunServiceImpl implements RunService {
 			return runFromDB;
 		}
 		
+		Run parentRun = run.getParent();
+		Run savedParent = saveParentToDB(parentRun);
+		run.setParent(savedParent);
 		return runDao.save(run);
 	}
+			
+	private Run saveParentToDB(Run parentRun) {
+			
+			Run parentFromDB = runDao.findByBuildNumber(parentRun.getBuildNumber());
+			
+			if (parentFromDB != null) {
+				return parentFromDB;
+			}
+			
+			return runDao.save(parentRun);
+	}		
 
 	@Override
 	public Run addEndTimeToExistingRun(Run runData) {

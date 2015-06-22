@@ -1,102 +1,243 @@
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Environment.env_TestCase_TestResults#1], was: [com.test.domain.Environment.env_TestCase_TestResults#1] (uninitialized)
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 4 collections
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Branch{builds=<uninitialized>, name=main, id=1}
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Build{environments=<uninitialized>, id=1, branch=com.test.domain.Branch#1, buildNumber=5075695}
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Environment{builds=[com.test.domain.Build#1], name=singleSlice_with_5k_objects, id=1, productName=vRops6.1, datanodes=null, env_TestCase_TestResults=<uninitialized>, haEnabled=false, master=10.143.121.100}
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@5a8f0a1d] after transaction
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.TestResultServiceImpl.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@4fd0240] for JPA transaction
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@4fd0240] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@34294c72] does not support JDBC Connection retrieval
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@4fd0240] for JPA transaction
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:196) - Executing identity-insert immediately
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-06-22 18:11:32,704]DEBUG621369[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#4], was: [com.test.domain.Run.testSuites#4] (uninitialized)
+[2015-06-22 18:11:32,704]DEBUG621369[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#5], was: [com.test.domain.Run.children#5] (initialized)
+[2015-06-22 18:11:32,705]DEBUG621370[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#5], was: [com.test.domain.Run.testSuites#5] (uninitialized)
+[2015-06-22 18:11:32,705]DEBUG621370[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#6], was: [com.test.domain.Run.children#6] (initialized)
+[2015-06-22 18:11:32,705]DEBUG621370[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#6], was: [com.test.domain.Run.testSuites#6] (uninitialized)
+[2015-06-22 18:11:32,705]DEBUG621370[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.TestSuite.runs#2], was: [com.test.domain.TestSuite.runs#2] (initialized)
+[2015-06-22 18:11:32,706]DEBUG621371[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestSuite.testCases#2], was: [com.test.domain.TestSuite.testCases#2] (uninitialized)
+[2015-06-22 18:11:32,706]DEBUG621371[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#2], was: [com.test.domain.Run.children#2] (initialized)
+[2015-06-22 18:11:32,706]DEBUG621371[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#2], was: [com.test.domain.Run.testSuites#2] (uninitialized)
+[2015-06-22 18:11:32,706]DEBUG621371[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#1], was: [com.test.domain.Run.children#1] (initialized)
+[2015-06-22 18:11:32,707]DEBUG621372[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#1], was: [com.test.domain.Run.testSuites#1] (uninitialized)
+[2015-06-22 18:11:32,707]DEBUG621372[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#3], was: [com.test.domain.Run.children#3] (initialized)
+[2015-06-22 18:11:32,707]DEBUG621372[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#3], was: [com.test.domain.Run.testSuites#3] (uninitialized)
+[2015-06-22 18:11:32,707]DEBUG621372[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.TestCase.env_TestCase_TestResults#6], was: [com.test.domain.TestCase.env_TestCase_TestResults#6] (uninitialized)
+[2015-06-22 18:11:32,707]DEBUG621372[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 9 objects
+[2015-06-22 18:11:32,708]DEBUG621373[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 17 collections
+[2015-06-22 18:11:32,708]DEBUG621373[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:32,708]DEBUG621373[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=null, children=[com.test.domain.Run#2, com.test.domain.Run#3], testSuites=<uninitialized>, startTime=null, id=1, endTime=null, tag=null, buildNumber=run000}
+[2015-06-22 18:11:32,708]DEBUG621373[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestSuite{testCases=<uninitialized>, name=EnvironmentTab, id=2, runs=[com.test.domain.Run#2, com.test.domain.Run#3, com.test.domain.Run#5, com.test.domain.Run#6, com.test.domain.Run#7]}
+[2015-06-22 18:11:32,708]DEBUG621373[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#1, children=[], testSuites=<uninitialized>, startTime=2015-06-22 16:29:01.0, id=2, endTime=2015-06-22 16:35:22.0, tag=FirstTag, buildNumber=run001}
+[2015-06-22 18:11:32,709]DEBUG621374[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#1, children=[], testSuites=<uninitialized>, startTime=2015-06-22 16:44:51.0, id=3, endTime=2015-06-22 16:49:52.0, tag=FirstTag, buildNumber=run002}
+[2015-06-22 18:11:32,709]DEBUG621374[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=null, children=[com.test.domain.Run#5, com.test.domain.Run#6, com.test.domain.Run#7], testSuites=<uninitialized>, startTime=null, id=4, endTime=null, tag=null, buildNumber=run100}
+[2015-06-22 18:11:32,709]DEBUG621374[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#4, children=[], testSuites=<uninitialized>, startTime=2015-06-22 16:55:53.0, id=5, endTime=2015-06-22 17:00:36.0, tag=FirstTag, buildNumber=run101}
+[2015-06-22 18:11:32,709]DEBUG621374[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#4, children=[], testSuites=<uninitialized>, startTime=2015-06-22 17:08:37.0, id=6, endTime=2015-06-22 17:13:10.0, tag=FirstTag, buildNumber=run102}
+[2015-06-22 18:11:32,709]DEBUG621374[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestCase{testSuite=com.test.domain.TestSuite#2, name=skittlesMapTest, description=null, id=6, env_TestCase_TestResults=<uninitialized>}
+[2015-06-22 18:11:32,710]DEBUG621375[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#4, children=[], testSuites=<uninitialized>, startTime=2015-06-22 18:07:16.0, id=7, endTime=null, tag=FirstTag, buildNumber=run103}
+[2015-06-22 18:11:32,710]DEBUG621375[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
+[2015-06-22 18:11:32,710]DEBUG621375[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
+[2015-06-22 18:11:32,711]DEBUG621376[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@2e50950f] after transaction
+[2015-06-22 18:11:32,711]DEBUG621376[http-bio-8080-exec-4] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-06-22 18:11:32,711]DEBUG621376[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
+[2015-06-22 18:11:32,711]DEBUG621376[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
+[2015-06-22 18:11:32,712]DEBUG621377[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.EnvironmentServiceImpl.saveToItsBuild]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2015-06-22 18:11:32,712]DEBUG621377[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@5ddc3b93] for JPA transaction
+[2015-06-22 18:11:32,712]DEBUG621377[http-bio-8080-exec-4] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
+[2015-06-22 18:11:32,712]DEBUG621377[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
+[2015-06-22 18:11:32,714]DEBUG621379[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
+[2015-06-22 18:11:32,715]DEBUG621380[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
+[2015-06-22 18:11:32,715]DEBUG621380[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
+[2015-06-22 18:11:32,715]DEBUG621380[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@5ddc3b93] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@39f5a3b4] does not support JDBC Connection retrieval
+[2015-06-22 18:11:32,716]DEBUG621381[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@5ddc3b93] for JPA transaction
+[2015-06-22 18:11:32,716]DEBUG621381[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
+[2015-06-22 18:11:32,716]DEBUG621381[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@5ddc3b93] for JPA transaction
+[2015-06-22 18:11:32,716]DEBUG621381[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
+[2015-06-22 18:11:32,717]DEBUG621382[http-bio-8080-exec-4] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Branch as generatedAlias0 where generatedAlias0.name=:param0
+[2015-06-22 18:11:32,717]DEBUG621382[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        branch0_.id as id1_0_,
+        branch0_.name as name2_0_ 
+    from
+        Branch branch0_ 
+    where
+        branch0_.name=?
+[2015-06-22 18:11:32,718]DEBUG621383[http-bio-8080-exec-4] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-06-22 18:11:32,718]DEBUG621383[http-bio-8080-exec-4] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Branch#1]
+[2015-06-22 18:11:32,719]DEBUG621384[http-bio-8080-exec-4] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Branch#1]
+[2015-06-22 18:11:32,719]DEBUG621384[http-bio-8080-exec-4] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Branch#1]
+[2015-06-22 18:11:32,720]DEBUG621385[http-bio-8080-exec-4] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Build as generatedAlias0 where generatedAlias0.buildNumber=:param0
+[2015-06-22 18:11:32,721]DEBUG621386[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
+[2015-06-22 18:11:32,721]DEBUG621386[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
+[2015-06-22 18:11:32,721]DEBUG621386[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Branch.builds#1], was: [com.test.domain.Branch.builds#1] (uninitialized)
+[2015-06-22 18:11:32,721]DEBUG621386[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+[2015-06-22 18:11:32,722]DEBUG621387[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 1 collections
+[2015-06-22 18:11:32,722]DEBUG621387[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:32,722]DEBUG621387[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Branch{builds=<uninitialized>, name=main, id=1}
+[2015-06-22 18:11:32,722]DEBUG621387[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        build0_.id as id1_1_,
+        build0_.branch_id as branch_i3_1_,
+        build0_.buildNumber as buildNum2_1_ 
+    from
+        Build build0_ 
+    where
+        build0_.buildNumber=?
+[2015-06-22 18:11:32,724]DEBUG621389[http-bio-8080-exec-4] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-06-22 18:11:32,724]DEBUG621389[http-bio-8080-exec-4] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Build#1]
+[2015-06-22 18:11:32,725]DEBUG621390[http-bio-8080-exec-4] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Build#1]
+[2015-06-22 18:11:32,725]DEBUG621390[http-bio-8080-exec-4] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Build#1]
+[2015-06-22 18:11:32,726]DEBUG621391[http-bio-8080-exec-4] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Environment as generatedAlias0 where ( generatedAlias0.name=:param0 ) and ( generatedAlias0.master=:param1 )
+[2015-06-22 18:11:32,726]DEBUG621391[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
+[2015-06-22 18:11:32,726]DEBUG621391[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
+[2015-06-22 18:11:32,727]DEBUG621392[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Branch.builds#1], was: [com.test.domain.Branch.builds#1] (uninitialized)
+[2015-06-22 18:11:32,727]DEBUG621392[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Build.environments#1], was: [com.test.domain.Build.environments#1] (uninitialized)
+[2015-06-22 18:11:32,728]DEBUG621393[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects
+[2015-06-22 18:11:32,728]DEBUG621393[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
+[2015-06-22 18:11:32,728]DEBUG621393[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:32,728]DEBUG621393[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Branch{builds=<uninitialized>, name=main, id=1}
+[2015-06-22 18:11:32,728]DEBUG621393[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Build{environments=<uninitialized>, id=1, branch=com.test.domain.Branch#1, buildNumber=5075695}
+[2015-06-22 18:11:32,729]DEBUG621394[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        environmen0_.id as id1_3_,
+        environmen0_.datanodes as datanode2_3_,
+        environmen0_.haEnabled as haEnable3_3_,
+        environmen0_.master as master4_3_,
+        environmen0_.name as name5_3_,
+        environmen0_.productName as productN6_3_ 
+    from
+        Environment environmen0_ 
+    where
+        environmen0_.name=? 
+        and environmen0_.master=?
+[2015-06-22 18:11:32,730]DEBUG621395[http-bio-8080-exec-4] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-06-22 18:11:32,730]DEBUG621395[http-bio-8080-exec-4] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Environment#3]
+[2015-06-22 18:11:32,730]DEBUG621395[http-bio-8080-exec-4] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Environment#3]
+[2015-06-22 18:11:32,730]DEBUG621395[http-bio-8080-exec-4] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Environment#3]
+[2015-06-22 18:11:32,733]DEBUG621398[http-bio-8080-exec-4] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Environment.builds#3]
+[2015-06-22 18:11:32,734]DEBUG621399[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        builds0_.environments_id as environm1_3_0_,
+        builds0_.builds_id as builds_i2_4_0_,
+        build1_.id as id1_1_1_,
+        build1_.branch_id as branch_i3_1_1_,
+        build1_.buildNumber as buildNum2_1_1_,
+        branch2_.id as id1_0_2_,
+        branch2_.name as name2_0_2_ 
+    from
+        Environment_Build builds0_ 
+    inner join
+        Build build1_ 
+            on builds0_.builds_id=build1_.id 
+    left outer join
+        Branch branch2_ 
+            on build1_.branch_id=branch2_.id 
+    where
+        builds0_.environments_id=?
+[2015-06-22 18:11:32,734]DEBUG621399[http-bio-8080-exec-4] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Environment.builds#3]
+[2015-06-22 18:11:32,735]DEBUG621400[http-bio-8080-exec-4] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-06-22 18:11:32,735]DEBUG621400[http-bio-8080-exec-4] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Environment.builds#3]
+[2015-06-22 18:11:32,735]DEBUG621400[http-bio-8080-exec-4] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Environment.builds
+[2015-06-22 18:11:32,735]DEBUG621400[http-bio-8080-exec-4] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Environment.builds#3]
+[2015-06-22 18:11:32,736]DEBUG621401[http-bio-8080-exec-4] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Environment.builds
+[2015-06-22 18:11:32,736]DEBUG621401[http-bio-8080-exec-4] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-06-22 18:11:32,736]DEBUG621401[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
+[2015-06-22 18:11:32,736]DEBUG621401[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@5ddc3b93]
+[2015-06-22 18:11:32,737]DEBUG621402[http-bio-8080-exec-4] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
+[2015-06-22 18:11:32,737]DEBUG621402[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
+[2015-06-22 18:11:32,737]DEBUG621402[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
+[2015-06-22 18:11:32,738]DEBUG621403[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Branch.builds#1], was: [com.test.domain.Branch.builds#1] (uninitialized)
+[2015-06-22 18:11:32,738]DEBUG621403[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Build.environments#1], was: [com.test.domain.Build.environments#1] (uninitialized)
+[2015-06-22 18:11:32,738]DEBUG621403[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Environment.builds#3], was: [com.test.domain.Environment.builds#3] (initialized)
+[2015-06-22 18:11:32,738]DEBUG621403[http-bio-8080-exec-4] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Environment.env_TestCase_TestResults#3], was: [com.test.domain.Environment.env_TestCase_TestResults#3] (uninitialized)
+[2015-06-22 18:11:32,739]DEBUG621404[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 3 objects
+[2015-06-22 18:11:32,739]DEBUG621404[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 4 collections
+[2015-06-22 18:11:32,739]DEBUG621404[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:32,739]DEBUG621404[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Environment{builds=[com.test.domain.Build#1], name=singleSlice_with_5k_objects3, id=3, productName=vRops6.1, datanodes=null, env_TestCase_TestResults=<uninitialized>, haEnabled=false, master=10.143.121.103}
+[2015-06-22 18:11:32,739]DEBUG621404[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Branch{builds=<uninitialized>, name=main, id=1}
+[2015-06-22 18:11:32,739]DEBUG621404[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Build{environments=<uninitialized>, id=1, branch=com.test.domain.Branch#1, buildNumber=5075695}
+[2015-06-22 18:11:32,741]DEBUG621406[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
+[2015-06-22 18:11:32,741]DEBUG621406[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
+[2015-06-22 18:11:32,741]DEBUG621406[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@5ddc3b93] after transaction
+[2015-06-22 18:11:32,742]DEBUG621407[http-bio-8080-exec-4] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-06-22 18:11:32,742]DEBUG621407[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
+[2015-06-22 18:11:32,742]DEBUG621407[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
+[2015-06-22 18:11:32,742]DEBUG621407[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.TestResultServiceImpl.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2015-06-22 18:11:32,742]DEBUG621407[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6dca2d03] for JPA transaction
+[2015-06-22 18:11:32,743]DEBUG621408[http-bio-8080-exec-4] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
+[2015-06-22 18:11:32,743]DEBUG621408[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
+[2015-06-22 18:11:32,743]DEBUG621408[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
+[2015-06-22 18:11:32,743]DEBUG621408[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
+[2015-06-22 18:11:32,744]DEBUG621409[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
+[2015-06-22 18:11:32,744]DEBUG621409[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@6dca2d03] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@39f5a3b4] does not support JDBC Connection retrieval
+[2015-06-22 18:11:32,744]DEBUG621409[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6dca2d03] for JPA transaction
+[2015-06-22 18:11:32,744]DEBUG621409[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
+[2015-06-22 18:11:32,745]DEBUG621410[http-bio-8080-exec-4] - org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:196) - Executing identity-insert immediately
+[2015-06-22 18:11:32,745]DEBUG621410[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     insert 
     into
         TestResult
         (endTime, result, startTime, testType) 
     values
         (?, ?, ?, ?)
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.hibernate.id.IdentifierGeneratorHelper.getGeneratedIdentity(IdentifierGeneratorHelper.java:94) - Natively generated identity: 3
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
-[2015-06-19 20:06:12,207]DEBUG815117[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@4fd0240]
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
-[2015-06-19 20:06:12,217]DEBUG815127[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestResult{result=SUCCESS, testType=API, startTime=Fri Jun 19 20:04:57 AMT 2015, id=3, endTime=Fri Jun 19 20:06:07 AMT 2015, env_TestCase_TestResults=null}
-[2015-06-19 20:06:12,257]DEBUG815167[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
-[2015-06-19 20:06:12,257]DEBUG815167[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
-[2015-06-19 20:06:12,257]DEBUG815167[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@4fd0240] after transaction
-[2015-06-19 20:06:12,257]DEBUG815167[http-bio-8080-exec-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-19 20:06:12,257]DEBUG815167[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
-[2015-06-19 20:06:12,257]DEBUG815167[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.Env_TestCase_TestResultServiceImpl.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@28668ab1] for JPA transaction
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@28668ab1] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@34294c72] does not support JDBC Connection retrieval
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@28668ab1] for JPA transaction
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:196) - Executing identity-insert immediately
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-06-22 18:11:32,746]DEBUG621411[http-bio-8080-exec-4] - org.hibernate.id.IdentifierGeneratorHelper.getGeneratedIdentity(IdentifierGeneratorHelper.java:94) - Natively generated identity: 30
+[2015-06-22 18:11:32,747]DEBUG621412[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
+[2015-06-22 18:11:32,747]DEBUG621412[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6dca2d03]
+[2015-06-22 18:11:32,747]DEBUG621412[http-bio-8080-exec-4] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
+[2015-06-22 18:11:32,747]DEBUG621412[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
+[2015-06-22 18:11:32,748]DEBUG621413[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
+[2015-06-22 18:11:32,748]DEBUG621413[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+[2015-06-22 18:11:32,748]DEBUG621413[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2015-06-22 18:11:32,748]DEBUG621413[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:32,748]DEBUG621413[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.TestResult{result=SUCCESS, testType=API, startTime=Mon Jun 22 18:11:05 AMT 2015, id=30, endTime=Mon Jun 22 18:11:32 AMT 2015, env_TestCase_TestResults=null}
+[2015-06-22 18:11:32,809]DEBUG621474[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
+[2015-06-22 18:11:32,809]DEBUG621474[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
+[2015-06-22 18:11:32,810]DEBUG621475[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6dca2d03] after transaction
+[2015-06-22 18:11:32,810]DEBUG621475[http-bio-8080-exec-4] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-06-22 18:11:32,810]DEBUG621475[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
+[2015-06-22 18:11:32,810]DEBUG621475[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
+[2015-06-22 18:11:32,811]DEBUG621476[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.Env_TestCase_TestResultServiceImpl.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2015-06-22 18:11:32,811]DEBUG621476[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6c1fd396] for JPA transaction
+[2015-06-22 18:11:32,811]DEBUG621476[http-bio-8080-exec-4] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
+[2015-06-22 18:11:32,811]DEBUG621476[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
+[2015-06-22 18:11:32,812]DEBUG621477[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
+[2015-06-22 18:11:32,812]DEBUG621477[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
+[2015-06-22 18:11:32,812]DEBUG621477[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
+[2015-06-22 18:11:32,812]DEBUG621477[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@6c1fd396] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@39f5a3b4] does not support JDBC Connection retrieval
+[2015-06-22 18:11:32,812]DEBUG621477[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6c1fd396] for JPA transaction
+[2015-06-22 18:11:32,813]DEBUG621478[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
+[2015-06-22 18:11:32,813]DEBUG621478[http-bio-8080-exec-4] - org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:196) - Executing identity-insert immediately
+[2015-06-22 18:11:32,813]DEBUG621478[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     insert 
     into
         Env_TestCase_TestResult
         (environment_id, testCase_id, testResult_id) 
     values
         (?, ?, ?)
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.hibernate.id.IdentifierGeneratorHelper.getGeneratedIdentity(IdentifierGeneratorHelper.java:94) - Natively generated identity: 3
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
-[2015-06-19 20:06:14,061]DEBUG816971[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@28668ab1]
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
-[2015-06-19 20:06:14,062]DEBUG816972[http-bio-8080-exec-1] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Env_TestCase_TestResult{environment=com.test.domain.Environment#1, id=3, testResult=com.test.domain.TestResult#3, testCase=com.test.domain.TestCase#1}
-[2015-06-19 20:06:14,092]DEBUG817002[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
-[2015-06-19 20:06:14,092]DEBUG817002[http-bio-8080-exec-1] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
-[2015-06-19 20:06:14,092]DEBUG817002[http-bio-8080-exec-1] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@28668ab1] after transaction
-[2015-06-19 20:06:14,092]DEBUG817002[http-bio-8080-exec-1] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-19 20:06:14,092]DEBUG817002[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
-[2015-06-19 20:06:14,102]DEBUG817012[http-bio-8080-exec-1] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
-[2015-06-19 20:06:14,762]DEBUG817672[http-bio-8080-exec-1] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:163) - Written [Env_TestCase_TestResult [environment=singleSlice_with_5k_objects, testCase=loadDefaultRecommendationsPage, testResult=SUCCESS]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.StringHttpMessageConverter@17726930]
-[2015-06-19 20:06:14,762]DEBUG817672[http-bio-8080-exec-1] - org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034) - Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
-[2015-06-19 20:06:14,762]DEBUG817672[http-bio-8080-exec-1] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
-[2015-06-19 20:06:24,291]DEBUG827201[http-bio-8080-exec-2] - org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:861) - DispatcherServlet with name 'dispatcherServlet' processing POST request for [/performance-reporting/rest/runData]
-[2015-06-19 20:06:24,291]DEBUG827201[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:294) - Looking up handler method for path /rest/runData
-[2015-06-19 20:06:24,291]DEBUG827201[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:299) - Returning handler method [public java.lang.String com.test.controller.TestResultRestController.showRunData(com.test.domain.Run)]
-[2015-06-19 20:06:24,291]DEBUG827201[http-bio-8080-exec-2] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'testResultRestController'
-[2015-06-19 20:06:24,291]DEBUG827201[http-bio-8080-exec-2] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:143) - Reading [class com.test.domain.Run] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@3f8967cd]
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.RunServiceImpl.addEndTimeToExistingRun]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@3d095682] for JPA transaction
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@3d095682] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@34294c72] does not support JDBC Connection retrieval
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Run as generatedAlias0 where generatedAlias0.buildNumber=:param0
-[2015-06-19 20:06:24,301]DEBUG827211[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-06-22 18:11:32,814]DEBUG621479[http-bio-8080-exec-4] - org.hibernate.id.IdentifierGeneratorHelper.getGeneratedIdentity(IdentifierGeneratorHelper.java:94) - Natively generated identity: 30
+[2015-06-22 18:11:32,815]DEBUG621480[http-bio-8080-exec-4] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
+[2015-06-22 18:11:32,815]DEBUG621480[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6c1fd396]
+[2015-06-22 18:11:32,815]DEBUG621480[http-bio-8080-exec-4] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
+[2015-06-22 18:11:32,815]DEBUG621480[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
+[2015-06-22 18:11:32,816]DEBUG621481[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
+[2015-06-22 18:11:32,816]DEBUG621481[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+[2015-06-22 18:11:32,816]DEBUG621481[http-bio-8080-exec-4] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+[2015-06-22 18:11:32,816]DEBUG621481[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:32,816]DEBUG621481[http-bio-8080-exec-4] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Env_TestCase_TestResult{environment=com.test.domain.Environment#3, id=30, testResult=com.test.domain.TestResult#30, testCase=com.test.domain.TestCase#6}
+[2015-06-22 18:11:32,884]DEBUG621549[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
+[2015-06-22 18:11:32,884]DEBUG621549[http-bio-8080-exec-4] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
+[2015-06-22 18:11:32,884]DEBUG621549[http-bio-8080-exec-4] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@6c1fd396] after transaction
+[2015-06-22 18:11:32,884]DEBUG621549[http-bio-8080-exec-4] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-06-22 18:11:32,885]DEBUG621550[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
+[2015-06-22 18:11:32,885]DEBUG621550[http-bio-8080-exec-4] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
+[2015-06-22 18:11:32,886]DEBUG621551[http-bio-8080-exec-4] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:163) - Written [Env_TestCase_TestResult [environment=singleSlice_with_5k_objects3, testCase=skittlesMapTest, testResult=SUCCESS]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.StringHttpMessageConverter@6a1303bb]
+[2015-06-22 18:11:32,886]DEBUG621551[http-bio-8080-exec-4] - org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034) - Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+[2015-06-22 18:11:32,886]DEBUG621551[http-bio-8080-exec-4] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
+[2015-06-22 18:11:42,484]DEBUG631149[http-bio-8080-exec-8] - org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:861) - DispatcherServlet with name 'dispatcherServlet' processing POST request for [/performance-reporting/rest/runData]
+[2015-06-22 18:11:42,485]DEBUG631150[http-bio-8080-exec-8] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:294) - Looking up handler method for path /rest/runData
+[2015-06-22 18:11:42,485]DEBUG631150[http-bio-8080-exec-8] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:299) - Returning handler method [public java.lang.String com.test.controller.TestResultRestController.showRunData(com.test.domain.Run)]
+[2015-06-22 18:11:42,485]DEBUG631150[http-bio-8080-exec-8] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'testResultRestController'
+[2015-06-22 18:11:42,486]DEBUG631151[http-bio-8080-exec-8] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:143) - Reading [class com.test.domain.Run] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@722b18c2]
+[2015-06-22 18:11:42,487]DEBUG631152[http-bio-8080-exec-8] - org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource.getTransactionAttribute(AbstractFallbackTransactionAttributeSource.java:108) - Adding transactional method 'RunServiceImpl.addEndTimeToExistingRun' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2015-06-22 18:11:42,487]DEBUG631152[http-bio-8080-exec-8] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.RunServiceImpl.addEndTimeToExistingRun]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2015-06-22 18:11:42,487]DEBUG631152[http-bio-8080-exec-8] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:371) - Opened new EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@7e700a31] for JPA transaction
+[2015-06-22 18:11:42,487]DEBUG631152[http-bio-8080-exec-8] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
+[2015-06-22 18:11:42,488]DEBUG631153[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
+[2015-06-22 18:11:42,488]DEBUG631153[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
+[2015-06-22 18:11:42,488]DEBUG631153[http-bio-8080-exec-8] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
+[2015-06-22 18:11:42,488]DEBUG631153[http-bio-8080-exec-8] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
+[2015-06-22 18:11:42,488]DEBUG631153[http-bio-8080-exec-8] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@7e700a31] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@39f5a3b4] does not support JDBC Connection retrieval
+[2015-06-22 18:11:42,489]DEBUG631154[http-bio-8080-exec-8] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Run as generatedAlias0 where generatedAlias0.buildNumber=:param0
+[2015-06-22 18:11:42,489]DEBUG631154[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run0_.id as id1_5_,
         run0_.buildNumber as buildNum2_5_,
@@ -108,12 +249,54 @@
         Run run0_ 
     where
         run0_.buildNumber=?
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#1]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#1]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#1]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#1]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-06-22 18:11:42,490]DEBUG631155[http-bio-8080-exec-8] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-06-22 18:11:42,490]DEBUG631155[http-bio-8080-exec-8] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#7]
+[2015-06-22 18:11:42,491]DEBUG631156[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#7]
+[2015-06-22 18:11:42,491]DEBUG631156[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        run0_.id as id1_5_0_,
+        run0_.buildNumber as buildNum2_5_0_,
+        run0_.endTime as endTime3_5_0_,
+        run0_.parent_id as parent_i6_5_0_,
+        run0_.startTime as startTim4_5_0_,
+        run0_.tag as tag5_5_0_,
+        children1_.parent_id as parent_i6_5_1_,
+        children1_.id as id1_5_1_,
+        children1_.id as id1_5_2_,
+        children1_.buildNumber as buildNum2_5_2_,
+        children1_.endTime as endTime3_5_2_,
+        children1_.parent_id as parent_i6_5_2_,
+        children1_.startTime as startTim4_5_2_,
+        children1_.tag as tag5_5_2_ 
+    from
+        Run run0_ 
+    left outer join
+        Run children1_ 
+            on run0_.id=children1_.parent_id 
+    where
+        run0_.id=?
+[2015-06-22 18:11:42,492]DEBUG631157[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-06-22 18:11:42,492]DEBUG631157[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[2015-06-22 18:11:42,493]DEBUG631158[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.children#4]
+[2015-06-22 18:11:42,493]DEBUG631158[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-06-22 18:11:42,493]DEBUG631158[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[2015-06-22 18:11:42,494]DEBUG631159[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.children#4]
+[2015-06-22 18:11:42,494]DEBUG631159[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
+[2015-06-22 18:11:42,494]DEBUG631159[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[2015-06-22 18:11:42,495]DEBUG631160[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.children#4]
+[2015-06-22 18:11:42,495]DEBUG631160[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#4]
+[2015-06-22 18:11:42,495]DEBUG631160[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#4]
+[2015-06-22 18:11:42,496]DEBUG631161[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#5]
+[2015-06-22 18:11:42,496]DEBUG631161[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#5]
+[2015-06-22 18:11:42,496]DEBUG631161[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#6]
+[2015-06-22 18:11:42,496]DEBUG631161[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#6]
+[2015-06-22 18:11:42,497]DEBUG631162[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,497]DEBUG631162[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#4]
+[2015-06-22 18:11:42,497]DEBUG631162[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,498]DEBUG631163[http-bio-8080-exec-8] - org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:208) - Done entity load : com.test.domain.Run#4
+[2015-06-22 18:11:42,498]DEBUG631163[http-bio-8080-exec-8] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#7]
+[2015-06-22 18:11:42,499]DEBUG631164[http-bio-8080-exec-8] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#6]
+[2015-06-22 18:11:42,499]DEBUG631164[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         children0_.parent_id as parent_i6_5_0_,
         children0_.id as id1_5_0_,
@@ -127,23 +310,72 @@
         Run children0_ 
     where
         children0_.parent_id=?
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#1]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#1]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@3d095682]
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#1], was: [com.test.domain.Run.children#1] (initialized)
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#1], was: [com.test.domain.Run.testSuites#1] (uninitialized)
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 1 updates, 0 deletions to 1 objects
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 2 collections
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=null, children=[], testSuites=<uninitialized>, startTime=2015-06-19 18:16:05.0, id=1, endTime=Fri Jun 19 20:06:24 AMT 2015, tag=FirstTag, buildNumber=run111}
-[2015-06-19 20:06:24,302]DEBUG827212[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-06-22 18:11:42,500]DEBUG631165[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#6]
+[2015-06-22 18:11:42,500]DEBUG631165[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,500]DEBUG631165[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#6]
+[2015-06-22 18:11:42,500]DEBUG631165[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,501]DEBUG631166[http-bio-8080-exec-8] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-06-22 18:11:42,501]DEBUG631166[http-bio-8080-exec-8] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#5]
+[2015-06-22 18:11:42,501]DEBUG631166[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i6_5_0_,
+        children0_.id as id1_5_0_,
+        children0_.id as id1_5_1_,
+        children0_.buildNumber as buildNum2_5_1_,
+        children0_.endTime as endTime3_5_1_,
+        children0_.parent_id as parent_i6_5_1_,
+        children0_.startTime as startTim4_5_1_,
+        children0_.tag as tag5_5_1_ 
+    from
+        Run children0_ 
+    where
+        children0_.parent_id=?
+[2015-06-22 18:11:42,502]DEBUG631167[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#5]
+[2015-06-22 18:11:42,502]DEBUG631167[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,503]DEBUG631168[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#5]
+[2015-06-22 18:11:42,503]DEBUG631168[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,503]DEBUG631168[http-bio-8080-exec-8] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-06-22 18:11:42,504]DEBUG631169[http-bio-8080-exec-8] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#7]
+[2015-06-22 18:11:42,504]DEBUG631169[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i6_5_0_,
+        children0_.id as id1_5_0_,
+        children0_.id as id1_5_1_,
+        children0_.buildNumber as buildNum2_5_1_,
+        children0_.endTime as endTime3_5_1_,
+        children0_.parent_id as parent_i6_5_1_,
+        children0_.startTime as startTim4_5_1_,
+        children0_.tag as tag5_5_1_ 
+    from
+        Run children0_ 
+    where
+        children0_.parent_id=?
+[2015-06-22 18:11:42,505]DEBUG631170[http-bio-8080-exec-8] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#7]
+[2015-06-22 18:11:42,505]DEBUG631170[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,505]DEBUG631170[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#7]
+[2015-06-22 18:11:42,506]DEBUG631171[http-bio-8080-exec-8] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-06-22 18:11:42,506]DEBUG631171[http-bio-8080-exec-8] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-06-22 18:11:42,506]DEBUG631171[http-bio-8080-exec-8] - org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:755) - Initiating transaction commit
+[2015-06-22 18:11:42,507]DEBUG631172[http-bio-8080-exec-8] - org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:512) - Committing JPA transaction on EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@7e700a31]
+[2015-06-22 18:11:42,507]DEBUG631172[http-bio-8080-exec-8] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:175) - committing
+[2015-06-22 18:11:42,507]DEBUG631172[http-bio-8080-exec-8] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:149) - Processing flush-time cascades
+[2015-06-22 18:11:42,507]DEBUG631172[http-bio-8080-exec-8] - org.hibernate.event.internal.AbstractFlushingEventListener.prepareCollectionFlushes(AbstractFlushingEventListener.java:189) - Dirty checking collections
+[2015-06-22 18:11:42,509]DEBUG631174[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#7], was: [com.test.domain.Run.children#7] (initialized)
+[2015-06-22 18:11:42,509]DEBUG631174[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#7], was: [com.test.domain.Run.testSuites#7] (uninitialized)
+[2015-06-22 18:11:42,509]DEBUG631174[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#4], was: [com.test.domain.Run.children#4] (initialized)
+[2015-06-22 18:11:42,509]DEBUG631174[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#4], was: [com.test.domain.Run.testSuites#4] (uninitialized)
+[2015-06-22 18:11:42,510]DEBUG631175[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#5], was: [com.test.domain.Run.children#5] (initialized)
+[2015-06-22 18:11:42,510]DEBUG631175[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#5], was: [com.test.domain.Run.testSuites#5] (uninitialized)
+[2015-06-22 18:11:42,510]DEBUG631175[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:194) - Collection found: [com.test.domain.Run.children#6], was: [com.test.domain.Run.children#6] (initialized)
+[2015-06-22 18:11:42,510]DEBUG631175[http-bio-8080-exec-8] - org.hibernate.engine.internal.Collections.processReachableCollection(Collections.java:201) - Collection found: [com.test.domain.Run.testSuites#6], was: [com.test.domain.Run.testSuites#6] (uninitialized)
+[2015-06-22 18:11:42,511]DEBUG631176[http-bio-8080-exec-8] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:123) - Flushed: 0 insertions, 1 updates, 0 deletions to 4 objects
+[2015-06-22 18:11:42,511]DEBUG631176[http-bio-8080-exec-8] - org.hibernate.event.internal.AbstractFlushingEventListener.logFlushResults(AbstractFlushingEventListener.java:130) - Flushed: 0 (re)creations, 0 updates, 0 removals to 8 collections
+[2015-06-22 18:11:42,511]DEBUG631176[http-bio-8080-exec-8] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:114) - Listing entities:
+[2015-06-22 18:11:42,511]DEBUG631176[http-bio-8080-exec-8] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=null, children=[com.test.domain.Run#5, com.test.domain.Run#6, com.test.domain.Run#7], testSuites=<uninitialized>, startTime=null, id=4, endTime=null, tag=null, buildNumber=run100}
+[2015-06-22 18:11:42,511]DEBUG631176[http-bio-8080-exec-8] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#4, children=[], testSuites=<uninitialized>, startTime=2015-06-22 16:55:53.0, id=5, endTime=2015-06-22 17:00:36.0, tag=FirstTag, buildNumber=run101}
+[2015-06-22 18:11:42,512]DEBUG631177[http-bio-8080-exec-8] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#4, children=[], testSuites=<uninitialized>, startTime=2015-06-22 17:08:37.0, id=6, endTime=2015-06-22 17:13:10.0, tag=FirstTag, buildNumber=run102}
+[2015-06-22 18:11:42,512]DEBUG631177[http-bio-8080-exec-8] - org.hibernate.internal.util.EntityPrinter.toString(EntityPrinter.java:121) - com.test.domain.Run{parent=com.test.domain.Run#4, children=[], testSuites=<uninitialized>, startTime=2015-06-22 18:07:16.0, id=7, endTime=Mon Jun 22 18:11:42 AMT 2015, tag=FirstTag, buildNumber=run103}
+[2015-06-22 18:11:42,512]DEBUG631177[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     update
         Run 
     set
@@ -154,13 +386,13 @@
         tag=? 
     where
         id=?
-[2015-06-19 20:06:24,343]DEBUG827253[http-bio-8080-exec-2] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
-[2015-06-19 20:06:24,343]DEBUG827253[http-bio-8080-exec-2] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
-[2015-06-19 20:06:24,343]DEBUG827253[http-bio-8080-exec-2] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@3d095682] after transaction
-[2015-06-19 20:06:24,343]DEBUG827253[http-bio-8080-exec-2] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
-[2015-06-19 20:06:24,343]DEBUG827253[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.close(JdbcCoordinatorImpl.java:201) - HHH000420: Closing un-released batch
-[2015-06-19 20:06:24,353]DEBUG827263[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
-[2015-06-19 20:06:24,353]DEBUG827263[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
-[2015-06-19 20:06:28,622]DEBUG831532[http-bio-8080-exec-2] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:163) - Written [Run [id=1, buildNumber=run111, tag=FirstTag, children=[], parent=null, startTime=2015-06-19 18:16:05.0, endTime=Fri Jun 19 20:06:24 AMT 2015]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.StringHttpMessageConverter@17726930]
-[2015-06-19 20:06:28,622]DEBUG831532[http-bio-8080-exec-2] - org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034) - Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
-[2015-06-19 20:06:28,622]DEBUG831532[http-bio-8080-exec-2] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
+[2015-06-22 18:11:42,551]DEBUG631216[http-bio-8080-exec-8] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) - committed JDBC Connection
+[2015-06-22 18:11:42,551]DEBUG631216[http-bio-8080-exec-8] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) - re-enabling autocommit
+[2015-06-22 18:11:42,552]DEBUG631217[http-bio-8080-exec-8] - org.springframework.orm.jpa.JpaTransactionManager.doCleanupAfterCompletion(JpaTransactionManager.java:600) - Closing JPA EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@7e700a31] after transaction
+[2015-06-22 18:11:42,552]DEBUG631217[http-bio-8080-exec-8] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-06-22 18:11:42,552]DEBUG631217[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.close(JdbcCoordinatorImpl.java:201) - HHH000420: Closing un-released batch
+[2015-06-22 18:11:42,552]DEBUG631217[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
+[2015-06-22 18:11:42,552]DEBUG631217[http-bio-8080-exec-8] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
+[2015-06-22 18:11:42,553]DEBUG631218[http-bio-8080-exec-8] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:163) - Written [Run [id=null, buildNumber=run103, tag=FirstTag, children=null, parent=Run [id=null, buildNumber=run100, tag=null, children=null, parent=null, startTime=null, endTime=null], startTime=Mon Jun 22 18:07:15 AMT 2015, endTime=Mon Jun 22 18:11:42 AMT 2015]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.StringHttpMessageConverter@6a1303bb]
+[2015-06-22 18:11:42,553]DEBUG631218[http-bio-8080-exec-8] - org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034) - Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+[2015-06-22 18:11:42,553]DEBUG631218[http-bio-8080-exec-8] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request

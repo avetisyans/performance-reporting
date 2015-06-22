@@ -71,7 +71,7 @@ public class TestSuiteServiceImpl implements TestSuiteService {
 	public TestSuite saveToItsRun(TestSuite testSuite) {
 		//TestSuite testSuiteFromDB = testSuiteDao.findByName(testSuite.getName());
 		Run runFromTestSuite = testSuite.getRuns().get(0);
-		Run savedRun = runService.saveToDB(runFromTestSuite);
+		Run savedRun = runService.saveToItsParent(runFromTestSuite);
 		
 		
 		
