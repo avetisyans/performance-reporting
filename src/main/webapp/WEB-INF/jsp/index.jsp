@@ -2,11 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
+Test Results:
+<br />
 <table class="table table-bordered table-hover table-striped">
 	<thead>
 		<tr>
 			<th>Start Time</th>
 			<th>End Time</th>
+			<th>Duration</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,6 +17,30 @@
 			<tr>
 				<td><c:out value="${result.startTime}" /></td>
 				<td><c:out value="${result.endTime}" /></td>
+				<td><c:out value="${result.duration}" /></td>
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
+<hr />
+<hr />
+Runs:
+<br />
+<table class="table table-bordered table-hover table-striped">
+	<thead>
+		<tr>
+			<th>Start Time</th>
+			<th>End Time</th>
+			<th>Duration</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach items="${runs}" var="run">
+			<tr>
+				<td><c:out value="${run.startTime}" /></td>
+				<td><c:out value="${run.endTime}" /></td>
+				<td><c:out value="${run.duration}" /></td>
 			</tr>
 		</c:forEach>
 	</tbody>

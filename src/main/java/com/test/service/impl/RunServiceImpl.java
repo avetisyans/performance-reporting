@@ -1,5 +1,7 @@
 package com.test.service.impl;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +59,11 @@ public class RunServiceImpl implements RunService {
 		}
 		
 		return null;
+	}
+
+	@Override
+	public List<Run> findAll() {
+		return runDao.findAll();
 	}
 
 }

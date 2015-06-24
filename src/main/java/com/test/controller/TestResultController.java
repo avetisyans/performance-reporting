@@ -1,8 +1,5 @@
 package com.test.controller;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +11,6 @@ import com.test.domain.Environment;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
-import com.test.domain.TestResult.TestType;
 import com.test.service.Env_TestCase_TestResultService;
 import com.test.service.EnvironmentService;
 import com.test.service.TestCaseService;
@@ -88,9 +84,9 @@ public class TestResultController {
 		TestResult testResult1 = new TestResult();
 		//testResult1.setName("Test Result 1 From Controller");
 		//testResult1.setResult("Success");
-		testResult1.setStartTime(new Timestamp(new Date().getTime()));
-		testResult1.setEndTime(new Timestamp(new Date().getTime()));
-		testResult1.setTestType(TestType.API);
+		//testResult1.setStartTime(new Timestamp(new Date().getTime()));
+		//testResult1.setEndTime(new Timestamp(new Date().getTime()));
+	//	testResult1.setTestType(TestType.API);
 		//testResultService.save(testResult1);
 		
 		// Link Env, TestResult and TestCase

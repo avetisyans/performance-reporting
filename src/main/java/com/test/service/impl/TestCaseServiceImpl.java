@@ -1,6 +1,5 @@
 package com.test.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -13,7 +12,6 @@ import com.test.dao.TestCaseDao;
 import com.test.dao.TestSuiteDao;
 import com.test.domain.Env_TestCase_TestResult;
 import com.test.domain.TestCase;
-import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
 import com.test.service.TestCaseService;
 import com.test.service.TestSuiteService;

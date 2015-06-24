@@ -23,9 +23,9 @@ import com.test.domain.Env_TestCase_TestResult;
 import com.test.domain.Environment;
 import com.test.domain.Run;
 import com.test.domain.TestCase;
+import com.test.domain.TestCase.TestType;
 import com.test.domain.TestResult;
 import com.test.domain.TestResult.Result;
-import com.test.domain.TestResult.TestType;
 import com.test.domain.TestSuite;
 
 @Service
@@ -66,7 +66,7 @@ public class InitDBService {
 		Run run1 = new Run();
 		run1.setBuildNumber("#111");
 		run1.setTag("tag of run1");
-		run1.setStartTime(new Date());
+		//run1.setStartTime(new Date());
 		List<TestSuite> testSuites = new ArrayList<TestSuite>();
 		testSuites.add(testSuite1);
 		run1.setTestSuites(testSuites);
@@ -75,11 +75,13 @@ public class InitDBService {
 		TestCase testCase1 = new TestCase();
 		testCase1.setName("testCase1");
 		testCase1.setTestSuite(testSuite1);
+		testCase1.setTestType(TestType.UI);
 		testCaseDao.save(testCase1);
 		
 		TestCase testCase2 = new TestCase();
 		testCase2.setName("testCase2");
 		testCase2.setTestSuite(testSuite1);
+		testCase2.setTestType(TestType.UI);
 		testCaseDao.save(testCase2);
 	/************************************************/
 	
@@ -87,16 +89,16 @@ public class InitDBService {
 	/************* Second Block ********************/
 		TestResult testResult1 = new TestResult();
 		testResult1.setResult(Result.SUCCESS);
-		testResult1.setTestType(TestType.API);
-		testResult1.setStartTime(new Date());
-		testResult1.setEndTime(new Date());
+
+	//	testResult1.setStartTime(new Date());
+	//	testResult1.setEndTime(new Date());
 		testResultDao.save(testResult1);
 		
 		TestResult testResult2 = new TestResult();
 		testResult2.setResult(Result.SKIPPED);
-		testResult2.setTestType(TestType.API);
-		testResult2.setStartTime(new Date());
-		testResult2.setEndTime(new Date());
+
+	//	testResult2.setStartTime(new Date());
+	//	testResult2.setEndTime(new Date());
 		testResultDao.save(testResult2);
 	/***********************************************/
 
@@ -144,7 +146,7 @@ public class InitDBService {
 		Run run = new Run();
 		run.setBuildNumber("#1");
 		run.setTag("tag of run1");
-		run.setStartTime(new Date());
+		//run.setStartTime(new Date());
 		//List<TestSuite> testSuites = new ArrayList<TestSuite>();
 		//testSuites.add(testSuite1);
 		//run1.setTestSuites(testSuites);

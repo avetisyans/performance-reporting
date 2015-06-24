@@ -1,6 +1,5 @@
 package com.test.domain;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,14 +8,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.PostLoad;
+import javax.persistence.PostUpdate;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class TestResult {
-	public static enum TestType {
-		API, UI
-	}
 	
 	public static enum Result {
 		NONE, SUCCESS, FAILURE, SKIPPED
@@ -28,22 +27,23 @@ public class TestResult {
 	
 	@Enumerated(EnumType.STRING)
 	private Result result;
-	
-	@Enumerated(EnumType.STRING)	
-	private TestType testType;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date startTime;
+	private Long startTime;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date endTime;
+	private Long endTime;
 	
 	@OneToMany(mappedBy="testResult")
 	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
 	
-	public Date getEndTime() {
-		return endTime;
-	};
+	@Transient
+	@JsonIgnore
+	private Long duration;
+	
+	@PostLoad
+	@PostUpdate
+	public void calculateDuration() {
+		this.duration = this.endTime - this.startTime;
+	}
 
 	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {
 		return env_TestCase_TestResults;
@@ -51,18 +51,6 @@ public class TestResult {
 
 	public Long getId() {
 		return id;
-	}
-
-	public Date getStartTime() {
-		return startTime;
-	}
-
-	public TestType getTestType() {
-		return testType;
-	}
-
-	public void setEndTime(Date endTime) {
-		this.endTime = endTime;
 	}
 
 	public void setEnv_TestCase_TestResults(List<Env_TestCase_TestResult> env_TestCase_TestResults) {
@@ -73,20 +61,35 @@ public class TestResult {
 		this.id = id;
 	}
 
-
-	public void setStartTime(Date startTime) {
-		this.startTime = startTime;
-	}
-
-	public void setTestType(TestType testType) {
-		this.testType = testType;
-	}
-
 	public Result getResult() {
 		return result;
 	}
 
 	public void setResult(Result result) {
 		this.result = result;
+	}
+
+	public Long getDuration() {
+		return duration;
+	}
+
+	public void setDuration(Long duration) {
+		this.duration = duration;
+	}
+
+	public Long getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Long startTime) {
+		this.startTime = startTime;
+	}
+
+	public Long getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Long endTime) {
+		this.endTime = endTime;
 	}
 }

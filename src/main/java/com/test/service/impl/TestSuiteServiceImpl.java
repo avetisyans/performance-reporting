@@ -40,7 +40,6 @@ public class TestSuiteServiceImpl implements TestSuiteService {
 
 	@Override
 	public TestSuite findByName(String name) {
-		System.out.println("aaaaaa_________finding________________++++++++++++++");
 		return testSuiteDao.findByName(name);
 	}
 
@@ -60,7 +59,6 @@ public class TestSuiteServiceImpl implements TestSuiteService {
 		TestSuite foundTestSuite = testSuiteDao.findByName(name);
 		
 		if (foundTestSuite == null) {
-			System.out.println("Saving Test Suite");
 			return testSuiteDao.save(testSuite);
 		}
 

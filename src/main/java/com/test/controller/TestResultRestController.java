@@ -29,37 +29,37 @@ import com.test.service.TestSuiteService;
 @RestController
 @RequestMapping("/rest")
 public class TestResultRestController {
-
+	
 	@Autowired
 	private Env_TestCase_TestResultService env_TestCase_TestResultService;
-
+	
 	@Autowired
 	private EnvironmentService environmentService;
-
+	
 	@Autowired
 	private RunService runService;
 	
 	@Autowired
 	private TestCaseService testCaseService;
-
+	
 	@Autowired
 	private TestResultService testResultService;
-
+	
 	@Autowired
 	private TestSuiteService testSuiteService;
-
+	
 	@Autowired
 	private Env_TestCase_TestResultDao env_TestCase_TestResultDao;
-
+	
 	@Autowired
 	private EnvironmentDao environmentDao;
-
+	
 	@Autowired
 	private TestCaseDao testCaseDao;
-
+	
 	@Autowired
 	private TestResultDao testResultDao;
-
+	
 	@Autowired
 	private TestSuiteDao testSuiteDao;
 	
