@@ -14,6 +14,7 @@ import javax.persistence.PostUpdate;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.test.util.DurationConverter;
 
 @Entity
 public class Run {
@@ -40,13 +41,14 @@ public class Run {
 	
 	@Transient
 	@JsonIgnore
-	private Long duration;
+	private String duration;
 	
 	@PostLoad
 	@PostUpdate
 	public void calculateDuration() {
 		if (this.endTime != null && this.startTime != null) {
-		this.duration = this.endTime - this.startTime;
+			long dur = this.endTime - this.startTime;
+			this.duration = DurationConverter.formatToString(dur);
 		}
 	}
 
@@ -58,9 +60,6 @@ public class Run {
 		return children;
 	}
 
-	public Long getDuration() {
-		return duration;
-	}
 
 	public Long getEndTime() {
 		return endTime;
@@ -94,9 +93,6 @@ public class Run {
 		this.children = children;
 	}
 
-	public void setDuration(Long duration) {
-		this.duration = duration;
-	}
 
 	public void setEndTime(Long endTime) {
 		this.endTime = endTime;
@@ -120,6 +116,14 @@ public class Run {
 
 	public void setTestSuites(List<TestSuite> testSuites) {
 		this.testSuites = testSuites;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
 	}
 	
 
