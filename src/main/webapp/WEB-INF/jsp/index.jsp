@@ -22,42 +22,33 @@
 	<div class="tab-content">
 		<c:forEach items="${testSuites}" var="testSuite">
 
-			<div role="tabpanel" class="tab-pane active" id="${testSuite.name }">
+			<div role="tabpanel" class="tab-pane" id="${testSuite.name }">
 				<table class="table table-bordered table-hover table-striped">
 					<thead>
 						<tr>
+							<th>&nbsp;</th>
 							<c:forEach items="${testSuite.testCases}" var="testCase">
-								<th><c:out value="${testCase.name}" /></th>
+								<th>${testCase.name }</th>
 							</c:forEach>
 						</tr>
 					</thead>
 					<tbody>
-						
-							<c:forEach items="${testSuite.runs }" var="run">
-							
-								<tr>
-								 <td>${run.buildNumber }</td>
-								</tr>
-							
-							</c:forEach>
-						
+						<c:forEach items="${testSuite.runs}" var="run">
+							<tr>
+								<td>${run.buildNumber }</td><%-- <c:forEach items="${run.testSuites }" var="testSuite1"><c:forEach items="${testSuite1.testCases}" var="testCase"><c:forEach items="${testCase.env_TestCase_TestResults}" var="env_result"><td>${env_result.testResult.duration }</td></c:forEach></c:forEach></c:forEach> --%>
+								
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
-				<c:forEach items="${testSuite.testCases}" var="testCase">
-
-				</c:forEach>
 			</div>
 
 		</c:forEach>
-
-		<div role="tabpanel" class="tab-pane" id="profile">...</div>
-		<div role="tabpanel" class="tab-pane" id="messages">...</div>
-		<div role="tabpanel" class="tab-pane" id="settings">...</div>
 	</div>
 
 </div>
 
-<%-- <hr />
+<%-- <hr />hr />
 Test Results:
 <br />
 <table class="table table-bordered table-hover table-striped">
@@ -86,14 +77,14 @@ Runs:
 <table class="table table-bordered table-hover table-striped">
 	<thead>
 		<tr>
-			<th>BuildNumber</th>
+		BuildNumberumber</th>
 			<th>Duration</th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach items="${runs}" var="run">
 			<tr>
-				<td><c:out value="${run.buildNumber}" /></td>
+				<td><c:out value="$buildNumberumber}" /></td>
 				<td><c:out value="${run.duration}" /></td>
 			</tr>
 		</c:forEach>
@@ -111,17 +102,17 @@ TestCase is:
 		<tr>
 			<th>Test Case Name</th>
 			<th>Result</th>
-			<th>Duration</th>
+		Durationation</th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach items="${testCase.env_TestCase_TestResults}" var="env_TestCase_TestResults">
 			<tr>
 				<td><c:out value="${testCase.name}" /></td>
-				<td><c:out value="${env_TestCase_TestResults.testResult.result}" /></td>
-				<td><c:out value="${env_TestCase_TestResults.testResult.duration}" /></td>
+				<td><c:out value="${env_TestCase_TestResults.testReresultesult}" /></td>
+				<td><c:out value="${env_TestCase_TestResults.testRedurationation}" /></td>
 			</tr>
 		</c:forEach>
 	</tbody>
-</table> --%>
+</t --%>
 
