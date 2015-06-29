@@ -1,5 +1,7 @@
 package com.test.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -128,6 +130,15 @@ public class TestResultRestController {
 		env_TestCase_TestResultService.save(env_TestCase_TestResult);
 		
 		return env_TestCase_TestResult.toString();
+	}
+	
+	@RequestMapping(value = "/run/{buildNumber}/testResults", method = RequestMethod.GET)
+	public List<TestResult> getTestResultsOfRun(String builNumber) {
+		
+		//List<TestResult> testResults = testResultDao.findByRun(builNumber);
+		
+		//return testResults;
+		return null;
 	}
 
 }
