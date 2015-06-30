@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dao.RunDao;
+import com.test.domain.Environment;
 import com.test.domain.Run;
+import com.test.service.EnvironmentService;
 import com.test.service.RunService;
 
 @Service("runService")
@@ -17,6 +19,9 @@ public class RunServiceImpl implements RunService {
 
 	@Autowired
 	private RunDao runDao;
+	
+	@Autowired
+	private EnvironmentService environmentService;
 	
 	@Override
 	public Run save(Run run) {
@@ -34,7 +39,11 @@ public class RunServiceImpl implements RunService {
 		
 		Run parentRun = run.getParent();
 		Run savedParent = saveParentToDB(parentRun);
+		
+		Environment envFromDB = environmentService.saveToItsBuild(run.getEnvironment());
+		
 		run.setParent(savedParent);
+		run.setEnvironment(envFromDB);
 		return runDao.save(run);
 	}
 			

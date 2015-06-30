@@ -14,7 +14,7 @@ public interface RunDao extends JpaRepository<Run, Long> {
 
 	Run findByBuildNumber(String buildNumber);
 
-	@Query("Select r FROM Run r INNER JOIN r.testSuites t WHERE t.id = :testSuiteId ")
-	List<Run> findByTestSuite(Long testSuiteId);
+/*	@Query("Select r FROM Run r INNER JOIN r.testSuites t WHERE t.id = :testSuiteId ")
+	List<Run> findByTestSuite(Long testSuiteId);*/
 	
 }

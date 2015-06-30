@@ -6,12 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.test.domain.Env_TestCase_TestResult;
+import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.Environment;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
-import com.test.service.Env_TestCase_TestResultService;
+import com.test.service.Run_TestCase_TestResultService;
 import com.test.service.EnvironmentService;
 import com.test.service.TestCaseService;
 import com.test.service.TestResultService;
@@ -22,7 +22,7 @@ import com.test.service.TestSuiteService;
 public class TestResultController {
 	
 	@Autowired
-	private Env_TestCase_TestResultService env_TestCase_TestResultService;
+	private Run_TestCase_TestResultService run_TestCase_TestResultService;
 	
 	@Autowired
 	private EnvironmentService environmentService;
@@ -91,11 +91,11 @@ public class TestResultController {
 		
 		// Link Env, TestResult and TestCase
 		
-		Env_TestCase_TestResult env_TestCase_TestResult = new Env_TestCase_TestResult();
-		env_TestCase_TestResult.setEnvironment(environment);
-		env_TestCase_TestResult.setTestCase(testCase1);
-		env_TestCase_TestResult.setTestResult(testResult1);
-		env_TestCase_TestResultService.save(env_TestCase_TestResult);
+		Run_TestCase_TestResult run_TestCase_TestResult = new Run_TestCase_TestResult();
+		//env_TestCase_TestResult.setEnvironment(environment);
+		run_TestCase_TestResult.setTestCase(testCase1);
+		run_TestCase_TestResult.setTestResult(testResult1);
+		run_TestCase_TestResultService.save(run_TestCase_TestResult);
 		
 		return "init";
 	}

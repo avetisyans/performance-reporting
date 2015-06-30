@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.test.dao.Env_TestCase_TestResultDao;
+import com.test.dao.Run_TestCase_TestResultDao;
 import com.test.dao.EnvironmentDao;
 import com.test.dao.TestCaseDao;
 import com.test.dao.TestResultDao;
 import com.test.dao.TestSuiteDao;
 import com.test.domain.Build;
-import com.test.domain.Env_TestCase_TestResult;
+import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.Environment;
 import com.test.domain.Run;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.service.BuildService;
-import com.test.service.Env_TestCase_TestResultService;
+import com.test.service.Run_TestCase_TestResultService;
 import com.test.service.EnvironmentService;
 import com.test.service.RunService;
 import com.test.service.TestCaseService;
@@ -33,7 +33,7 @@ import com.test.service.TestSuiteService;
 public class TestResultRestController {
 	
 	@Autowired
-	private Env_TestCase_TestResultService env_TestCase_TestResultService;
+	private Run_TestCase_TestResultService run_TestCase_TestResultService;
 	
 	@Autowired
 	private EnvironmentService environmentService;
@@ -51,7 +51,7 @@ public class TestResultRestController {
 	private TestSuiteService testSuiteService;
 	
 	@Autowired
-	private Env_TestCase_TestResultDao env_TestCase_TestResultDao;
+	private Run_TestCase_TestResultDao run_TestCase_TestResultDao;
 	
 	@Autowired
 	private EnvironmentDao environmentDao;
@@ -88,21 +88,21 @@ public class TestResultRestController {
 		return runData.toString();
 	}
 	
-	@RequestMapping(value = "/buildData", method = RequestMethod.POST)
+/*	@RequestMapping(value = "/buildData", method = RequestMethod.POST)
 	public String showBuildData(@RequestBody Build buildData) {
 		
 		System.out.println("buildData.getBuildNumber() is: " + buildData.getBuildNumber());
 		//Build buildDB = buildService.saveToItsBranch(build);
 		Build savedBuild = buildService.saveToItsBranch(buildData);
 		return savedBuild.toString();
-	}
+	}*/
 	
 	@RequestMapping(value = "/testData", method = RequestMethod.POST)
-	public String showResultJson(@RequestBody Env_TestCase_TestResult env_TestCase_TestResult) {
+	public String showResultJson(@RequestBody Run_TestCase_TestResult run_TestCase_TestResult) {
 
-		Environment environment = env_TestCase_TestResult.getEnvironment();
-		TestResult testResult = env_TestCase_TestResult.getTestResult();
-		TestCase testCase = env_TestCase_TestResult.getTestCase();
+		Run run = run_TestCase_TestResult.getRun();
+		TestResult testResult = run_TestCase_TestResult.getTestResult();
+		TestCase testCase = run_TestCase_TestResult.getTestCase();
 		
 		//List<Build> builds = environment.getBuilds();
 		
@@ -117,19 +117,21 @@ public class TestResultRestController {
 		//Run run = runs.get(0);
 		
 		TestCase testCaseDB = testCaseService.saveToItsTestSuite(testCase);	
-		Environment environmentDB = environmentService.saveToItsBuild(environment);
+//		Environment environmentDB = environmentService.saveToItsBuild(environment);
+		Run runDB = runService.saveToItsParent(run);
 		TestResult testResultDB = testResultService.save(testResult);
 		
 		//Environment environmentDB = environmentService.saveToDB(environment);
 		//testResultService.save(testResult);
 		
-		env_TestCase_TestResult.setEnvironment(environmentDB);
-		env_TestCase_TestResult.setTestResult(testResultDB);
-		env_TestCase_TestResult.setTestCase(testCaseDB);
+//		env_TestCase_TestResult.setEnvironment(environmentDB);
+		run_TestCase_TestResult.setRun(runDB);
+		run_TestCase_TestResult.setTestResult(testResultDB);
+		run_TestCase_TestResult.setTestCase(testCaseDB);
 		
-		env_TestCase_TestResultService.save(env_TestCase_TestResult);
+		run_TestCase_TestResultService.save(run_TestCase_TestResult);
 		
-		return env_TestCase_TestResult.toString();
+		return run_TestCase_TestResult.toString();
 	}
 	
 	@RequestMapping(value = "/run/{buildNumber}/testResults", method = RequestMethod.GET)

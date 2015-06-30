@@ -8,9 +8,9 @@ public interface EnvironmentService {
 
 	List<Environment> findAll();
 	
-	Environment save(Environment environment);
+/*	Environment save(Environment environment);
 
-	Environment saveToDB(Environment environment);
+	Environment saveToDB(Environment environment);*/
 
 	Environment saveToItsBuild(Environment environment);
 

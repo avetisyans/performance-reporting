@@ -6,9 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PostLoad;
 import javax.persistence.PostUpdate;
 import javax.persistence.Transient;
@@ -26,14 +26,20 @@ public class Run {
 	
 	private String tag;
 	
+	@OneToOne
+	private Environment environment;
+	
 	@OneToMany(mappedBy="parent", fetch=FetchType.EAGER)
 	private List<Run> children;
 	
 	@ManyToOne
 	private Run parent;
 	
-	@ManyToMany(mappedBy="runs")
-	private List<TestSuite> testSuites;
+	@OneToMany(mappedBy="run")
+	private List<Run_TestCase_TestResult> run_TestCase_TestResults;
+	
+/*	@ManyToMany(mappedBy="runs")
+	private List<TestSuite> testSuites;*/
 	
 	private Long startTime;
 	
@@ -81,9 +87,9 @@ public class Run {
 		return tag;
 	}
 
-	public List<TestSuite> getTestSuites() {
+/*	public List<TestSuite> getTestSuites() {
 		return testSuites;
-	}
+	}*/
 
 	public void setBuildNumber(String buildNumber) {
 		this.buildNumber = buildNumber;
@@ -114,9 +120,9 @@ public class Run {
 		this.tag = tag;
 	}
 
-	public void setTestSuites(List<TestSuite> testSuites) {
+/*	public void setTestSuites(List<TestSuite> testSuites) {
 		this.testSuites = testSuites;
-	}
+	}*/
 
 	public String getDuration() {
 		return duration;
@@ -124,6 +130,23 @@ public class Run {
 
 	public void setDuration(String duration) {
 		this.duration = duration;
+	}
+
+	public Environment getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(Environment environment) {
+		this.environment = environment;
+	}
+
+	public List<Run_TestCase_TestResult> getRun_TestCase_TestResults() {
+		return run_TestCase_TestResults;
+	}
+
+	public void setRun_TestCase_TestResults(
+			List<Run_TestCase_TestResult> run_TestCase_TestResults) {
+		this.run_TestCase_TestResults = run_TestCase_TestResults;
 	}
 	
 

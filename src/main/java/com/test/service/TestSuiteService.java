@@ -10,12 +10,8 @@ public interface TestSuiteService {
 	
 	TestSuite save(TestSuite testSuite);
 
-	TestSuite save(String name, TestSuite testSuite);
-
 	TestSuite findByName(String name);
 
-	TestSuite save(TestSuite testSuite, String name);
-
-	TestSuite saveToItsRun(TestSuite testSuite);
+	TestSuite saveToDB(TestSuite testSuite);
 	
 }

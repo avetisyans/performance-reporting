@@ -2,11 +2,9 @@ package com.test.domain;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -15,7 +13,7 @@ public class TestSuite {
 	@GeneratedValue
 	private Long id;
 	
-	@Column(unique=true)
+	//@Column(unique=true)
 	private String name;
 	
 /*	@ManyToMany(mappedBy="testClasses")
@@ -24,16 +22,16 @@ public class TestSuite {
 	@OneToMany(mappedBy="testSuite")
 	private List<TestCase> testCases;
 	
-	@ManyToMany
-	private List<Run> runs;
+/*	@ManyToMany
+	private List<Run> runs;*/
 
-	public List<Run> getRuns() {
+/*	public List<Run> getRuns() {
 		return runs;
 	}
 
 	public void setRuns(List<Run> runs) {
 		this.runs = runs;
-	}
+	}*/
 
 	public Long getId() {
 		return id;

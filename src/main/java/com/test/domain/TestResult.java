@@ -34,7 +34,7 @@ public class TestResult {
 	private Long endTime;
 	
 	@OneToMany(mappedBy="testResult")
-	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
+	private List<Run_TestCase_TestResult> run_TestCase_TestResults;
 	
 	@Transient
 	@JsonIgnore
@@ -47,17 +47,11 @@ public class TestResult {
 		this.duration = DurationConverter.formatToString(dur);
 	}
 
-	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {
-		return env_TestCase_TestResults;
-	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setEnv_TestCase_TestResults(List<Env_TestCase_TestResult> env_TestCase_TestResults) {
-		this.env_TestCase_TestResults = env_TestCase_TestResults;
-	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -93,5 +87,16 @@ public class TestResult {
 
 	public void setDuration(String duration) {
 		this.duration = duration;
+	}
+
+
+	public List<Run_TestCase_TestResult> getRun_TestCase_TestResults() {
+		return run_TestCase_TestResults;
+	}
+
+
+	public void setRun_TestCase_TestResults(
+			List<Run_TestCase_TestResult> run_TestCase_TestResults) {
+		this.run_TestCase_TestResults = run_TestCase_TestResults;
 	}
 }

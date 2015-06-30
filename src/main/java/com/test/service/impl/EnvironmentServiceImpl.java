@@ -30,22 +30,6 @@ public class EnvironmentServiceImpl implements EnvironmentService {
 	}
 
 	@Override
-	public Environment save(Environment environment) {
-		return environmentDao.save(environment);
-	}
-
-	@Override
-	public Environment saveToDB(Environment environment) {
-		Environment environmentFromDB = environmentDao.findByNameAndMaster(environment.getName(), environment.getMaster());
-		
-		if (environmentFromDB == null) {
-			return environmentDao.save(environment);
-		}
-		
-		return environmentFromDB;
-	}
-
-	@Override
 	public Environment saveToItsBuild(Environment environment) {
 		
 		//Build buildFromEnvironment = environment.getBuilds().get(0);
@@ -57,6 +41,7 @@ public class EnvironmentServiceImpl implements EnvironmentService {
 			if (!environmentByNameAndMaster.getBuilds().contains(savedBuild)) {
 				environmentByNameAndMaster.getBuilds().add(savedBuild);
 			}
+			
 			return environmentByNameAndMaster;
 		} else {
 			List<Build> builds = new ArrayList<Build>();

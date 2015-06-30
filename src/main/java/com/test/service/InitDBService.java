@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.test.dao.BranchDao;
 import com.test.dao.BuildDao;
-import com.test.dao.Env_TestCase_TestResultDao;
+import com.test.dao.Run_TestCase_TestResultDao;
 import com.test.dao.EnvironmentDao;
 import com.test.dao.RunDao;
 import com.test.dao.TestCaseDao;
@@ -19,7 +19,7 @@ import com.test.dao.TestResultDao;
 import com.test.dao.TestSuiteDao;
 import com.test.domain.Branch;
 import com.test.domain.Build;
-import com.test.domain.Env_TestCase_TestResult;
+import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.Environment;
 import com.test.domain.Run;
 import com.test.domain.TestCase;
@@ -33,7 +33,7 @@ import com.test.domain.TestSuite;
 public class InitDBService {
 
 	@Autowired
-	private Env_TestCase_TestResultDao env_TestCase_TestResultDao;
+	private Run_TestCase_TestResultDao run_TestCase_TestResultDao;
 
 	@Autowired
 	private EnvironmentDao environmentDao;
@@ -69,7 +69,7 @@ public class InitDBService {
 		//run1.setStartTime(new Date());
 		List<TestSuite> testSuites = new ArrayList<TestSuite>();
 		testSuites.add(testSuite1);
-		run1.setTestSuites(testSuites);
+		//run1.setTestSuites(testSuites);
 		runDao.save(run1);
 		
 		TestCase testCase1 = new TestCase();
@@ -126,17 +126,17 @@ public class InitDBService {
 	/***********************************************/
 		
 	/*********** Setting All to Env_TestCase_TestResult **********/
-		Env_TestCase_TestResult env_TestCase_TestResult1 = new Env_TestCase_TestResult();
-		env_TestCase_TestResult1.setEnvironment(environment1);
+		Run_TestCase_TestResult env_TestCase_TestResult1 = new Run_TestCase_TestResult();
+		//env_TestCase_TestResult1.setEnvironment(environment1);
 		env_TestCase_TestResult1.setTestCase(testCase1);
 		env_TestCase_TestResult1.setTestResult(testResult1);
-		env_TestCase_TestResultDao.save(env_TestCase_TestResult1);
+		run_TestCase_TestResultDao.save(env_TestCase_TestResult1);
 		
-		Env_TestCase_TestResult env_TestCase_TestResult2 = new Env_TestCase_TestResult();
-		env_TestCase_TestResult2.setEnvironment(environment1);
+		Run_TestCase_TestResult env_TestCase_TestResult2 = new Run_TestCase_TestResult();
+		//env_TestCase_TestResult2.setEnvironment(environment1);
 		env_TestCase_TestResult2.setTestCase(testCase2);
 		env_TestCase_TestResult2.setTestResult(testResult2);
-		env_TestCase_TestResultDao.save(env_TestCase_TestResult2);
+		run_TestCase_TestResultDao.save(env_TestCase_TestResult2);
 	/*************************************************************/
 		
 	}

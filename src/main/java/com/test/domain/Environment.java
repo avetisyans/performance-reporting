@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Environment {
@@ -26,11 +27,14 @@ public class Environment {
 	
 	private boolean haEnabled;
 	
+	@OneToOne(mappedBy="environment")
+	private Run run;
+	
 	@ManyToMany
 	private List<Build> builds;
 	
-	@OneToMany(mappedBy="environment")
-	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
+/*	@OneToMany(mappedBy="environment")
+	private List<Env_TestCase_TestResult> env_TestCase_TestResults;*/
 	
 	public List<Build> getBuilds() {
 		return builds;
@@ -46,9 +50,9 @@ public class Environment {
 		return deploymentType;
 	}
 	
-	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {
+/*	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {
 		return env_TestCase_TestResults;
-	}
+	}*/
 	
 	public Long getId() {
 		return id;
@@ -66,10 +70,14 @@ public class Environment {
 		return productName;
 	}
 
+	public Run getRun() {
+		return run;
+	}
+
+
 	public boolean isHaEnabled() {
 		return haEnabled;
 	}
-
 
 	public void setBuilds(List<Build> builds) {
 		this.builds = builds;
@@ -83,10 +91,10 @@ public class Environment {
 		this.deploymentType = deploymentType;
 	}
 
-	public void setEnv_TestCase_TestResults(
+/*	public void setEnv_TestCase_TestResults(
 			List<Env_TestCase_TestResult> env_TestCase_TestResults) {
 		this.env_TestCase_TestResults = env_TestCase_TestResults;
-	}
+	}*/
 
 	public void setHaEnabled(boolean haEnabled) {
 		this.haEnabled = haEnabled;
@@ -95,6 +103,7 @@ public class Environment {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 	public void setMaster(String master) {
 		this.master = master;
@@ -108,6 +117,11 @@ public class Environment {
 
 	public void setProductName(String productName) {
 		this.productName = productName;
+	}
+
+
+	public void setRun(Run run) {
+		this.run = run;
 	}
 
 

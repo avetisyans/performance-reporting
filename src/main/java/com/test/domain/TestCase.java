@@ -2,7 +2,6 @@ package com.test.domain;
 
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -23,7 +22,7 @@ public class TestCase {
 	@GeneratedValue
 	private Long id;
 	
-	@Column(unique=true)
+	//@Column(unique=true)
 	private String name;
 	
 	@Enumerated(EnumType.STRING)	
@@ -34,12 +33,10 @@ public class TestCase {
 	private TestSuite testSuite;
 	
 	@OneToMany(mappedBy="testCase")
-	private List<Env_TestCase_TestResult> env_TestCase_TestResults;
+	private List<Run_TestCase_TestResult> run_TestCase_TestResults;
 	
 	
-	public List<Env_TestCase_TestResult> getEnv_TestCase_TestResults() {
-		return env_TestCase_TestResults;
-	}
+
 	
 	public Long getId() {
 		return id;
@@ -57,9 +54,6 @@ public class TestCase {
 		return testType;
 	}
 
-	public void setEnv_TestCase_TestResults(List<Env_TestCase_TestResult> env_TestCase_TestResults) {
-		this.env_TestCase_TestResults = env_TestCase_TestResults;
-	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -76,6 +70,15 @@ public class TestCase {
 
 	public void setTestType(TestType testType) {
 		this.testType = testType;
+	}
+
+	public List<Run_TestCase_TestResult> getRun_TestCase_TestResults() {
+		return run_TestCase_TestResults;
+	}
+
+	public void setRun_TestCase_TestResults(
+			List<Run_TestCase_TestResult> run_TestCase_TestResults) {
+		this.run_TestCase_TestResults = run_TestCase_TestResults;
 	}
 
 }
