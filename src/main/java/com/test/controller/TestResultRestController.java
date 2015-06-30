@@ -70,8 +70,8 @@ public class TestResultRestController {
 
 	@RequestMapping(value = "/testJson", method = RequestMethod.POST)
 	public JsonNode showTestClass(@RequestBody JsonNode envObj) {
-
-		return envObj;
+		
+		return envObj.get("environment");
 	}
 
 	@RequestMapping(value = "/runData", method = RequestMethod.POST)
