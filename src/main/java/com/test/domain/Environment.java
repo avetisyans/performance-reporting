@@ -9,6 +9,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Environment {
 	@Id
@@ -73,7 +75,6 @@ public class Environment {
 	public Run getRun() {
 		return run;
 	}
-
 
 	public boolean isHaEnabled() {
 		return haEnabled;

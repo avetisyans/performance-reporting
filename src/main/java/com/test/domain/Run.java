@@ -46,7 +46,7 @@ public class Run {
 	private Long endTime;
 	
 	@Transient
-	@JsonIgnore
+//	@JsonIgnore
 	private String duration;
 	
 	@PostLoad

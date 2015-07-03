@@ -37,7 +37,7 @@ public class TestResult {
 	private List<Run_TestCase_TestResult> run_TestCase_TestResults;
 	
 	@Transient
-	@JsonIgnore
+//	@JsonIgnore
 	private String duration;
 	
 	@PostLoad

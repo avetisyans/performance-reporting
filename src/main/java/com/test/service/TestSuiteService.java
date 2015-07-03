@@ -14,4 +14,6 @@ public interface TestSuiteService {
 
 	TestSuite saveToDB(TestSuite testSuite);
 	
+	List<TestSuite> findByRun(Long runId);
+	
 }

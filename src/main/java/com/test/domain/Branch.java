@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Branch {
 	@Id
@@ -16,6 +18,7 @@ public class Branch {
 	private String name;
 	
 	@OneToMany(mappedBy="branch")
+//	@JsonIgnore
 	private List<Build> builds;
 
 	public List<Build> getBuilds() {

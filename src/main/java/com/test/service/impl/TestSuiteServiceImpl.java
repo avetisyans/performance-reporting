@@ -53,6 +53,11 @@ public class TestSuiteServiceImpl implements TestSuiteService {
 		return testSuiteFromDB != null ? testSuiteFromDB : testSuiteDao.save(testSuite);
 
 	}
+
+	@Override
+	public List<TestSuite> findByRun(Long runId) {
+		return testSuiteDao.findByRun(runId);
+	}
 	
 }
 
