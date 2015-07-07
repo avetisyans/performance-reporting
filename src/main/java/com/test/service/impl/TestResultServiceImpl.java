@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.test.dao.TestResultDao;
+import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.service.TestResultService;
 
@@ -40,6 +41,14 @@ public class TestResultServiceImpl implements TestResultService {
 	public TestResult findOne(Long id) {
 		return testResultDao.findOne(id);
 	}
+
+	@Override
+	public TestResult findByTestCaseAndRun(Long testCaseId, Long runId) {
+		
+		TestResult findByTestCaseAndRun = testResultDao.findByTestCaseAndRun(testCaseId, runId);
+		return findByTestCaseAndRun;
+	}
+
 	
 
 /*	@Override

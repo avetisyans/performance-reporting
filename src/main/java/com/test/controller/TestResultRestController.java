@@ -10,15 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.test.dao.Run_TestCase_TestResultDao;
 import com.test.dao.EnvironmentDao;
+import com.test.dao.Run_TestCase_TestResultDao;
 import com.test.dao.TestCaseDao;
 import com.test.dao.TestResultDao;
 import com.test.dao.TestSuiteDao;
-import com.test.domain.Build;
-import com.test.domain.Run_TestCase_TestResult;
-import com.test.domain.Environment;
 import com.test.domain.Run;
+import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
@@ -28,9 +26,9 @@ import com.test.dto.ParentRunDTO;
 import com.test.dto.TestCaseWithResultDTO;
 import com.test.dto.TestSuiteDTO;
 import com.test.service.BuildService;
-import com.test.service.Run_TestCase_TestResultService;
 import com.test.service.EnvironmentService;
 import com.test.service.RunService;
+import com.test.service.Run_TestCase_TestResultService;
 import com.test.service.TestCaseService;
 import com.test.service.TestResultService;
 import com.test.service.TestSuiteService;
@@ -81,6 +79,7 @@ public class TestResultRestController {
 		return envObj.get("environment");
 	}
 	
+	
 	@RequestMapping(value = "/runs", method = RequestMethod.GET)
 	public List<ParentRunDTO> getRuns() {
 		
@@ -94,6 +93,9 @@ public class TestResultRestController {
 			if (run.getStartTime() == null && run.getParent() == null) {
 
 				List<ChildRunDTO> childRunDTOs = new ArrayList<ChildRunDTO>();
+				List<TestSuiteDTO> testSuiteDTOs = new ArrayList<TestSuiteDTO>();
+				
+				
 				
 				ParentRunDTO parentRunDTO = new ParentRunDTO();
 				parentRunDTO.setBuildNumber(run.getBuildNumber());
@@ -102,33 +104,60 @@ public class TestResultRestController {
 				
 				List<Run> childRuns = run.getChildren();
 				
-				for (Run run2 : childRuns) {
+				for (Run childRun : childRuns) {
 					
-					List<TestSuite> foundByRun = testSuiteService.findByRun(run2.getId());
+					List<TestSuite> foundByRun = testSuiteService.findByRun(childRun.getId());
 					
-					foundByRun.size();
+					//List<TestSuiteDTO> testSuiteDTOs = TestSuiteDTO.mapToDTO(foundByRun);
+					//foundByRun.size();
 					
 					for (TestSuite testSuite : foundByRun) {
+						TestSuiteDTO testSuiteDTO = new TestSuiteDTO();
+						testSuiteDTO.setName(testSuite.getName());
+						List<TestCaseWithResultDTO> testCaseWithResultDTOs = new ArrayList<TestCaseWithResultDTO>();
+						
+						
 						List<TestCase> testCases = testSuite.getTestCases();
-						testCases.size();
-						System.out.println(testSuite.getName());
+						for (TestCase testCase : testCases) {
+							if (testResultService.findByTestCaseAndRun(testCase.getId(), childRun.getId()) != null) {
+								
+								TestResult testResult = testResultService.findByTestCaseAndRun(testCase.getId(), childRun.getId());
+								testResult.getResult();
+								TestCaseWithResultDTO testCaseWithResultDTO = new TestCaseWithResultDTO();
+								testCaseWithResultDTO.setTestCaseName(testCase.getName());
+								testCaseWithResultDTO.setTestType(testCase.getTestType());
+								testCaseWithResultDTO.setResult(testResult.getResult());
+								
+								testCaseWithResultDTO.setStartTime(testResult.getStartTime());
+								testCaseWithResultDTO.setEndTime(testResult.getEndTime());
+								testCaseWithResultDTO.setDuration(testResult.getDuration());	
+								
+								testCaseWithResultDTOs.add(testCaseWithResultDTO);					
+							}
+
+							
+						}
+						testSuiteDTO.setTestCases(testCaseWithResultDTOs);
+						//TestSuiteDTO testSuiteDTO = TestSuiteDTO.mapToDTO(testSuite);
+						testSuiteDTOs.add(testSuiteDTO);
 					}
 					
 					ChildRunDTO childRunDTO = new ChildRunDTO();
-					childRunDTO.setBuildNumber(run2.getBuildNumber());
-					childRunDTO.setDuration(run2.getDuration());
-					childRunDTO.setStartTime(run2.getStartTime());
-					childRunDTO.setEndTime(run2.getEndTime());
-					childRunDTO.setTag(run2.getTag());
-					childRunDTO.setId(run2.getId());
-					EnvironmentDTO envDTO = new EnvironmentDTO(run2.getEnvironment());
+					childRunDTO.setBuildNumber(childRun.getBuildNumber());
+					childRunDTO.setDuration(childRun.getDuration());
+					childRunDTO.setStartTime(childRun.getStartTime());
+					childRunDTO.setEndTime(childRun.getEndTime());
+					childRunDTO.setTag(childRun.getTag());
+					childRunDTO.setId(childRun.getId());
+					EnvironmentDTO envDTO = new EnvironmentDTO(childRun.getEnvironment());
 					childRunDTO.setEnvironment(envDTO);
+					childRunDTO.setTestSuites(testSuiteDTOs);
 					
-					List<Run_TestCase_TestResult> rttList = run2.getRun_TestCase_TestResults();
-					List<TestSuiteDTO> testSuiteDTOs = new ArrayList<TestSuiteDTO>();
+					List<Run_TestCase_TestResult> rttList = childRun.getRun_TestCase_TestResults();
+				//	List<TestSuiteDTO> testSuiteDTOs = new ArrayList<TestSuiteDTO>();
 					List<TestCaseWithResultDTO> rttDTOs = new ArrayList<TestCaseWithResultDTO>();
 					
-					for (Run_TestCase_TestResult rtt : rttList) {
+/*					for (Run_TestCase_TestResult rtt : rttList) {
 						
 						TestCaseWithResultDTO testCaseWithResultDTO = new TestCaseWithResultDTO();
 						testCaseWithResultDTO.setTestCaseName(rtt.getTestCase().getName());
@@ -142,7 +171,7 @@ public class TestResultRestController {
 //						TestSuiteDTO testSuiteDTO = new TestSuiteDTO(rtt.getTestCase().getTestSuite());
 						
 						rttDTOs.add(testCaseWithResultDTO);
-					}
+					}*/
 					
 //					childRunDTO.setTestCases(rttDTOs);
 					
@@ -166,7 +195,7 @@ public class TestResultRestController {
 	}
 
 	@RequestMapping(value = "/runData", method = RequestMethod.POST)
-	public String showRunData(@RequestBody Run runData) {
+	public String showRunData(@RequestBody Run runData) throws Exception {
 		
 		//System.out.println("runData.getBuildNumber() is: " + runData.getBuildNumber());
 		if ( runData.getEndTime() == null) {
@@ -189,7 +218,7 @@ public class TestResultRestController {
 	}*/
 	
 	@RequestMapping(value = "/testData", method = RequestMethod.POST)
-	public String showResultJson(@RequestBody Run_TestCase_TestResult run_TestCase_TestResult) {
+	public String showResultJson(@RequestBody Run_TestCase_TestResult run_TestCase_TestResult) throws Exception {
 
 		Run run = run_TestCase_TestResult.getRun();
 		TestResult testResult = run_TestCase_TestResult.getTestResult();
