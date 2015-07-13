@@ -13,4 +13,6 @@ public interface RunService {
 	Run addEndTimeToExistingRun(Run runData) throws Exception;
 	
 	List<Run> findAll();
+
+	Run createRunWithParent(Run runData);
 }

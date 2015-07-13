@@ -1,5 +1,6 @@
 package com.test.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ChildRunDTO {
@@ -11,7 +12,8 @@ public class ChildRunDTO {
 	private String duration;
 	private EnvironmentDTO environment;
 	//private List<TestCaseWithResultDTO> TestCases;
-	private List<TestSuiteDTO> testSuites;
+	private List<TestSuiteDTO> testSuites = new ArrayList<TestSuiteDTO>();
+	
 	
 	public Long getId() {
 		return id;

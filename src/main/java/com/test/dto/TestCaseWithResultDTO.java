@@ -1,6 +1,8 @@
 package com.test.dto;
 
+import com.test.domain.TestCase;
 import com.test.domain.TestCase.TestType;
+import com.test.domain.TestResult;
 import com.test.domain.TestResult.Result;
 
 public class TestCaseWithResultDTO {
@@ -10,6 +12,16 @@ public class TestCaseWithResultDTO {
 	private Long startTime;
 	private Long endTime;
 	private String duration;
+
+	public TestCaseWithResultDTO(TestCase testCase, TestResult testResult) {
+		this.setTestCaseName(testCase.getName());
+		this.setTestType(testCase.getTestType());
+		this.setResult(testResult.getResult());
+		
+		this.setStartTime(testResult.getStartTime());
+		this.setEndTime(testResult.getEndTime());
+		this.setDuration(testResult.getDuration());
+	}
 
 	public String getTestCaseName() {
 		return testCaseName;

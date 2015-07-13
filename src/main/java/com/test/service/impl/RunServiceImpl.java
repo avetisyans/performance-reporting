@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.test.dao.RunDao;
 import com.test.domain.Environment;
 import com.test.domain.Run;
+import com.test.exceptions.RunAlreadyExistsException;
+import com.test.exceptions.RunDoesNotExistsException;
 import com.test.service.EnvironmentService;
 import com.test.service.RunService;
 
@@ -33,18 +35,11 @@ public class RunServiceImpl implements RunService {
 		
 		Run runFromDB = runDao.findByBuildNumber(run.getBuildNumber());
 		
-		if (runFromDB != null) {
+		if (runFromDB.getEndTime() == null) {
 			return runFromDB;
 		}
 		
-		Run parentRun = run.getParent();
-		Run savedParent = saveParentToDB(parentRun);
-		
-		Environment envFromDB = environmentService.saveToItsBuild(run.getEnvironment());
-		
-		run.setParent(savedParent);
-		run.setEnvironment(envFromDB);
-		return runDao.save(run);
+		throw new RunDoesNotExistsException(run.getBuildNumber());
 	}
 			
 	private Run saveParentToDB(Run parentRun) {
@@ -62,17 +57,36 @@ public class RunServiceImpl implements RunService {
 	public Run addEndTimeToExistingRun(Run runData) {
 		Run runFromDB = runDao.findByBuildNumber(runData.getBuildNumber());
 		
-		if (runFromDB != null) {
+		if (runFromDB.getEndTime() == null) {
 			runFromDB.setEndTime(runData.getEndTime());
 			return runFromDB;
 		}
 		
-		return null;
+		throw new RunDoesNotExistsException(runData.getBuildNumber());
 	}
 
 	@Override
 	public List<Run> findAll() {
 		return runDao.findAll();
+	}
+
+	@Override
+	public Run createRunWithParent(Run run) {
+		
+		Run runFromDB = runDao.findByBuildNumber(run.getBuildNumber());
+		
+		if (runFromDB != null) {
+			throw new RunAlreadyExistsException(run.getBuildNumber());
+		}
+		
+		Run parentRun = run.getParent();
+		Run savedParent = saveParentToDB(parentRun);
+		
+		Environment envFromDB = environmentService.saveToItsBuild(run.getEnvironment());
+		
+		run.setParent(savedParent);
+		run.setEnvironment(envFromDB);
+		return runDao.save(run);
 	}
 
 }

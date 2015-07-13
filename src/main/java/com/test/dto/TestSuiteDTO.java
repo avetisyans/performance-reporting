@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.test.domain.TestCase;
+import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
 import com.test.service.TestResultService;
 
@@ -23,11 +24,18 @@ public class TestSuiteDTO {
 	public TestSuiteDTO() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public void addTestCaseWithResultDTO(TestCaseWithResultDTO tDTO) {
-		testCases.add(tDTO);
+	
+	public void addTestCaseWithResultDTO(TestCaseWithResultDTO testCaseWithResultDTO) {
+		if (!containsTestCaseWithName(testCaseWithResultDTO)) {
+			this.testCases.add(testCaseWithResultDTO);
+		}
 	}
 	
+	public TestSuiteDTO(String testSuiteName, TestCaseWithResultDTO testCaseWithResultDTO) {
+		this.name = testSuiteName;
+		this.testCases.add(testCaseWithResultDTO);
+	}
+
 	public boolean containsTestCaseWithName(TestCaseWithResultDTO tDTO) {
 		for (TestCaseWithResultDTO testCaseWithResultDTO : testCases) {
 			if (testCaseWithResultDTO.getTestCaseName().equals(tDTO.getTestCaseName())) {
