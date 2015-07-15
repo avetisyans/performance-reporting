@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -28,7 +29,8 @@ public class Run {
 	
 	private String tag;
 	
-	@OneToOne
+	@ManyToOne
+	@JoinColumn(name="environment_id")
 	private Environment environment;
 	
 	@OneToMany(mappedBy="parent", fetch=FetchType.EAGER)

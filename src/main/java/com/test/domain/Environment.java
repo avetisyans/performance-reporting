@@ -29,18 +29,8 @@ public class Environment {
 	
 	private boolean haEnabled;
 	
-	@OneToOne(mappedBy="environment")
-	private Run run;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@OneToMany(mappedBy="environment")
+	private List<Run> runs;
 	
 	@ManyToMany
 	private List<Build> builds;
@@ -82,9 +72,6 @@ public class Environment {
 		return productName;
 	}
 
-	public Run getRun() {
-		return run;
-	}
 
 	public boolean isHaEnabled() {
 		return haEnabled;
@@ -131,9 +118,15 @@ public class Environment {
 	}
 
 
-	public void setRun(Run run) {
-		this.run = run;
+	public List<Run> getRuns() {
+		return runs;
 	}
+
+
+	public void setRuns(List<Run> runs) {
+		this.runs = runs;
+	}
+
 
 
 }

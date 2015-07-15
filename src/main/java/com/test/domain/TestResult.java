@@ -1,18 +1,15 @@
 package com.test.domain;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PostLoad;
 import javax.persistence.PostUpdate;
 import javax.persistence.Transient;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.test.util.DurationConverter;
 
 @Entity
@@ -33,8 +30,8 @@ public class TestResult {
 
 	private Long endTime;
 	
-	@OneToMany(mappedBy="testResult")
-	private List<Run_TestCase_TestResult> run_TestCase_TestResults;
+	@OneToOne(mappedBy="testResult")
+	private Run_TestCase_TestResult run_TestCase_TestResults;
 	
 	@Transient
 //	@JsonIgnore
@@ -89,14 +86,4 @@ public class TestResult {
 		this.duration = duration;
 	}
 
-
-	public List<Run_TestCase_TestResult> getRun_TestCase_TestResults() {
-		return run_TestCase_TestResults;
-	}
-
-
-	public void setRun_TestCase_TestResults(
-			List<Run_TestCase_TestResult> run_TestCase_TestResults) {
-		this.run_TestCase_TestResults = run_TestCase_TestResults;
-	}
 }

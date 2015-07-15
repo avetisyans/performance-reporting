@@ -1,9 +1,7 @@
 package com.test.controller;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,15 +15,17 @@ import com.test.dao.Run_TestCase_TestResultDao;
 import com.test.dao.TestCaseDao;
 import com.test.dao.TestResultDao;
 import com.test.dao.TestSuiteDao;
+import com.test.domain.Environment;
 import com.test.domain.Run;
 import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
-import com.test.domain.TestSuite;
 import com.test.dto.ChildRunDTO;
 import com.test.dto.EnvironmentDTO;
+import com.test.dto.EnvironmentWithResultDTO;
 import com.test.dto.ParentRunDTO;
 import com.test.dto.TestCaseWithResultDTO;
+import com.test.dto.TestCaseWithStatistics;
 import com.test.dto.TestSuiteDTO;
 import com.test.dto.TestSuiteWithResult;
 import com.test.service.BuildService;
@@ -89,6 +89,41 @@ public class TestResultRestController {
 		List<Run> runsWithResults = runService.findAll();
 		
 		return mapToParentRunDTO(runsWithResults);
+	}
+	
+	
+	@RequestMapping(value = "/environments", method = RequestMethod.GET)
+	public List<EnvironmentWithResultDTO> getEnvs() {
+		
+		List<Environment> environments = environmentService.findAll();
+		
+		return mapToEnvironmentDTO(environments);
+	}
+
+
+	private List<EnvironmentWithResultDTO> mapToEnvironmentDTO(List<Environment> environments) {
+		
+		List<EnvironmentWithResultDTO> envWithResults = new ArrayList<EnvironmentWithResultDTO>();
+		
+		for (Environment environment : environments) {
+			EnvironmentWithResultDTO envDTO = new EnvironmentWithResultDTO();
+			TestCaseWithStatistics tcStat = new TestCaseWithStatistics();
+			
+			List<Run> runs = environment.getRuns();
+			
+			for (Run run : runs) {
+				List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+				for (Run_TestCase_TestResult run_TestCase_TestResult : run_TestCase_TestResults) {
+					
+				}
+			}
+			//tcStat.seenvironment.getRuns().size();
+			System.out.println("break!");
+		}
+		
+		
+		
+		return null;
 	}
 
 

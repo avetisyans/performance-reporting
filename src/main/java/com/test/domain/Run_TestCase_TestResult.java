@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Run_TestCase_TestResult {
@@ -25,8 +26,7 @@ public class Run_TestCase_TestResult {
 	@JoinColumn(name="testCase_id")
 	private TestCase testCase;
 	
-	@ManyToOne/*(cascade=CascadeType.ALL)*/
-	@JoinColumn(name="testResult_id")
+	@OneToOne/*(cascade=CascadeType.ALL)*/
 	private TestResult testResult;
 	
 /*	public Environment getEnvironment() {
