@@ -32,6 +32,16 @@ public class Environment {
 	@OneToOne(mappedBy="environment")
 	private Run run;
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@ManyToMany
 	private List<Build> builds;
 	
