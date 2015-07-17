@@ -1,7 +1,10 @@
 package com.test.controller;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +23,7 @@ import com.test.domain.Run;
 import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
+import com.test.domain.TestResult.Result;
 import com.test.dto.ChildRunDTO;
 import com.test.dto.EnvironmentDTO;
 import com.test.dto.EnvironmentWithResultDTO;
@@ -106,24 +110,81 @@ public class TestResultRestController {
 		List<EnvironmentWithResultDTO> envWithResults = new ArrayList<EnvironmentWithResultDTO>();
 		
 		for (Environment environment : environments) {
-			EnvironmentWithResultDTO envDTO = new EnvironmentWithResultDTO();
-			TestCaseWithStatistics tcStat = new TestCaseWithStatistics();
+			EnvironmentWithResultDTO environmentWithResultDTO = new EnvironmentWithResultDTO();
+			environmentWithResultDTO.setName(environment.getName());
+			List<TestCaseWithStatistics> testCaseWithStatistics = new ArrayList<TestCaseWithStatistics>();
 			
-			List<Run> runs = environment.getRuns();
 			
-			for (Run run : runs) {
-				List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+			List<TestCase> uniqueTestCases = getUniqueTestCases(environment);
+			
+			for (TestCase testCase : uniqueTestCases) {
+				TestCaseWithStatistics testCaseWithStatistic = new TestCaseWithStatistics();
+				List<Run_TestCase_TestResult> run_TestCase_TestResults = testCase.getRun_TestCase_TestResults();
+				//testCaseWithStatistic.setTotalRuns((long) run_TestCase_TestResults.size());
+				
+				List<Long> durations = new ArrayList<Long>();
+				long numberOfFailures = 0;
+				long totalRuns = 0;
 				for (Run_TestCase_TestResult run_TestCase_TestResult : run_TestCase_TestResults) {
+					long duration = run_TestCase_TestResult.getRun().getEndTime() - run_TestCase_TestResult.getRun().getStartTime();
+					totalRuns = (long) run_TestCase_TestResults.size();
+					
+					if(run_TestCase_TestResult.getTestResult().getResult() == Result.SUCCESS) {
+						durations.add(duration);
+					} else {
+						++numberOfFailures;
+					}
 					
 				}
+				long sum = 0;
+				for (Long long1 : durations) {
+					sum += long1;
+				}
+				
+				long numberOfPassed = durations.size();
+				long avg = sum/numberOfPassed;
+				long max = Collections.max(durations);
+				long min = Collections.min(durations);
+				
+				testCaseWithStatistic.setName(testCase.getName());
+				testCaseWithStatistic.setTotalRuns(totalRuns);
+				testCaseWithStatistic.setPassed(numberOfPassed);
+				testCaseWithStatistic.setFailed(numberOfFailures);
+				testCaseWithStatistic.setSuccessfulMin(min);
+				testCaseWithStatistic.setSuccessfulMax(max);
+				testCaseWithStatistic.setSuccessfulAvg(avg);
+				testCaseWithStatistics.add(testCaseWithStatistic);
+				//testCaseWithStatistic.set
 			}
-			//tcStat.seenvironment.getRuns().size();
-			System.out.println("break!");
+			
+			environmentWithResultDTO.setTestCaseData(testCaseWithStatistics);
+			envWithResults.add(environmentWithResultDTO);
+		}
+
+		
+		return envWithResults;
+	}
+
+
+	private List<TestCase> getUniqueTestCases(Environment environment) {
+		Set<TestCase> testCasesSet = new HashSet<TestCase>();
+		
+		
+		
+		List<Run> runs = environment.getRuns();
+		
+		for (Run run : runs) {
+			List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+			for (Run_TestCase_TestResult run_TestCase_TestResult : run_TestCase_TestResults) {
+				testCasesSet.add(run_TestCase_TestResult.getTestCase());
+			}
 		}
 		
+		List<TestCase> testCases = new ArrayList<TestCase>();
 		
+		testCases.addAll(testCasesSet);
 		
-		return null;
+		return testCases;
 	}
 
 

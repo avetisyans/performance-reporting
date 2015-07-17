@@ -6,9 +6,9 @@ public class TestCaseWithStatistics {
 	private Long totalRuns;
 	private Long passed;
 	private Long failed;
-	private String successfulMin;
-	private String successfulMax;
-	private String successfulAvg;
+	private Long successfulMin;
+	private Long successfulMax;
+	private Long successfulAvg;
 	
 	
 	public String getName() {
@@ -35,25 +35,23 @@ public class TestCaseWithStatistics {
 	public void setFailed(Long failed) {
 		this.failed = failed;
 	}
-	public String getSuccessfulMin() {
+	public Long getSuccessfulMin() {
 		return successfulMin;
 	}
-	public void setSuccessfulMin(String successfulMin) {
+	public void setSuccessfulMin(Long successfulMin) {
 		this.successfulMin = successfulMin;
 	}
-	public String getSuccessfulMax() {
+	public Long getSuccessfulMax() {
 		return successfulMax;
 	}
-	public void setSuccessfulMax(String successfulMax) {
+	public void setSuccessfulMax(Long successfulMax) {
 		this.successfulMax = successfulMax;
 	}
-	public String getSuccessfulAvg() {
+	public Long getSuccessfulAvg() {
 		return successfulAvg;
 	}
-	public void setSuccessfulAvg(String successfulAvg) {
+	public void setSuccessfulAvg(Long successfulAvg) {
 		this.successfulAvg = successfulAvg;
 	}
-	
-	
 	
 }
