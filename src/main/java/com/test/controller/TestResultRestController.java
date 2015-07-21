@@ -29,9 +29,9 @@ import com.test.dto.EnvironmentDTO;
 import com.test.dto.EnvironmentWithResultDTO;
 import com.test.dto.ParentRunDTO;
 import com.test.dto.TestCaseWithResultDTO;
-import com.test.dto.TestCaseWithStatistics;
-import com.test.dto.TestSuiteDTO;
-import com.test.dto.TestSuiteWithResult;
+import com.test.dto.TestCaseWithStatisticsDTO;
+import com.test.dto.TestSuiteWithResultDTO;
+import com.test.dto.TestSuiteWithResultEntity;
 import com.test.service.BuildService;
 import com.test.service.EnvironmentService;
 import com.test.service.RunService;
@@ -103,6 +103,14 @@ public class TestResultRestController {
 		
 		return mapToEnvironmentDTO(environments);
 	}
+	
+	@RequestMapping(value = "/envs", method = RequestMethod.GET)
+	public List<EnvironmentWithResultDTO> getEnvironments() {
+		
+		List<Environment> environments = environmentService.findAll();
+		
+		return mapToEnvironmentDTOWithSuites(environments);
+	}
 
 
 	private List<EnvironmentWithResultDTO> mapToEnvironmentDTO(List<Environment> environments) {
@@ -112,13 +120,13 @@ public class TestResultRestController {
 		for (Environment environment : environments) {
 			EnvironmentWithResultDTO environmentWithResultDTO = new EnvironmentWithResultDTO();
 			environmentWithResultDTO.setName(environment.getName());
-			List<TestCaseWithStatistics> testCaseWithStatistics = new ArrayList<TestCaseWithStatistics>();
+			List<TestCaseWithStatisticsDTO> testCaseWithStatisticsDTO = new ArrayList<TestCaseWithStatisticsDTO>();
 			
 			
 			List<TestCase> uniqueTestCases = getUniqueTestCases(environment);
 			
 			for (TestCase testCase : uniqueTestCases) {
-				TestCaseWithStatistics testCaseWithStatistic = new TestCaseWithStatistics();
+				TestCaseWithStatisticsDTO testCaseWithStatistic = new TestCaseWithStatisticsDTO();
 				List<Run_TestCase_TestResult> run_TestCase_TestResults = testCase.getRun_TestCase_TestResults();
 				//testCaseWithStatistic.setTotalRuns((long) run_TestCase_TestResults.size());
 				
@@ -153,14 +161,73 @@ public class TestResultRestController {
 				testCaseWithStatistic.setSuccessfulMin(min);
 				testCaseWithStatistic.setSuccessfulMax(max);
 				testCaseWithStatistic.setSuccessfulAvg(avg);
-				testCaseWithStatistics.add(testCaseWithStatistic);
+				testCaseWithStatisticsDTO.add(testCaseWithStatistic);
 				//testCaseWithStatistic.set
 			}
 			
-			environmentWithResultDTO.setTestCaseData(testCaseWithStatistics);
+			environmentWithResultDTO.setTestCaseData(testCaseWithStatisticsDTO);
 			envWithResults.add(environmentWithResultDTO);
 		}
 
+		
+		return envWithResults;
+	}
+	private List<EnvironmentWithResultDTO> mapToEnvironmentDTOWithSuites(List<Environment> environments) {
+		
+		List<EnvironmentWithResultDTO> envWithResults = new ArrayList<EnvironmentWithResultDTO>();
+		
+		for (Environment environment : environments) {
+			EnvironmentWithResultDTO environmentWithResultDTO = new EnvironmentWithResultDTO();
+			environmentWithResultDTO.setName(environment.getName());
+			List<TestCaseWithStatisticsDTO> testCaseWithStatisticsDTO = new ArrayList<TestCaseWithStatisticsDTO>();
+			
+			
+			List<TestCase> uniqueTestCases = getUniqueTestCases(environment);
+			
+			for (TestCase testCase : uniqueTestCases) {
+				TestCaseWithStatisticsDTO testCaseWithStatistic = new TestCaseWithStatisticsDTO();
+				List<Run_TestCase_TestResult> run_TestCase_TestResults = testCase.getRun_TestCase_TestResults();
+				//testCaseWithStatistic.setTotalRuns((long) run_TestCase_TestResults.size());
+				
+				List<Long> durations = new ArrayList<Long>();
+				long numberOfFailures = 0;
+				long totalRuns = 0;
+				for (Run_TestCase_TestResult run_TestCase_TestResult : run_TestCase_TestResults) {
+					long duration = run_TestCase_TestResult.getRun().getEndTime() - run_TestCase_TestResult.getRun().getStartTime();
+					totalRuns = (long) run_TestCase_TestResults.size();
+					
+					if(run_TestCase_TestResult.getTestResult().getResult() == Result.SUCCESS) {
+						durations.add(duration);
+					} else {
+						++numberOfFailures;
+					}
+					
+				}
+				long sum = 0;
+				for (Long long1 : durations) {
+					sum += long1;
+				}
+				
+				long numberOfPassed = durations.size();
+				long avg = sum/numberOfPassed;
+				long max = Collections.max(durations);
+				long min = Collections.min(durations);
+				
+				testCaseWithStatistic.setName(testCase.getName());
+				testCaseWithStatistic.setTotalRuns(totalRuns);
+				testCaseWithStatistic.setPassed(numberOfPassed);
+				testCaseWithStatistic.setFailed(numberOfFailures);
+				testCaseWithStatistic.setSuccessfulMin(min);
+				testCaseWithStatistic.setSuccessfulMax(max);
+				testCaseWithStatistic.setSuccessfulAvg(avg);
+				testCaseWithStatisticsDTO.add(testCaseWithStatistic);
+				//testCaseWithStatistic.set
+			}
+			
+			environmentWithResultDTO.setTestCaseData(testCaseWithStatisticsDTO);
+			envWithResults.add(environmentWithResultDTO);
+		}
+		
 		
 		return envWithResults;
 	}
@@ -194,7 +261,7 @@ public class TestResultRestController {
 			if (run.getStartTime() == null && run.getParent() == null) {
 
 				List<ChildRunDTO> childRunDTOs = new ArrayList<ChildRunDTO>();
-				List<TestSuiteDTO> testSuiteDTOs = new ArrayList<TestSuiteDTO>();
+				List<TestSuiteWithResultDTO> testSuiteWithResultDTOs = new ArrayList<TestSuiteWithResultDTO>();
 				
 				
 				ParentRunDTO parentRunDTO = new ParentRunDTO();
@@ -204,13 +271,13 @@ public class TestResultRestController {
 				List<Run> childRuns = run.getChildren();
 				
 				for (Run childRun : childRuns) {		
-						List<TestSuiteWithResult> testSuiteWithResults = new ArrayList<TestSuiteWithResult>();
+						List<TestSuiteWithResultEntity> testSuiteWithResultEntities = new ArrayList<TestSuiteWithResultEntity>();
 						for (Run_TestCase_TestResult run_TestCase_TestResult : childRun.getRun_TestCase_TestResults()) {							
 							TestCaseWithResultDTO testCaseWithResultDTO = new TestCaseWithResultDTO(run_TestCase_TestResult.getTestCase(), run_TestCase_TestResult.getTestResult());
 							String testSuiteName = run_TestCase_TestResult.getTestCase().getTestSuite().getName();
-							TestSuiteWithResult testSuiteWithResult = new TestSuiteWithResult(testSuiteName, testCaseWithResultDTO);
+							TestSuiteWithResultEntity testSuiteWithResultEntity = new TestSuiteWithResultEntity(testSuiteName, testCaseWithResultDTO);
 							//testSuiteDTOs.add(new TestSuiteDTO(testSuite, testCase, testResult));
-							testSuiteWithResults.add(testSuiteWithResult);
+							testSuiteWithResultEntities.add(testSuiteWithResultEntity);
 						}
 						
 					ChildRunDTO childRunDTO = new ChildRunDTO();
@@ -222,7 +289,7 @@ public class TestResultRestController {
 					childRunDTO.setId(childRun.getId());
 					EnvironmentDTO envDTO = new EnvironmentDTO(childRun.getEnvironment());
 					childRunDTO.setEnvironment(envDTO);
-					childRunDTO.setTestSuites(TestSuiteWithResult.mapToTestSuiteDTOs(testSuiteWithResults));			
+					childRunDTO.setTestSuites(TestSuiteWithResultEntity.mapToTestSuiteDTOs(testSuiteWithResultEntities));			
 					childRunDTOs.add(childRunDTO);
 				}		
 				parentRunDTO.setChildren(childRunDTOs);

@@ -1,6 +1,6 @@
 package com.test.dto;
 
-public class TestCaseWithStatistics {
+public class TestCaseWithStatisticsDTO {
 	
 	private String name;
 	private Long totalRuns;

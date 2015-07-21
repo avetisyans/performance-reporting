@@ -10,33 +10,33 @@ import com.test.domain.TestResult;
 import com.test.domain.TestSuite;
 import com.test.service.TestResultService;
 
-public class TestSuiteDTO {
+public class TestSuiteWithResultDTO {
 	
 	private String name;
 	private List<TestCaseWithResultDTO> testCases = new ArrayList<TestCaseWithResultDTO>();
 	
 	
-	public TestSuiteDTO(TestSuite testSuite) {
+/*	public TestSuiteWithResultDTO(TestSuite testSuite) {
 		this.name = testSuite.getName();
 		
-	}
+	}*/
 
-	public TestSuiteDTO() {
+	public TestSuiteWithResultDTO() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	public void addTestCaseWithResultDTO(TestCaseWithResultDTO testCaseWithResultDTO) {
-		if (!containsTestCaseWithName(testCaseWithResultDTO)) {
+		if (!contains(testCaseWithResultDTO)) {
 			this.testCases.add(testCaseWithResultDTO);
 		}
 	}
 	
-	public TestSuiteDTO(String testSuiteName, TestCaseWithResultDTO testCaseWithResultDTO) {
+	public TestSuiteWithResultDTO(String testSuiteName, TestCaseWithResultDTO testCaseWithResultDTO) {
 		this.name = testSuiteName;
 		this.testCases.add(testCaseWithResultDTO);
 	}
 
-	public boolean containsTestCaseWithName(TestCaseWithResultDTO tDTO) {
+	public boolean contains(TestCaseWithResultDTO tDTO) {
 		for (TestCaseWithResultDTO testCaseWithResultDTO : testCases) {
 			if (testCaseWithResultDTO.getTestCaseName().equals(tDTO.getTestCaseName())) {
 				return true;
@@ -61,7 +61,7 @@ public class TestSuiteDTO {
 		this.testCases = testCases;
 	}
 
-	public static TestSuiteDTO mapToDTO(TestSuite testSuite) {
+	public static TestSuiteWithResultDTO mapToDTO(TestSuite testSuite) {
 		
 		List<TestCase> testCases= testSuite.getTestCases();
 		for (TestCase testCase : testCases) {

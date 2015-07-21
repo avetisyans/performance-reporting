@@ -12,7 +12,7 @@ public class ChildRunDTO {
 	private String duration;
 	private EnvironmentDTO environment;
 	//private List<TestCaseWithResultDTO> TestCases;
-	private List<TestSuiteDTO> testSuites = new ArrayList<TestSuiteDTO>();
+	private List<TestSuiteWithResultDTO> testSuites = new ArrayList<TestSuiteWithResultDTO>();
 	
 	
 	public Long getId() {
@@ -63,10 +63,10 @@ public class ChildRunDTO {
 	public void setEnvironment(EnvironmentDTO environment) {
 		this.environment = environment;
 	}
-	public List<TestSuiteDTO> getTestSuites() {
+	public List<TestSuiteWithResultDTO> getTestSuites() {
 		return testSuites;
 	}
-	public void setTestSuites(List<TestSuiteDTO> testSuites) {
+	public void setTestSuites(List<TestSuiteWithResultDTO> testSuites) {
 		this.testSuites = testSuites;
 	}
 }

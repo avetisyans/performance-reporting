@@ -5,7 +5,7 @@ import java.util.List;
 public class EnvironmentWithResultDTO {
 	
 	private String name;
-	private List<TestCaseWithStatistics> testCaseData;
+	private List<TestCaseWithStatisticsDTO> testCaseData;
 	
 	public String getName() {
 		return name;
@@ -15,11 +15,11 @@ public class EnvironmentWithResultDTO {
 		this.name = name;
 	}
 	
-	public List<TestCaseWithStatistics> getTestCaseData() {
+	public List<TestCaseWithStatisticsDTO> getTestCaseData() {
 		return testCaseData;
 	}
 	
-	public void setTestCaseData(List<TestCaseWithStatistics> testCaseData) {
+	public void setTestCaseData(List<TestCaseWithStatisticsDTO> testCaseData) {
 		this.testCaseData = testCaseData;
 	}
 	
