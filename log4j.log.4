@@ -1,84 +1,7 @@
-[2015-07-17 18:23:11,688]DEBUG209123[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#6]
-[2015-07-17 18:23:11,689]DEBUG209124[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,689]DEBUG209124[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,689]DEBUG209124[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#11]
-[2015-07-17 18:23:11,689]DEBUG209124[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#29]
-[2015-07-17 18:23:11,690]DEBUG209125[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#29]
-[2015-07-17 18:23:11,690]DEBUG209125[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#29]
-[2015-07-17 18:23:11,690]DEBUG209125[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#29]
-[2015-07-17 18:23:11,690]DEBUG209125[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,691]DEBUG209126[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,691]DEBUG209126[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#3], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#29], EntityKey[com.test.domain.Run_TestCase_TestResult#29]
-[2015-07-17 18:23:11,692]DEBUG209127[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,692]DEBUG209127[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,692]DEBUG209127[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,692]DEBUG209127[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#29]
-[2015-07-17 18:23:11,693]DEBUG209128[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,693]DEBUG209128[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#3]
-[2015-07-17 18:23:11,693]DEBUG209128[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,693]DEBUG209128[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,693]DEBUG209128[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#11]
-[2015-07-17 18:23:11,694]DEBUG209129[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,621]DEBUG225573[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,622]DEBUG225574[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,622]DEBUG225574[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#10]
+[2015-07-20 19:30:41,622]DEBUG225574[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.testCase_id as testCase3_6_0_,
         run_testca0_.id as id1_5_0_,
@@ -127,16 +50,16 @@
             on run_testca0_.testResult_id=testresult4_.id 
     where
         run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,749]DEBUG209184[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#11]
-[2015-07-17 18:23:11,749]DEBUG209184[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,749]DEBUG209184[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#11]
-[2015-07-17 18:23:11,750]DEBUG209185[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,750]DEBUG209185[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#11]
-[2015-07-17 18:23:11,750]DEBUG209185[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#37]
-[2015-07-17 18:23:11,750]DEBUG209185[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#37]
-[2015-07-17 18:23:11,751]DEBUG209186[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#37]
-[2015-07-17 18:23:11,751]DEBUG209186[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#37]
-[2015-07-17 18:23:11,751]DEBUG209186[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,623]DEBUG225575[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#10]
+[2015-07-20 19:30:41,624]DEBUG225576[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,624]DEBUG225576[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#10]
+[2015-07-20 19:30:41,624]DEBUG225576[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,624]DEBUG225576[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#10]
+[2015-07-20 19:30:41,624]DEBUG225576[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#36]
+[2015-07-20 19:30:41,625]DEBUG225577[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#36]
+[2015-07-20 19:30:41,625]DEBUG225577[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#36]
+[2015-07-20 19:30:41,625]DEBUG225577[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#36]
+[2015-07-20 19:30:41,625]DEBUG225577[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.id as id1_5_6_,
         run_testca0_.run_id as run_id2_5_6_,
@@ -197,18 +120,18 @@
             on run_testca0_.testResult_id=testresult6_.id 
     where
         run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,752]DEBUG209187[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,752]DEBUG209187[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#11], EntityKey[com.test.domain.TestSuite#3], EntityKey[com.test.domain.TestResult#37], EntityKey[com.test.domain.Run_TestCase_TestResult#37]
-[2015-07-17 18:23:11,753]DEBUG209188[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,753]DEBUG209188[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,753]DEBUG209188[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,753]DEBUG209188[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#37]
-[2015-07-17 18:23:11,754]DEBUG209189[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,754]DEBUG209189[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#11]
-[2015-07-17 18:23:11,754]DEBUG209189[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,754]DEBUG209189[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,754]DEBUG209189[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#5]
-[2015-07-17 18:23:11,755]DEBUG209190[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,626]DEBUG225578[http-bio-8080-exec-2] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-07-20 19:30:41,627]DEBUG225579[http-bio-8080-exec-2] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#10], EntityKey[com.test.domain.TestSuite#3], EntityKey[com.test.domain.TestResult#36], EntityKey[com.test.domain.Run_TestCase_TestResult#36]
+[2015-07-20 19:30:41,627]DEBUG225579[http-bio-8080-exec-2] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
+[2015-07-20 19:30:41,627]DEBUG225579[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
+[2015-07-20 19:30:41,627]DEBUG225579[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
+[2015-07-20 19:30:41,628]DEBUG225580[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#36]
+[2015-07-20 19:30:41,628]DEBUG225580[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,628]DEBUG225580[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#10]
+[2015-07-20 19:30:41,628]DEBUG225580[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,629]DEBUG225581[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,629]DEBUG225581[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,629]DEBUG225581[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.testCase_id as testCase3_6_0_,
         run_testca0_.id as id1_5_0_,
@@ -257,18 +180,20 @@
             on run_testca0_.testResult_id=testresult4_.id 
     where
         run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,756]DEBUG209191[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#5]
-[2015-07-17 18:23:11,756]DEBUG209191[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,756]DEBUG209191[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#5]
-[2015-07-17 18:23:11,756]DEBUG209191[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,756]DEBUG209191[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#5]
-[2015-07-17 18:23:11,757]DEBUG209192[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
-[2015-07-17 18:23:11,757]DEBUG209192[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#5]
-[2015-07-17 18:23:11,757]DEBUG209192[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#12]
-[2015-07-17 18:23:11,757]DEBUG209192[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#12]
-[2015-07-17 18:23:11,757]DEBUG209192[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#12]
-[2015-07-17 18:23:11,758]DEBUG209193[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#12]
-[2015-07-17 18:23:11,758]DEBUG209193[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,630]DEBUG225582[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,630]DEBUG225582[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,630]DEBUG225582[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,631]DEBUG225583[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,631]DEBUG225583[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,631]DEBUG225583[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
+[2015-07-20 19:30:41,631]DEBUG225583[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,632]DEBUG225584[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #3
+[2015-07-20 19:30:41,632]DEBUG225584[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,632]DEBUG225584[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#13]
+[2015-07-20 19:30:41,632]DEBUG225584[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#13]
+[2015-07-20 19:30:41,632]DEBUG225584[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#13]
+[2015-07-20 19:30:41,633]DEBUG225585[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#13]
+[2015-07-20 19:30:41,633]DEBUG225585[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.id as id1_5_6_,
         run_testca0_.run_id as run_id2_5_6_,
@@ -329,17 +254,17 @@
             on run_testca0_.testResult_id=testresult6_.id 
     where
         run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,759]DEBUG209194[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,759]DEBUG209194[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#6], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#5], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#12], EntityKey[com.test.domain.Run_TestCase_TestResult#12]
-[2015-07-17 18:23:11,759]DEBUG209194[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#6]
-[2015-07-17 18:23:11,759]DEBUG209194[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,760]DEBUG209195[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,760]DEBUG209195[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#12]
-[2015-07-17 18:23:11,760]DEBUG209195[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#30]
-[2015-07-17 18:23:11,760]DEBUG209195[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#30]
-[2015-07-17 18:23:11,760]DEBUG209195[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#30]
-[2015-07-17 18:23:11,760]DEBUG209195[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#30]
-[2015-07-17 18:23:11,761]DEBUG209196[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,634]DEBUG225586[http-bio-8080-exec-2] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-07-20 19:30:41,634]DEBUG225586[http-bio-8080-exec-2] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#6], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#6], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#13], EntityKey[com.test.domain.Run_TestCase_TestResult#13]
+[2015-07-20 19:30:41,634]DEBUG225586[http-bio-8080-exec-2] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#6]
+[2015-07-20 19:30:41,634]DEBUG225586[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
+[2015-07-20 19:30:41,635]DEBUG225587[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
+[2015-07-20 19:30:41,635]DEBUG225587[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#13]
+[2015-07-20 19:30:41,635]DEBUG225587[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#31]
+[2015-07-20 19:30:41,635]DEBUG225587[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#31]
+[2015-07-20 19:30:41,635]DEBUG225587[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#31]
+[2015-07-20 19:30:41,636]DEBUG225588[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#31]
+[2015-07-20 19:30:41,636]DEBUG225588[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.id as id1_5_6_,
         run_testca0_.run_id as run_id2_5_6_,
@@ -400,18 +325,18 @@
             on run_testca0_.testResult_id=testresult6_.id 
     where
         run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,762]DEBUG209197[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,762]DEBUG209197[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#5], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#30], EntityKey[com.test.domain.Run_TestCase_TestResult#30]
-[2015-07-17 18:23:11,762]DEBUG209197[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,762]DEBUG209197[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,762]DEBUG209197[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,763]DEBUG209198[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#30]
-[2015-07-17 18:23:11,763]DEBUG209198[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,763]DEBUG209198[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#5]
-[2015-07-17 18:23:11,763]DEBUG209198[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,764]DEBUG209199[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,764]DEBUG209199[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#10]
-[2015-07-17 18:23:11,764]DEBUG209199[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,637]DEBUG225589[http-bio-8080-exec-2] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-07-20 19:30:41,637]DEBUG225589[http-bio-8080-exec-2] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#6], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#31], EntityKey[com.test.domain.Run_TestCase_TestResult#31]
+[2015-07-20 19:30:41,637]DEBUG225589[http-bio-8080-exec-2] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
+[2015-07-20 19:30:41,637]DEBUG225589[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
+[2015-07-20 19:30:41,638]DEBUG225590[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
+[2015-07-20 19:30:41,638]DEBUG225590[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#31]
+[2015-07-20 19:30:41,638]DEBUG225590[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,638]DEBUG225590[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,638]DEBUG225590[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,639]DEBUG225591[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,639]DEBUG225591[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#11]
+[2015-07-20 19:30:41,639]DEBUG225591[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.testCase_id as testCase3_6_0_,
         run_testca0_.id as id1_5_0_,
@@ -460,16 +385,16 @@
             on run_testca0_.testResult_id=testresult4_.id 
     where
         run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,765]DEBUG209200[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#10]
-[2015-07-17 18:23:11,765]DEBUG209200[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,765]DEBUG209200[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#10]
-[2015-07-17 18:23:11,765]DEBUG209200[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,766]DEBUG209201[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#10]
-[2015-07-17 18:23:11,766]DEBUG209201[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#36]
-[2015-07-17 18:23:11,766]DEBUG209201[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#36]
-[2015-07-17 18:23:11,766]DEBUG209201[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#36]
-[2015-07-17 18:23:11,766]DEBUG209201[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#36]
-[2015-07-17 18:23:11,767]DEBUG209202[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,640]DEBUG225592[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#11]
+[2015-07-20 19:30:41,640]DEBUG225592[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,640]DEBUG225592[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#11]
+[2015-07-20 19:30:41,641]DEBUG225593[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,641]DEBUG225593[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#11]
+[2015-07-20 19:30:41,641]DEBUG225593[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#37]
+[2015-07-20 19:30:41,641]DEBUG225593[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#37]
+[2015-07-20 19:30:41,641]DEBUG225593[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#37]
+[2015-07-20 19:30:41,642]DEBUG225594[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#37]
+[2015-07-20 19:30:41,642]DEBUG225594[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
         run_testca0_.id as id1_5_6_,
         run_testca0_.run_id as run_id2_5_6_,
@@ -530,898 +455,598 @@
             on run_testca0_.testResult_id=testresult6_.id 
     where
         run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,768]DEBUG209203[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,768]DEBUG209203[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#10], EntityKey[com.test.domain.TestSuite#3], EntityKey[com.test.domain.TestResult#36], EntityKey[com.test.domain.Run_TestCase_TestResult#36]
-[2015-07-17 18:23:11,768]DEBUG209203[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,768]DEBUG209203[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,769]DEBUG209204[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,769]DEBUG209204[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#36]
-[2015-07-17 18:23:11,769]DEBUG209204[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,769]DEBUG209204[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#10]
-[2015-07-17 18:23:11,769]DEBUG209204[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,770]DEBUG209205[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,770]DEBUG209205[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,770]DEBUG209205[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+[2015-07-20 19:30:41,643]DEBUG225595[http-bio-8080-exec-2] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-07-20 19:30:41,643]DEBUG225595[http-bio-8080-exec-2] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#11], EntityKey[com.test.domain.TestSuite#3], EntityKey[com.test.domain.TestResult#37], EntityKey[com.test.domain.Run_TestCase_TestResult#37]
+[2015-07-20 19:30:41,643]DEBUG225595[http-bio-8080-exec-2] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
+[2015-07-20 19:30:41,644]DEBUG225596[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
+[2015-07-20 19:30:41,644]DEBUG225596[http-bio-8080-exec-2] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
+[2015-07-20 19:30:41,644]DEBUG225596[http-bio-8080-exec-2] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#37]
+[2015-07-20 19:30:41,644]DEBUG225596[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,645]DEBUG225597[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#11]
+[2015-07-20 19:30:41,645]DEBUG225597[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
+[2015-07-20 19:30:41,645]DEBUG225597[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,645]DEBUG225597[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Environment.runs#2]
+[2015-07-20 19:30:41,645]DEBUG225597[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
-        run_testca0_.testCase_id as testCase3_6_0_,
-        run_testca0_.id as id1_5_0_,
-        run_testca0_.id as id1_5_1_,
-        run_testca0_.run_id as run_id2_5_1_,
-        run_testca0_.testCase_id as testCase3_5_1_,
-        run_testca0_.testResult_id as testResu4_5_1_,
+        runs0_.environment_id as environm6_2_0_,
+        runs0_.id as id1_4_0_,
+        runs0_.id as id1_4_1_,
+        runs0_.buildNumber as buildNum2_4_1_,
+        runs0_.endTime as endTime3_4_1_,
+        runs0_.environment_id as environm6_4_1_,
+        runs0_.parent_id as parent_i7_4_1_,
+        runs0_.startTime as startTim4_4_1_,
+        runs0_.tag as tag5_4_1_,
         run1_.id as id1_4_2_,
         run1_.buildNumber as buildNum2_4_2_,
         run1_.endTime as endTime3_4_2_,
         run1_.environment_id as environm6_4_2_,
         run1_.parent_id as parent_i7_4_2_,
         run1_.startTime as startTim4_4_2_,
-        run1_.tag as tag5_4_2_,
-        environmen2_.id as id1_2_3_,
-        environmen2_.datanodes as datanode2_2_3_,
-        environmen2_.deploymentType as deployme3_2_3_,
-        environmen2_.haEnabled as haEnable4_2_3_,
-        environmen2_.master as master5_2_3_,
-        environmen2_.name as name6_2_3_,
-        environmen2_.productName as productN7_2_3_,
-        run3_.id as id1_4_4_,
-        run3_.buildNumber as buildNum2_4_4_,
-        run3_.endTime as endTime3_4_4_,
-        run3_.environment_id as environm6_4_4_,
-        run3_.parent_id as parent_i7_4_4_,
-        run3_.startTime as startTim4_4_4_,
-        run3_.tag as tag5_4_4_,
-        testresult4_.id as id1_7_5_,
-        testresult4_.endTime as endTime2_7_5_,
-        testresult4_.result as result3_7_5_,
-        testresult4_.startTime as startTim4_7_5_ 
+        run1_.tag as tag5_4_2_ 
     from
-        Run_TestCase_TestResult run_testca0_ 
+        Run runs0_ 
     left outer join
         Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Environment environmen2_ 
-            on run1_.environment_id=environmen2_.id 
-    left outer join
-        Run run3_ 
-            on run1_.parent_id=run3_.id 
-    left outer join
-        TestResult testresult4_ 
-            on run_testca0_.testResult_id=testresult4_.id 
+            on runs0_.parent_id=run1_.id 
     where
-        run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,771]DEBUG209206[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,771]DEBUG209206[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,771]DEBUG209206[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,772]DEBUG209207[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,772]DEBUG209207[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,772]DEBUG209207[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
-[2015-07-17 18:23:11,772]DEBUG209207[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,772]DEBUG209207[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #3
-[2015-07-17 18:23:11,773]DEBUG209208[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,773]DEBUG209208[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #4
-[2015-07-17 18:23:11,773]DEBUG209208[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,773]DEBUG209208[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #5
-[2015-07-17 18:23:11,773]DEBUG209208[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,774]DEBUG209209[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #6
-[2015-07-17 18:23:11,774]DEBUG209209[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,774]DEBUG209209[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#2]
-[2015-07-17 18:23:11,774]DEBUG209209[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#2]
-[2015-07-17 18:23:11,774]DEBUG209209[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#2]
-[2015-07-17 18:23:11,775]DEBUG209210[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#2]
-[2015-07-17 18:23:11,775]DEBUG209210[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+        runs0_.environment_id=?
+[2015-07-20 19:30:41,646]DEBUG225598[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Environment.runs#2]
+[2015-07-20 19:30:41,646]DEBUG225598[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,646]DEBUG225598[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Environment.runs#2]
+[2015-07-20 19:30:41,647]DEBUG225599[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,647]DEBUG225599[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Environment.runs#2]
+[2015-07-20 19:30:41,647]DEBUG225599[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
+[2015-07-20 19:30:41,647]DEBUG225599[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Environment.runs#2]
+[2015-07-20 19:30:41,647]DEBUG225599[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Environment.runs
+[2015-07-20 19:30:41,648]DEBUG225600[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Environment.runs#2]
+[2015-07-20 19:30:41,648]DEBUG225600[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Environment.runs
+[2015-07-20 19:30:41,648]DEBUG225600[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,648]DEBUG225600[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.run_TestCase_TestResults#3]
+[2015-07-20 19:30:41,649]DEBUG225601[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,776]DEBUG209211[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,776]DEBUG209211[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#3], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#1], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#2], EntityKey[com.test.domain.Run_TestCase_TestResult#2]
-[2015-07-17 18:23:11,776]DEBUG209211[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#3]
-[2015-07-17 18:23:11,776]DEBUG209211[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,777]DEBUG209212[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,777]DEBUG209212[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#2]
-[2015-07-17 18:23:11,777]DEBUG209212[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#9]
-[2015-07-17 18:23:11,777]DEBUG209212[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#9]
-[2015-07-17 18:23:11,777]DEBUG209212[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#9]
-[2015-07-17 18:23:11,778]DEBUG209213[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#9]
-[2015-07-17 18:23:11,778]DEBUG209213[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,779]DEBUG209214[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,779]DEBUG209214[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#6], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#1], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#9], EntityKey[com.test.domain.Run_TestCase_TestResult#9]
-[2015-07-17 18:23:11,779]DEBUG209214[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#6]
-[2015-07-17 18:23:11,779]DEBUG209214[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,780]DEBUG209215[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,780]DEBUG209215[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#9]
-[2015-07-17 18:23:11,780]DEBUG209215[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#27]
-[2015-07-17 18:23:11,780]DEBUG209215[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#27]
-[2015-07-17 18:23:11,780]DEBUG209215[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#27]
-[2015-07-17 18:23:11,781]DEBUG209216[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#27]
-[2015-07-17 18:23:11,781]DEBUG209216[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,782]DEBUG209217[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,782]DEBUG209217[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#1], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#27], EntityKey[com.test.domain.Run_TestCase_TestResult#27]
-[2015-07-17 18:23:11,782]DEBUG209217[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,782]DEBUG209217[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,783]DEBUG209218[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,783]DEBUG209218[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#27]
-[2015-07-17 18:23:11,783]DEBUG209218[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,783]DEBUG209218[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#1]
-[2015-07-17 18:23:11,783]DEBUG209218[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,784]DEBUG209219[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,784]DEBUG209219[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,784]DEBUG209219[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.testCase_id as testCase3_6_0_,
+        run_testca0_.run_id as run_id2_4_0_,
         run_testca0_.id as id1_5_0_,
         run_testca0_.id as id1_5_1_,
         run_testca0_.run_id as run_id2_5_1_,
         run_testca0_.testCase_id as testCase3_5_1_,
         run_testca0_.testResult_id as testResu4_5_1_,
-        run1_.id as id1_4_2_,
-        run1_.buildNumber as buildNum2_4_2_,
-        run1_.endTime as endTime3_4_2_,
-        run1_.environment_id as environm6_4_2_,
-        run1_.parent_id as parent_i7_4_2_,
-        run1_.startTime as startTim4_4_2_,
-        run1_.tag as tag5_4_2_,
-        environmen2_.id as id1_2_3_,
-        environmen2_.datanodes as datanode2_2_3_,
-        environmen2_.deploymentType as deployme3_2_3_,
-        environmen2_.haEnabled as haEnable4_2_3_,
-        environmen2_.master as master5_2_3_,
-        environmen2_.name as name6_2_3_,
-        environmen2_.productName as productN7_2_3_,
-        run3_.id as id1_4_4_,
-        run3_.buildNumber as buildNum2_4_4_,
-        run3_.endTime as endTime3_4_4_,
-        run3_.environment_id as environm6_4_4_,
-        run3_.parent_id as parent_i7_4_4_,
-        run3_.startTime as startTim4_4_4_,
-        run3_.tag as tag5_4_4_,
-        testresult4_.id as id1_7_5_,
-        testresult4_.endTime as endTime2_7_5_,
-        testresult4_.result as result3_7_5_,
-        testresult4_.startTime as startTim4_7_5_ 
+        testcase1_.id as id1_6_2_,
+        testcase1_.name as name2_6_2_,
+        testcase1_.testSuite_id as testSuit4_6_2_,
+        testcase1_.testType as testType3_6_2_,
+        testsuite2_.id as id1_8_3_,
+        testsuite2_.name as name2_8_3_,
+        testresult3_.id as id1_7_4_,
+        testresult3_.endTime as endTime2_7_4_,
+        testresult3_.result as result3_7_4_,
+        testresult3_.startTime as startTim4_7_4_ 
     from
         Run_TestCase_TestResult run_testca0_ 
     left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
+        TestCase testcase1_ 
+            on run_testca0_.testCase_id=testcase1_.id 
     left outer join
-        Environment environmen2_ 
-            on run1_.environment_id=environmen2_.id 
+        TestSuite testsuite2_ 
+            on testcase1_.testSuite_id=testsuite2_.id 
     left outer join
-        Run run3_ 
-            on run1_.parent_id=run3_.id 
-    left outer join
-        TestResult testresult4_ 
-            on run_testca0_.testResult_id=testresult4_.id 
+        TestResult testresult3_ 
+            on run_testca0_.testResult_id=testresult3_.id 
     where
-        run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,785]DEBUG209220[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,785]DEBUG209220[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,786]DEBUG209221[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,786]DEBUG209221[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,786]DEBUG209221[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,786]DEBUG209221[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
-[2015-07-17 18:23:11,786]DEBUG209221[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,786]DEBUG209221[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #3
-[2015-07-17 18:23:11,787]DEBUG209222[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,787]DEBUG209222[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#15]
-[2015-07-17 18:23:11,787]DEBUG209222[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#15]
-[2015-07-17 18:23:11,787]DEBUG209222[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#15]
-[2015-07-17 18:23:11,787]DEBUG209222[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#15]
-[2015-07-17 18:23:11,788]DEBUG209223[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+        run_testca0_.run_id=?
+[2015-07-20 19:30:41,649]DEBUG225601[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.run_TestCase_TestResults#3]
+[2015-07-20 19:30:41,649]DEBUG225601[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,650]DEBUG225602[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#3]
+[2015-07-20 19:30:41,650]DEBUG225602[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,650]DEBUG225602[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#3]
+[2015-07-20 19:30:41,650]DEBUG225602[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
+[2015-07-20 19:30:41,650]DEBUG225602[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#3]
+[2015-07-20 19:30:41,651]DEBUG225603[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.run_TestCase_TestResults
+[2015-07-20 19:30:41,651]DEBUG225603[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.run_TestCase_TestResults#3]
+[2015-07-20 19:30:41,651]DEBUG225603[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.run_TestCase_TestResults
+[2015-07-20 19:30:41,651]DEBUG225603[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,651]DEBUG225603[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,652]DEBUG225604[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,789]DEBUG209224[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,789]DEBUG209224[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#6], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#4], EntityKey[com.test.domain.TestSuite#2], EntityKey[com.test.domain.TestResult#15], EntityKey[com.test.domain.Run_TestCase_TestResult#15]
-[2015-07-17 18:23:11,789]DEBUG209224[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#6]
-[2015-07-17 18:23:11,789]DEBUG209224[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,790]DEBUG209225[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,790]DEBUG209225[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#15]
-[2015-07-17 18:23:11,790]DEBUG209225[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#34]
-[2015-07-17 18:23:11,790]DEBUG209225[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#34]
-[2015-07-17 18:23:11,790]DEBUG209225[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#34]
-[2015-07-17 18:23:11,790]DEBUG209225[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#34]
-[2015-07-17 18:23:11,791]DEBUG209226[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,792]DEBUG209227[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,792]DEBUG209227[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#4], EntityKey[com.test.domain.TestSuite#2], EntityKey[com.test.domain.TestResult#34], EntityKey[com.test.domain.Run_TestCase_TestResult#34]
-[2015-07-17 18:23:11,792]DEBUG209227[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,792]DEBUG209227[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,793]DEBUG209228[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,793]DEBUG209228[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#34]
-[2015-07-17 18:23:11,793]DEBUG209228[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,793]DEBUG209228[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#4]
-[2015-07-17 18:23:11,793]DEBUG209228[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,794]DEBUG209229[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,794]DEBUG209229[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,794]DEBUG209229[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.testCase_id as testCase3_6_0_,
+        run_testca0_.run_id as run_id2_4_0_,
         run_testca0_.id as id1_5_0_,
         run_testca0_.id as id1_5_1_,
         run_testca0_.run_id as run_id2_5_1_,
         run_testca0_.testCase_id as testCase3_5_1_,
         run_testca0_.testResult_id as testResu4_5_1_,
-        run1_.id as id1_4_2_,
-        run1_.buildNumber as buildNum2_4_2_,
-        run1_.endTime as endTime3_4_2_,
-        run1_.environment_id as environm6_4_2_,
-        run1_.parent_id as parent_i7_4_2_,
-        run1_.startTime as startTim4_4_2_,
-        run1_.tag as tag5_4_2_,
-        environmen2_.id as id1_2_3_,
-        environmen2_.datanodes as datanode2_2_3_,
-        environmen2_.deploymentType as deployme3_2_3_,
-        environmen2_.haEnabled as haEnable4_2_3_,
-        environmen2_.master as master5_2_3_,
-        environmen2_.name as name6_2_3_,
-        environmen2_.productName as productN7_2_3_,
-        run3_.id as id1_4_4_,
-        run3_.buildNumber as buildNum2_4_4_,
-        run3_.endTime as endTime3_4_4_,
-        run3_.environment_id as environm6_4_4_,
-        run3_.parent_id as parent_i7_4_4_,
-        run3_.startTime as startTim4_4_4_,
-        run3_.tag as tag5_4_4_,
-        testresult4_.id as id1_7_5_,
-        testresult4_.endTime as endTime2_7_5_,
-        testresult4_.result as result3_7_5_,
-        testresult4_.startTime as startTim4_7_5_ 
+        testcase1_.id as id1_6_2_,
+        testcase1_.name as name2_6_2_,
+        testcase1_.testSuite_id as testSuit4_6_2_,
+        testcase1_.testType as testType3_6_2_,
+        testsuite2_.id as id1_8_3_,
+        testsuite2_.name as name2_8_3_,
+        testresult3_.id as id1_7_4_,
+        testresult3_.endTime as endTime2_7_4_,
+        testresult3_.result as result3_7_4_,
+        testresult3_.startTime as startTim4_7_4_ 
     from
         Run_TestCase_TestResult run_testca0_ 
     left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
+        TestCase testcase1_ 
+            on run_testca0_.testCase_id=testcase1_.id 
     left outer join
-        Environment environmen2_ 
-            on run1_.environment_id=environmen2_.id 
+        TestSuite testsuite2_ 
+            on testcase1_.testSuite_id=testsuite2_.id 
     left outer join
-        Run run3_ 
-            on run1_.parent_id=run3_.id 
-    left outer join
-        TestResult testresult4_ 
-            on run_testca0_.testResult_id=testresult4_.id 
+        TestResult testresult3_ 
+            on run_testca0_.testResult_id=testresult3_.id 
     where
-        run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,795]DEBUG209230[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,795]DEBUG209230[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,795]DEBUG209230[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,796]DEBUG209231[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,796]DEBUG209231[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,796]DEBUG209231[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
-[2015-07-17 18:23:11,796]DEBUG209231[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,796]DEBUG209231[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #3
-[2015-07-17 18:23:11,797]DEBUG209232[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,797]DEBUG209232[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #4
-[2015-07-17 18:23:11,797]DEBUG209232[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,797]DEBUG209232[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#3]
-[2015-07-17 18:23:11,797]DEBUG209232[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#3]
-[2015-07-17 18:23:11,798]DEBUG209233[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#3]
-[2015-07-17 18:23:11,798]DEBUG209233[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#3]
-[2015-07-17 18:23:11,798]DEBUG209233[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+        run_testca0_.run_id=?
+[2015-07-20 19:30:41,652]DEBUG225604[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,652]DEBUG225604[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,653]DEBUG225605[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,653]DEBUG225605[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,653]DEBUG225605[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,653]DEBUG225605[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
+[2015-07-20 19:30:41,653]DEBUG225605[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,654]DEBUG225606[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #3
+[2015-07-20 19:30:41,654]DEBUG225606[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,654]DEBUG225606[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #4
+[2015-07-20 19:30:41,654]DEBUG225606[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,654]DEBUG225606[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #5
+[2015-07-20 19:30:41,655]DEBUG225607[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,655]DEBUG225607[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #6
+[2015-07-20 19:30:41,655]DEBUG225607[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,655]DEBUG225607[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.run_TestCase_TestResults
+[2015-07-20 19:30:41,655]DEBUG225607[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.run_TestCase_TestResults#6]
+[2015-07-20 19:30:41,655]DEBUG225607[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.run_TestCase_TestResults
+[2015-07-20 19:30:41,656]DEBUG225608[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,656]DEBUG225608[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,656]DEBUG225608[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,799]DEBUG209234[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,799]DEBUG209234[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#3], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#2], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#3], EntityKey[com.test.domain.Run_TestCase_TestResult#3]
-[2015-07-17 18:23:11,799]DEBUG209234[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#3]
-[2015-07-17 18:23:11,799]DEBUG209234[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,800]DEBUG209235[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,800]DEBUG209235[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#3]
-[2015-07-17 18:23:11,800]DEBUG209235[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#10]
-[2015-07-17 18:23:11,800]DEBUG209235[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#10]
-[2015-07-17 18:23:11,801]DEBUG209236[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#10]
-[2015-07-17 18:23:11,801]DEBUG209236[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#10]
-[2015-07-17 18:23:11,801]DEBUG209236[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,802]DEBUG209237[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,802]DEBUG209237[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#6], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#2], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#10], EntityKey[com.test.domain.Run_TestCase_TestResult#10]
-[2015-07-17 18:23:11,802]DEBUG209237[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#6]
-[2015-07-17 18:23:11,802]DEBUG209237[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,803]DEBUG209238[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,803]DEBUG209238[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#10]
-[2015-07-17 18:23:11,803]DEBUG209238[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#28]
-[2015-07-17 18:23:11,803]DEBUG209238[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#28]
-[2015-07-17 18:23:11,803]DEBUG209238[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#28]
-[2015-07-17 18:23:11,804]DEBUG209239[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#28]
-[2015-07-17 18:23:11,804]DEBUG209239[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
-    from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
-    where
-        run_testca0_.testResult_id=?
-[2015-07-17 18:23:11,805]DEBUG209240[http-bio-8080-exec-7] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
-[2015-07-17 18:23:11,805]DEBUG209240[http-bio-8080-exec-7] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9], null, EntityKey[com.test.domain.Environment#2], EntityKey[com.test.domain.TestCase#2], EntityKey[com.test.domain.TestSuite#1], EntityKey[com.test.domain.TestResult#28], EntityKey[com.test.domain.Run_TestCase_TestResult#28]
-[2015-07-17 18:23:11,805]DEBUG209240[http-bio-8080-exec-7] - org.hibernate.loader.Loader.readCollectionElement(Loader.java:1337) - Result set contains (possibly empty) collection: [com.test.domain.Run.children#9]
-[2015-07-17 18:23:11,805]DEBUG209240[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:227) - No collections were found in result set for role: com.test.domain.Run.children
-[2015-07-17 18:23:11,806]DEBUG209241[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2161) - Done entity load
-[2015-07-17 18:23:11,806]DEBUG209241[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.TestResult#28]
-[2015-07-17 18:23:11,806]DEBUG209241[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,806]DEBUG209241[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.TestCase.run_TestCase_TestResults#2]
-[2015-07-17 18:23:11,806]DEBUG209241[http-bio-8080-exec-7] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.TestCase.run_TestCase_TestResults
-[2015-07-17 18:23:11,807]DEBUG209242[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
-[2015-07-17 18:23:11,807]DEBUG209242[http-bio-8080-exec-7] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.TestCase.run_TestCase_TestResults#9]
-[2015-07-17 18:23:11,807]DEBUG209242[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
-    select
-        run_testca0_.testCase_id as testCase3_6_0_,
+        run_testca0_.run_id as run_id2_4_0_,
         run_testca0_.id as id1_5_0_,
         run_testca0_.id as id1_5_1_,
         run_testca0_.run_id as run_id2_5_1_,
         run_testca0_.testCase_id as testCase3_5_1_,
         run_testca0_.testResult_id as testResu4_5_1_,
-        run1_.id as id1_4_2_,
-        run1_.buildNumber as buildNum2_4_2_,
-        run1_.endTime as endTime3_4_2_,
-        run1_.environment_id as environm6_4_2_,
-        run1_.parent_id as parent_i7_4_2_,
-        run1_.startTime as startTim4_4_2_,
-        run1_.tag as tag5_4_2_,
-        environmen2_.id as id1_2_3_,
-        environmen2_.datanodes as datanode2_2_3_,
-        environmen2_.deploymentType as deployme3_2_3_,
-        environmen2_.haEnabled as haEnable4_2_3_,
-        environmen2_.master as master5_2_3_,
-        environmen2_.name as name6_2_3_,
-        environmen2_.productName as productN7_2_3_,
-        run3_.id as id1_4_4_,
-        run3_.buildNumber as buildNum2_4_4_,
-        run3_.endTime as endTime3_4_4_,
-        run3_.environment_id as environm6_4_4_,
-        run3_.parent_id as parent_i7_4_4_,
-        run3_.startTime as startTim4_4_4_,
-        run3_.tag as tag5_4_4_,
-        testresult4_.id as id1_7_5_,
-        testresult4_.endTime as endTime2_7_5_,
-        testresult4_.result as result3_7_5_,
-        testresult4_.startTime as startTim4_7_5_ 
+        testcase1_.id as id1_6_2_,
+        testcase1_.name as name2_6_2_,
+        testcase1_.testSuite_id as testSuit4_6_2_,
+        testcase1_.testType as testType3_6_2_,
+        testsuite2_.id as id1_8_3_,
+        testsuite2_.name as name2_8_3_,
+        testresult3_.id as id1_7_4_,
+        testresult3_.endTime as endTime2_7_4_,
+        testresult3_.result as result3_7_4_,
+        testresult3_.startTime as startTim4_7_4_ 
     from
         Run_TestCase_TestResult run_testca0_ 
     left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
+        TestCase testcase1_ 
+            on run_testca0_.testCase_id=testcase1_.id 
     left outer join
-        Environment environmen2_ 
-            on run1_.environment_id=environmen2_.id 
+        TestSuite testsuite2_ 
+            on testcase1_.testSuite_id=testsuite2_.id 
     left outer join
-        Run run3_ 
-            on run1_.parent_id=run3_.id 
-    left outer join
-        TestResult testresult4_ 
-            on run_testca0_.testResult_id=testresult4_.id 
+        TestResult testresult3_ 
+            on run_testca0_.testResult_id=testresult3_.id 
     where
-        run_testca0_.testCase_id=?
-[2015-07-17 18:23:11,808]DEBUG209243[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.TestCase.run_TestCase_TestResults#9]
-[2015-07-17 18:23:11,808]DEBUG209243[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
-[2015-07-17 18:23:11,808]DEBUG209243[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#9]
-[2015-07-17 18:23:11,809]DEBUG209244[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
-[2015-07-17 18:23:11,809]DEBUG209244[http-bio-8080-exec-7] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.TestCase.run_TestCase_TestResults#9]
-[2015-07-17 18:23:11,809]DEBUG209244[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run_TestCase_TestResult#35]
-[2015-07-17 18:23:11,809]DEBUG209244[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run_TestCase_TestResult#35]
-[2015-07-17 18:23:11,809]DEBUG209244[http-bio-8080-exec-7] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.TestResult#35]
-[2015-07-17 18:23:11,809]DEBUG209244[http-bio-8080-exec-7] - org.hibernate.loader.Loader.loadEntity(Loader.java:2137) - Loading entity: [com.test.domain.Run_TestCase_TestResult#35]
-[2015-07-17 18:23:11,810]DEBUG209245[http-bio-8080-exec-7] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+        run_testca0_.run_id=?
+[2015-07-20 19:30:41,657]DEBUG225609[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,657]DEBUG225609[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-20 19:30:41,657]DEBUG225609[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,657]DEBUG225609[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #1
+[2015-07-20 19:30:41,658]DEBUG225610[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,658]DEBUG225610[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #2
+[2015-07-20 19:30:41,658]DEBUG225610[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,658]DEBUG225610[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #3
+[2015-07-20 19:30:41,658]DEBUG225610[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,659]DEBUG225611[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #4
+[2015-07-20 19:30:41,659]DEBUG225611[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,659]DEBUG225611[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #5
+[2015-07-20 19:30:41,659]DEBUG225611[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,659]DEBUG225611[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #6
+[2015-07-20 19:30:41,659]DEBUG225611[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,660]DEBUG225612[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #7
+[2015-07-20 19:30:41,660]DEBUG225612[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,660]DEBUG225612[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #8
+[2015-07-20 19:30:41,660]DEBUG225612[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,660]DEBUG225612[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #9
+[2015-07-20 19:30:41,661]DEBUG225613[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,661]DEBUG225613[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #10
+[2015-07-20 19:30:41,661]DEBUG225613[http-bio-8080-exec-2] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,661]DEBUG225613[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.run_TestCase_TestResults
+[2015-07-20 19:30:41,661]DEBUG225613[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.run_TestCase_TestResults#9]
+[2015-07-20 19:30:41,662]DEBUG225614[http-bio-8080-exec-2] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.run_TestCase_TestResults
+[2015-07-20 19:30:41,662]DEBUG225614[http-bio-8080-exec-2] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-20 19:30:41,663]DEBUG225615[http-bio-8080-exec-2] - org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:163) - Written [[com.test.dto.EnvironmentWithResultDTO@7d228244, com.test.dto.EnvironmentWithResultDTO@50ab2de8]] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@70a62495]
+[2015-07-20 19:30:41,663]DEBUG225615[http-bio-8080-exec-2] - org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034) - Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+[2015-07-20 19:30:41,663]DEBUG225615[http-bio-8080-exec-2] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
+[2015-07-20 19:30:41,664]DEBUG225616[http-bio-8080-exec-2] - org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:186) - Closing JPA EntityManager in OpenEntityManagerInViewFilter
+[2015-07-20 19:30:41,664]DEBUG225616[http-bio-8080-exec-2] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-07-20 19:30:41,664]DEBUG225616[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:246) - Releasing JDBC connection
+[2015-07-20 19:30:41,664]DEBUG225616[http-bio-8080-exec-2] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:264) - Released JDBC connection
+[2015-07-20 19:30:42,502]DEBUG226454[http-bio-8080-exec-2] - org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:161) - Opening JPA EntityManager in OpenEntityManagerInViewFilter
+[2015-07-20 19:30:42,502]DEBUG226454[http-bio-8080-exec-2] - org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:861) - DispatcherServlet with name 'dispatcherServlet' processing GET request for [/performance-report/app/views/environment.html]
+[2015-07-20 19:30:42,503]DEBUG226455[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:294) - Looking up handler method for path /app/views/environment.html
+[2015-07-20 19:30:42,503]DEBUG226455[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:302) - Did not find handler method for [/app/views/environment.html]
+[2015-07-20 19:30:42,503]DEBUG226455[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.lookupHandler(AbstractUrlHandlerMapping.java:168) - Matching patterns for request [/app/views/environment.html] are [/**]
+[2015-07-20 19:30:42,503]DEBUG226455[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.lookupHandler(AbstractUrlHandlerMapping.java:193) - URI Template variables for request [/app/views/environment.html] are {}
+[2015-07-20 19:30:42,504]DEBUG226456[http-bio-8080-exec-2] - org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.getHandlerInternal(AbstractUrlHandlerMapping.java:123) - Mapping [/app/views/environment.html] to HandlerExecutionChain with handler [org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler@5a7efec5] and 1 interceptor
+[2015-07-20 19:30:42,504]DEBUG226456[http-bio-8080-exec-2] - org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:947) - Last-Modified value for [/performance-report/app/views/environment.html] is: -1
+[2015-07-20 19:30:42,504]DEBUG226456[http-bio-8080-exec-2] - org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1034) - Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+[2015-07-20 19:30:42,504]DEBUG226456[http-bio-8080-exec-2] - org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:996) - Successfully completed request
+[2015-07-20 19:30:42,504]DEBUG226456[http-bio-8080-exec-2] - org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:186) - Closing JPA EntityManager in OpenEntityManagerInViewFilter
+[2015-07-20 19:30:42,504]DEBUG226456[http-bio-8080-exec-2] - org.springframework.orm.jpa.EntityManagerFactoryUtils.closeEntityManager(EntityManagerFactoryUtils.java:432) - Closing JPA EntityManager
+[2015-07-21 10:38:48,833]DEBUG712785[http-bio-8080-exec-5] - org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:161) - Opening JPA EntityManager in OpenEntityManagerInViewFilter
+[2015-07-21 10:38:49,261]DEBUG713213[http-bio-8080-exec-5] - org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:861) - DispatcherServlet with name 'dispatcherServlet' processing GET request for [/performance-report/rest/runs]
+[2015-07-21 10:38:49,295]DEBUG713247[http-bio-8080-exec-5] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:294) - Looking up handler method for path /rest/runs
+[2015-07-21 10:38:49,464]DEBUG713416[http-bio-8080-exec-5] - org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:299) - Returning handler method [public java.util.List<com.test.dto.ParentRunDTO> com.test.controller.TestResultRestController.getRuns()]
+[2015-07-21 10:38:49,465]DEBUG713417[http-bio-8080-exec-5] - org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:248) - Returning cached instance of singleton bean 'testResultRestController'
+[2015-07-21 10:38:49,498]DEBUG713450[http-bio-8080-exec-5] - org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:947) - Last-Modified value for [/performance-report/rest/runs] is: -1
+[2015-07-21 10:38:49,668]DEBUG713620[http-bio-8080-exec-5] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@75ce39c8] for JPA transaction
+[2015-07-21 10:38:49,708]DEBUG713660[http-bio-8080-exec-5] - org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:367) - Creating new transaction with name [com.test.service.impl.RunServiceImpl.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+[2015-07-21 10:38:49,708]DEBUG713660[http-bio-8080-exec-5] - org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:160) - begin
+[2015-07-21 10:38:49,708]DEBUG713660[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:226) - Obtaining JDBC connection
+[2015-07-21 10:38:50,094]DEBUG714046[http-bio-8080-exec-5] - org.apache.commons.dbcp2.PoolableConnectionFactory.validateObject(PoolableConnectionFactory.java:292) - Failed to validate a poolable connection
+java.sql.SQLException: isValid() returned false
+	at org.apache.commons.dbcp2.PoolableConnection.validate(PoolableConnection.java:220)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateConnection(PoolableConnectionFactory.java:303)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.validateObject(PoolableConnectionFactory.java:288)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:488)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:361)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:102)
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:1413)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:380)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:228)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:171)
+	at org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:67)
+	at org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:162)
+	at org.hibernate.internal.SessionImpl.beginTransaction(SessionImpl.java:1471)
+	at org.hibernate.jpa.internal.TransactionImpl.begin(TransactionImpl.java:61)
+	at org.springframework.orm.jpa.DefaultJpaDialect.beginTransaction(DefaultJpaDialect.java:67)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:380)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:463)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:276)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy64.findAll(Unknown Source)
+	at com.test.controller.TestResultRestController.getRuns(TestResultRestController.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at com.test.corsfilter.SimpleCORSFilter.doFilter(SimpleCORSFilter.java:31)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter.doFilterInternal(OpenEntityManagerInViewFilter.java:178)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1041)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:603)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-07-21 10:38:51,688]DEBUG715640[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:232) - Obtained JDBC connection
+[2015-07-21 10:38:51,688]DEBUG715640[http-bio-8080-exec-5] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) - initial autocommit status: true
+[2015-07-21 10:38:51,689]DEBUG715641[http-bio-8080-exec-5] - org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) - disabling autocommit
+[2015-07-21 10:38:51,689]DEBUG715641[http-bio-8080-exec-5] - org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411) - Not exposing JPA transaction [org.hibernate.jpa.internal.EntityManagerImpl@75ce39c8] as JDBC transaction because JpaDialect [org.springframework.orm.jpa.DefaultJpaDialect@1ff0189b] does not support JDBC Connection retrieval
+[2015-07-21 10:38:51,694]DEBUG715646[http-bio-8080-exec-5] - org.springframework.orm.jpa.JpaTransactionManager.doGetTransaction(JpaTransactionManager.java:334) - Found thread-bound EntityManager [org.hibernate.jpa.internal.EntityManagerImpl@75ce39c8] for JPA transaction
+[2015-07-21 10:38:51,694]DEBUG715646[http-bio-8080-exec-5] - org.springframework.transaction.support.AbstractPlatformTransactionManager.handleExistingTransaction(AbstractPlatformTransactionManager.java:472) - Participating in existing transaction
+[2015-07-21 10:38:51,769]DEBUG715721[http-bio-8080-exec-5] - org.hibernate.jpa.criteria.CriteriaQueryImpl.interpret(CriteriaQueryImpl.java:327) - Rendered criteria query -> select generatedAlias0 from Run as generatedAlias0
+[2015-07-21 10:38:51,989]DEBUG715941[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
     select
-        run_testca0_.id as id1_5_6_,
-        run_testca0_.run_id as run_id2_5_6_,
-        run_testca0_.testCase_id as testCase3_5_6_,
-        run_testca0_.testResult_id as testResu4_5_6_,
-        run1_.id as id1_4_0_,
-        run1_.buildNumber as buildNum2_4_0_,
-        run1_.endTime as endTime3_4_0_,
-        run1_.environment_id as environm6_4_0_,
-        run1_.parent_id as parent_i7_4_0_,
-        run1_.startTime as startTim4_4_0_,
-        run1_.tag as tag5_4_0_,
-        children2_.parent_id as parent_i7_4_8_,
-        children2_.id as id1_4_8_,
-        children2_.id as id1_4_1_,
-        children2_.buildNumber as buildNum2_4_1_,
-        children2_.endTime as endTime3_4_1_,
-        children2_.environment_id as environm6_4_1_,
-        children2_.parent_id as parent_i7_4_1_,
-        children2_.startTime as startTim4_4_1_,
-        children2_.tag as tag5_4_1_,
-        environmen3_.id as id1_2_2_,
-        environmen3_.datanodes as datanode2_2_2_,
-        environmen3_.deploymentType as deployme3_2_2_,
-        environmen3_.haEnabled as haEnable4_2_2_,
-        environmen3_.master as master5_2_2_,
-        environmen3_.name as name6_2_2_,
-        environmen3_.productName as productN7_2_2_,
-        testcase4_.id as id1_6_3_,
-        testcase4_.name as name2_6_3_,
-        testcase4_.testSuite_id as testSuit4_6_3_,
-        testcase4_.testType as testType3_6_3_,
-        testsuite5_.id as id1_8_4_,
-        testsuite5_.name as name2_8_4_,
-        testresult6_.id as id1_7_5_,
-        testresult6_.endTime as endTime2_7_5_,
-        testresult6_.result as result3_7_5_,
-        testresult6_.startTime as startTim4_7_5_ 
+        run0_.id as id1_4_,
+        run0_.buildNumber as buildNum2_4_,
+        run0_.endTime as endTime3_4_,
+        run0_.environment_id as environm6_4_,
+        run0_.parent_id as parent_i7_4_,
+        run0_.startTime as startTim4_4_,
+        run0_.tag as tag5_4_ 
     from
-        Run_TestCase_TestResult run_testca0_ 
-    left outer join
-        Run run1_ 
-            on run_testca0_.run_id=run1_.id 
-    left outer join
-        Run children2_ 
-            on run1_.id=children2_.parent_id 
-    left outer join
-        Environment environmen3_ 
-            on run1_.environment_id=environmen3_.id 
-    left outer join
-        TestCase testcase4_ 
-            on run_testca0_.testCase_id=testcase4_.id 
-    left outer join
-        TestSuite testsuite5_ 
-            on testcase4_.testSuite_id=testsuite5_.id 
-    left outer join
-        TestResult testresult6_ 
-            on run_testca0_.testResult_id=testresult6_.id 
+        Run run0_
+[2015-07-21 10:38:52,235]DEBUG716187[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 0
+[2015-07-21 10:38:52,251]DEBUG716203[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#1]
+[2015-07-21 10:38:52,261]DEBUG716213[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 1
+[2015-07-21 10:38:52,261]DEBUG716213[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#2]
+[2015-07-21 10:38:52,282]DEBUG716234[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 2
+[2015-07-21 10:38:52,282]DEBUG716234[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#3]
+[2015-07-21 10:38:52,282]DEBUG716234[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 3
+[2015-07-21 10:38:52,283]DEBUG716235[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#4]
+[2015-07-21 10:38:52,283]DEBUG716235[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 4
+[2015-07-21 10:38:52,283]DEBUG716235[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#5]
+[2015-07-21 10:38:52,283]DEBUG716235[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 5
+[2015-07-21 10:38:52,284]DEBUG716236[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#6]
+[2015-07-21 10:38:52,284]DEBUG716236[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 6
+[2015-07-21 10:38:52,284]DEBUG716236[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#7]
+[2015-07-21 10:38:52,284]DEBUG716236[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 7
+[2015-07-21 10:38:52,285]DEBUG716237[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#8]
+[2015-07-21 10:38:52,285]DEBUG716237[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 8
+[2015-07-21 10:38:52,285]DEBUG716237[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#9]
+[2015-07-21 10:38:52,285]DEBUG716237[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 9
+[2015-07-21 10:38:52,286]DEBUG716238[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#10]
+[2015-07-21 10:38:52,286]DEBUG716238[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 10
+[2015-07-21 10:38:52,286]DEBUG716238[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#11]
+[2015-07-21 10:38:52,286]DEBUG716238[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 11
+[2015-07-21 10:38:52,287]DEBUG716239[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#12]
+[2015-07-21 10:38:52,287]DEBUG716239[http-bio-8080-exec-5] - org.hibernate.loader.Loader.processResultSet(Loader.java:952) - Result set row: 12
+[2015-07-21 10:38:52,287]DEBUG716239[http-bio-8080-exec-5] - org.hibernate.loader.Loader.getRow(Loader.java:1486) - Result row: EntityKey[com.test.domain.Run#13]
+[2015-07-21 10:38:52,287]DEBUG716239[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#1]
+[2015-07-21 10:38:52,288]DEBUG716240[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#1]
+[2015-07-21 10:38:52,288]DEBUG716240[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#2]
+[2015-07-21 10:38:52,292]DEBUG716244[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        environmen0_.id as id1_2_0_,
+        environmen0_.datanodes as datanode2_2_0_,
+        environmen0_.deploymentType as deployme3_2_0_,
+        environmen0_.haEnabled as haEnable4_2_0_,
+        environmen0_.master as master5_2_0_,
+        environmen0_.name as name6_2_0_,
+        environmen0_.productName as productN7_2_0_ 
+    from
+        Environment environmen0_ 
     where
-        run_testca0_.testResult_id=?
+        environmen0_.id=?
+[2015-07-21 10:38:52,331]DEBUG716283[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-21 10:38:52,331]DEBUG716283[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[2015-07-21 10:38:52,332]DEBUG716284[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Environment#1]
+[2015-07-21 10:38:52,332]DEBUG716284[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Environment#1]
+[2015-07-21 10:38:52,350]DEBUG716302[http-bio-8080-exec-5] - org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:208) - Done entity load : com.test.domain.Environment#1
+[2015-07-21 10:38:52,350]DEBUG716302[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#2]
+[2015-07-21 10:38:52,350]DEBUG716302[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#3]
+[2015-07-21 10:38:52,351]DEBUG716303[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        environmen0_.id as id1_2_0_,
+        environmen0_.datanodes as datanode2_2_0_,
+        environmen0_.deploymentType as deployme3_2_0_,
+        environmen0_.haEnabled as haEnable4_2_0_,
+        environmen0_.master as master5_2_0_,
+        environmen0_.name as name6_2_0_,
+        environmen0_.productName as productN7_2_0_ 
+    from
+        Environment environmen0_ 
+    where
+        environmen0_.id=?
+[2015-07-21 10:38:52,370]DEBUG716322[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-21 10:38:52,370]DEBUG716322[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.EntityReferenceInitializerImpl.resolveEntityKey(EntityReferenceInitializerImpl.java:142) - On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+[2015-07-21 10:38:52,371]DEBUG716323[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Environment#2]
+[2015-07-21 10:38:52,371]DEBUG716323[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Environment#2]
+[2015-07-21 10:38:52,372]DEBUG716324[http-bio-8080-exec-5] - org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:208) - Done entity load : com.test.domain.Environment#2
+[2015-07-21 10:38:52,372]DEBUG716324[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#3]
+[2015-07-21 10:38:52,372]DEBUG716324[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#4]
+[2015-07-21 10:38:52,373]DEBUG716325[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#4]
+[2015-07-21 10:38:52,373]DEBUG716325[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#5]
+[2015-07-21 10:38:52,373]DEBUG716325[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#5]
+[2015-07-21 10:38:52,374]DEBUG716326[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#6]
+[2015-07-21 10:38:52,374]DEBUG716326[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#6]
+[2015-07-21 10:38:52,374]DEBUG716326[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#7]
+[2015-07-21 10:38:52,375]DEBUG716327[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#7]
+[2015-07-21 10:38:52,375]DEBUG716327[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#8]
+[2015-07-21 10:38:52,375]DEBUG716327[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#8]
+[2015-07-21 10:38:52,375]DEBUG716327[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#9]
+[2015-07-21 10:38:52,376]DEBUG716328[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#9]
+[2015-07-21 10:38:52,376]DEBUG716328[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#10]
+[2015-07-21 10:38:52,376]DEBUG716328[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#10]
+[2015-07-21 10:38:52,376]DEBUG716328[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#11]
+[2015-07-21 10:38:52,377]DEBUG716329[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#11]
+[2015-07-21 10:38:52,377]DEBUG716329[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#12]
+[2015-07-21 10:38:52,377]DEBUG716329[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#12]
+[2015-07-21 10:38:52,377]DEBUG716329[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:160) - Resolving associations for [com.test.domain.Run#13]
+[2015-07-21 10:38:52,378]DEBUG716330[http-bio-8080-exec-5] - org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:286) - Done materializing entity [com.test.domain.Run#13]
+[2015-07-21 10:38:52,378]DEBUG716330[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#13]
+[2015-07-21 10:38:52,379]DEBUG716331[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i7_4_0_,
+        children0_.id as id1_4_0_,
+        children0_.id as id1_4_1_,
+        children0_.buildNumber as buildNum2_4_1_,
+        children0_.endTime as endTime3_4_1_,
+        children0_.environment_id as environm6_4_1_,
+        children0_.parent_id as parent_i7_4_1_,
+        children0_.startTime as startTim4_4_1_,
+        children0_.tag as tag5_4_1_,
+        environmen1_.id as id1_2_2_,
+        environmen1_.datanodes as datanode2_2_2_,
+        environmen1_.deploymentType as deployme3_2_2_,
+        environmen1_.haEnabled as haEnable4_2_2_,
+        environmen1_.master as master5_2_2_,
+        environmen1_.name as name6_2_2_,
+        environmen1_.productName as productN7_2_2_ 
+    from
+        Run children0_ 
+    left outer join
+        Environment environmen1_ 
+            on children0_.environment_id=environmen1_.id 
+    where
+        children0_.parent_id=?
+[2015-07-21 10:38:52,419]DEBUG716371[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#13]
+[2015-07-21 10:38:52,419]DEBUG716371[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,425]DEBUG716377[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#13]
+[2015-07-21 10:38:52,435]DEBUG716387[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,436]DEBUG716388[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-21 10:38:52,436]DEBUG716388[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#12]
+[2015-07-21 10:38:52,436]DEBUG716388[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i7_4_0_,
+        children0_.id as id1_4_0_,
+        children0_.id as id1_4_1_,
+        children0_.buildNumber as buildNum2_4_1_,
+        children0_.endTime as endTime3_4_1_,
+        children0_.environment_id as environm6_4_1_,
+        children0_.parent_id as parent_i7_4_1_,
+        children0_.startTime as startTim4_4_1_,
+        children0_.tag as tag5_4_1_,
+        environmen1_.id as id1_2_2_,
+        environmen1_.datanodes as datanode2_2_2_,
+        environmen1_.deploymentType as deployme3_2_2_,
+        environmen1_.haEnabled as haEnable4_2_2_,
+        environmen1_.master as master5_2_2_,
+        environmen1_.name as name6_2_2_,
+        environmen1_.productName as productN7_2_2_ 
+    from
+        Run children0_ 
+    left outer join
+        Environment environmen1_ 
+            on children0_.environment_id=environmen1_.id 
+    where
+        children0_.parent_id=?
+[2015-07-21 10:38:52,576]DEBUG716528[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#12]
+[2015-07-21 10:38:52,577]DEBUG716529[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-21 10:38:52,577]DEBUG716529[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.children#12]
+[2015-07-21 10:38:52,577]DEBUG716529[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,578]DEBUG716530[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#12]
+[2015-07-21 10:38:52,578]DEBUG716530[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,620]DEBUG716572[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-21 10:38:52,629]DEBUG716581[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#11]
+[2015-07-21 10:38:52,629]DEBUG716581[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i7_4_0_,
+        children0_.id as id1_4_0_,
+        children0_.id as id1_4_1_,
+        children0_.buildNumber as buildNum2_4_1_,
+        children0_.endTime as endTime3_4_1_,
+        children0_.environment_id as environm6_4_1_,
+        children0_.parent_id as parent_i7_4_1_,
+        children0_.startTime as startTim4_4_1_,
+        children0_.tag as tag5_4_1_,
+        environmen1_.id as id1_2_2_,
+        environmen1_.datanodes as datanode2_2_2_,
+        environmen1_.deploymentType as deployme3_2_2_,
+        environmen1_.haEnabled as haEnable4_2_2_,
+        environmen1_.master as master5_2_2_,
+        environmen1_.name as name6_2_2_,
+        environmen1_.productName as productN7_2_2_ 
+    from
+        Run children0_ 
+    left outer join
+        Environment environmen1_ 
+            on children0_.environment_id=environmen1_.id 
+    where
+        children0_.parent_id=?
+[2015-07-21 10:38:52,666]DEBUG716618[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#11]
+[2015-07-21 10:38:52,666]DEBUG716618[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,667]DEBUG716619[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#11]
+[2015-07-21 10:38:52,667]DEBUG716619[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,675]DEBUG716627[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-21 10:38:52,676]DEBUG716628[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#10]
+[2015-07-21 10:38:52,677]DEBUG716629[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i7_4_0_,
+        children0_.id as id1_4_0_,
+        children0_.id as id1_4_1_,
+        children0_.buildNumber as buildNum2_4_1_,
+        children0_.endTime as endTime3_4_1_,
+        children0_.environment_id as environm6_4_1_,
+        children0_.parent_id as parent_i7_4_1_,
+        children0_.startTime as startTim4_4_1_,
+        children0_.tag as tag5_4_1_,
+        environmen1_.id as id1_2_2_,
+        environmen1_.datanodes as datanode2_2_2_,
+        environmen1_.deploymentType as deployme3_2_2_,
+        environmen1_.haEnabled as haEnable4_2_2_,
+        environmen1_.master as master5_2_2_,
+        environmen1_.name as name6_2_2_,
+        environmen1_.productName as productN7_2_2_ 
+    from
+        Run children0_ 
+    left outer join
+        Environment environmen1_ 
+            on children0_.environment_id=environmen1_.id 
+    where
+        children0_.parent_id=?
+[2015-07-21 10:38:52,687]DEBUG716639[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#10]
+[2015-07-21 10:38:52,687]DEBUG716639[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:127) - Starting ResultSet row #0
+[2015-07-21 10:38:52,687]DEBUG716639[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.CollectionReferenceInitializerImpl.finishUpRow(CollectionReferenceInitializerImpl.java:77) - Found row of collection: [com.test.domain.Run.children#10]
+[2015-07-21 10:38:52,688]DEBUG716640[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,688]DEBUG716640[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#10]
+[2015-07-21 10:38:52,689]DEBUG716641[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,689]DEBUG716641[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-21 10:38:52,700]DEBUG716652[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#9]
+[2015-07-21 10:38:52,700]DEBUG716652[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i7_4_0_,
+        children0_.id as id1_4_0_,
+        children0_.id as id1_4_1_,
+        children0_.buildNumber as buildNum2_4_1_,
+        children0_.endTime as endTime3_4_1_,
+        children0_.environment_id as environm6_4_1_,
+        children0_.parent_id as parent_i7_4_1_,
+        children0_.startTime as startTim4_4_1_,
+        children0_.tag as tag5_4_1_,
+        environmen1_.id as id1_2_2_,
+        environmen1_.datanodes as datanode2_2_2_,
+        environmen1_.deploymentType as deployme3_2_2_,
+        environmen1_.haEnabled as haEnable4_2_2_,
+        environmen1_.master as master5_2_2_,
+        environmen1_.name as name6_2_2_,
+        environmen1_.productName as productN7_2_2_ 
+    from
+        Run children0_ 
+    left outer join
+        Environment environmen1_ 
+            on children0_.environment_id=environmen1_.id 
+    where
+        children0_.parent_id=?
+[2015-07-21 10:38:52,710]DEBUG716662[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#9]
+[2015-07-21 10:38:52,710]DEBUG716662[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,710]DEBUG716662[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#9]
+[2015-07-21 10:38:52,710]DEBUG716662[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,711]DEBUG716663[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-21 10:38:52,711]DEBUG716663[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#8]
+[2015-07-21 10:38:52,712]DEBUG716664[http-bio-8080-exec-5] - org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:109) - 
+    select
+        children0_.parent_id as parent_i7_4_0_,
+        children0_.id as id1_4_0_,
+        children0_.id as id1_4_1_,
+        children0_.buildNumber as buildNum2_4_1_,
+        children0_.endTime as endTime3_4_1_,
+        children0_.environment_id as environm6_4_1_,
+        children0_.parent_id as parent_i7_4_1_,
+        children0_.startTime as startTim4_4_1_,
+        children0_.tag as tag5_4_1_,
+        environmen1_.id as id1_2_2_,
+        environmen1_.datanodes as datanode2_2_2_,
+        environmen1_.deploymentType as deployme3_2_2_,
+        environmen1_.haEnabled as haEnable4_2_2_,
+        environmen1_.master as master5_2_2_,
+        environmen1_.name as name6_2_2_,
+        environmen1_.productName as productN7_2_2_ 
+    from
+        Run children0_ 
+    left outer join
+        Environment environmen1_ 
+            on children0_.environment_id=environmen1_.id 
+    where
+        children0_.parent_id=?
+[2015-07-21 10:38:52,712]DEBUG716664[http-bio-8080-exec-5] - org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.handlePotentiallyEmptyCollectionRootReturns(ResultSetProcessorImpl.java:168) - Preparing collection intializer : [com.test.domain.Run.children#8]
+[2015-07-21 10:38:52,713]DEBUG716665[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:234) - 1 collections were found in result set for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,714]DEBUG716666[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollection(CollectionLoadContext.java:282) - Collection fully initialized: [com.test.domain.Run.children#8]
+[2015-07-21 10:38:52,714]DEBUG716666[http-bio-8080-exec-5] - org.hibernate.engine.loading.internal.CollectionLoadContext.endLoadingCollections(CollectionLoadContext.java:242) - 1 collections initialized for role: com.test.domain.Run.children
+[2015-07-21 10:38:52,714]DEBUG716666[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:118) - Done loading collection
+[2015-07-21 10:38:52,715]DEBUG716667[http-bio-8080-exec-5] - org.hibernate.loader.collection.plan.AbstractLoadPlanBasedCollectionInitializer.initialize(AbstractLoadPlanBasedCollectionInitializer.java:88) - Loading collection: [com.test.domain.Run.children#7]
