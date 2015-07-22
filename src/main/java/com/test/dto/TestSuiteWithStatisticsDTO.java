@@ -5,21 +5,21 @@ import java.util.List;
 
 public class TestSuiteWithStatisticsDTO {
 	private String name;
-	private List<TestCaseWithStatisticsDTO> testCaseData = new ArrayList<TestCaseWithStatisticsDTO>();
+	private List<TestCaseWithStatisticsDTO> testCaseStats = new ArrayList<TestCaseWithStatisticsDTO>();
 	
 	public TestSuiteWithStatisticsDTO(String testSuiteName, TestCaseWithStatisticsDTO testCaseWithStatisticsDTO) {
 		this.name = testSuiteName;
-		this.testCaseData.add(testCaseWithStatisticsDTO);
+		this.testCaseStats.add(testCaseWithStatisticsDTO);
 	}
 
 	public void addTestCaseWithStatisticsDTO(TestCaseWithStatisticsDTO testCaseWithStatisticsDTO) {
 		if (!contains(testCaseWithStatisticsDTO)) {
-			this.testCaseData.add(testCaseWithStatisticsDTO);
+			this.testCaseStats.add(testCaseWithStatisticsDTO);
 		}
 	}
 
 	private boolean contains(TestCaseWithStatisticsDTO testCaseWithStatisticsDTO) {
-		for (TestCaseWithStatisticsDTO tStatisticsDTO : testCaseData) {
+		for (TestCaseWithStatisticsDTO tStatisticsDTO : testCaseStats) {
 			if (tStatisticsDTO.getName().equals(testCaseWithStatisticsDTO.getName())) {
 				return true;
 			}
@@ -35,11 +35,19 @@ public class TestSuiteWithStatisticsDTO {
 		this.name = name;
 	}
 
-	public List<TestCaseWithStatisticsDTO> getTestCaseData() {
-		return testCaseData;
+	public List<TestCaseWithStatisticsDTO> getTestCaseStats() {
+		return testCaseStats;
+	}
+
+	public void setTestCaseStats(List<TestCaseWithStatisticsDTO> testCaseStats) {
+		this.testCaseStats = testCaseStats;
+	}
+
+/*	public List<TestCaseWithStatisticsDTO> getTestCaseData() {
+		return testCaseStats;
 	}
 
 	public void setTestCaseData(List<TestCaseWithStatisticsDTO> testCaseData) {
-		this.testCaseData = testCaseData;
-	}
+		this.testCaseStats = testCaseData;
+	}*/
 }
