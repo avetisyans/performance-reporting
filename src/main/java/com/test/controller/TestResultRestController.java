@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -96,6 +97,16 @@ public class TestResultRestController {
 		List<Run> runsWithResults = runService.findAll();
 		
 		return mapToParentRunDTO(runsWithResults);
+	}
+	
+	@RequestMapping(value = "/testRuns", method = RequestMethod.GET)
+	public List<Run> getTestRuns() {
+		
+		List<Run> testRuns = runService.findByEnvAndTestCase(1L,2L, new PageRequest(0, 10));
+		
+		System.out.println("Before Return");
+		
+		return testRuns;
 	}
 	
 	
@@ -249,7 +260,6 @@ public class TestResultRestController {
 
 	private List<TestCase> getUniqueTestCases(Environment environment) {
 		Set<TestCase> testCasesSet = new HashSet<TestCase>();
-		
 		
 		
 		List<Run> runs = environment.getRuns();

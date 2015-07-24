@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.test.dao.RunDao;
@@ -87,6 +88,11 @@ public class RunServiceImpl implements RunService {
 		run.setParent(savedParent);
 		run.setEnvironment(envFromDB);
 		return runDao.save(run);
+	}
+
+	@Override
+	public List<Run> findByEnvAndTestCase(Long envId, Long testCaseId, Pageable pageable) {
+		return runDao.findByEnvAndTestCase(envId, testCaseId, pageable);
 	}
 
 }
