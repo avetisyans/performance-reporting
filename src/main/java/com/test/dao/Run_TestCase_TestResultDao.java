@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.test.domain.Run;
 import com.test.domain.Run_TestCase_TestResult;
 import com.test.domain.TestCase;
 
@@ -12,5 +13,6 @@ import com.test.domain.TestCase;
 public interface Run_TestCase_TestResultDao extends JpaRepository<Run_TestCase_TestResult, Long> {
 
 	List<Run_TestCase_TestResult> findByTestCase(TestCase testCase);
+	Run_TestCase_TestResult findByRunAndTestCase(Run run, TestCase testCase);
 	
 }

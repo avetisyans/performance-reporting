@@ -18,7 +18,7 @@ public interface RunDao extends JpaRepository<Run, Long> {
 /*	@Query("Select r FROM Run r INNER JOIN r.testSuites t WHERE t.id = :testSuiteId ")
 	List<Run> findByTestSuite(Long testSuiteId);*/
 	
-	@Query("select r.buildNumber from Run r join r.run_TestCase_TestResults rt join rt.testCase tc where r.environment.id = :envId and tc.id = :testCaseId order by r.endTime desc")
+	@Query("select r from Run r join r.run_TestCase_TestResults rt join rt.testCase tc where r.environment.id = :envId and tc.id = :testCaseId order by r.endTime desc")
 	List<Run> findByEnvAndTestCase(@Param("envId") Long envId, @Param("testCaseId") Long testCaseId, Pageable pageable);
 	
 /*	@Query("select testresult from TestResult testresult join testresult.run_TestCase_TestResults rtt join rtt.testCase tc where tc.id = :testCaseId and rtt.run.id = :runId")

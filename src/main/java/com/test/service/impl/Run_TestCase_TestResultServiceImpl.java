@@ -1,14 +1,19 @@
 package com.test.service.impl;
 
 import java.util.List;
+
 import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.test.dao.EnvironmentDao;
 import com.test.dao.Run_TestCase_TestResultDao;
 import com.test.dao.TestCaseDao;
 import com.test.dao.TestResultDao;
+import com.test.domain.Run;
 import com.test.domain.Run_TestCase_TestResult;
+import com.test.domain.TestCase;
 import com.test.service.Run_TestCase_TestResultService;
 
 @Service("run_TestCase_TestResultService")
@@ -36,6 +41,11 @@ public class Run_TestCase_TestResultServiceImpl implements Run_TestCase_TestResu
 	@Override
 	public Run_TestCase_TestResult save(Run_TestCase_TestResult run_TestCase_TestResult) {
 		return run_TestCase_TestResultDao.save(run_TestCase_TestResult);
+	}
+
+	@Override
+	public Run_TestCase_TestResult findByRunAndTestCase(Run run, TestCase testCase) {
+		return run_TestCase_TestResultDao.findByRunAndTestCase(run, testCase);
 	}
 
 /*	@Override

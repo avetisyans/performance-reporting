@@ -1,7 +1,13 @@
 package com.test.dto;
 
+import java.util.Collections;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class TestCaseWithStatisticsDTO {
-	
+	@JsonIgnore
+	private String testSuiteName;
 	private String name;
 	private Long totalRuns;
 	private Long passed;
@@ -10,6 +16,26 @@ public class TestCaseWithStatisticsDTO {
 	private Long successfulMax;
 	private Long successfulAvg;
 	
+	public TestCaseWithStatisticsDTO() {
+		
+	}
+	
+	public TestCaseWithStatisticsDTO(String testSuiteName, String testCaseName, List<Long> durations, long totalRuns) {
+		this.testSuiteName = testSuiteName;
+		this.name = testCaseName;
+		this.totalRuns = totalRuns;
+		long sum = 0;
+		for (Long long1 : durations) {
+			sum += long1;
+		}
+		
+		this.passed = (long) durations.size();
+		this.failed = totalRuns - this.passed;
+		//long numberOfPassed = durations.size();
+		this.successfulAvg = this.passed != 0 ? sum/this.passed : 0;
+/*		this.successfulMax = Collections.max(durations) != 0 ? Collections.max(durations) : 0;
+		this.successfulMin = Collections.min(durations) != 0 ? Collections.min(durations) : 0;*/
+	}
 	
 	public String getName() {
 		return name;
@@ -52,6 +78,14 @@ public class TestCaseWithStatisticsDTO {
 	}
 	public void setSuccessfulAvg(Long successfulAvg) {
 		this.successfulAvg = successfulAvg;
+	}
+
+	public String getTestSuiteName() {
+		return testSuiteName;
+	}
+
+	public void setTestSuiteName(String testSuiteName) {
+		this.testSuiteName = testSuiteName;
 	}
 	
 }

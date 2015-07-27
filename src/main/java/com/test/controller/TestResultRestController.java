@@ -35,6 +35,7 @@ import com.test.dto.TestCaseWithStatisticsDTO;
 import com.test.dto.TestSuiteWithResultDTO;
 import com.test.dto.TestSuiteWithResultEntity;
 import com.test.dto.TestSuiteWithStatisticsDTO;
+import com.test.dto.TestSuiteWithStatisticsDTOWrapper;
 import com.test.dto.TestSuiteWithStatisticsEntity;
 import com.test.service.BuildService;
 import com.test.service.EnvironmentService;
@@ -104,6 +105,13 @@ public class TestResultRestController {
 		
 		List<Run> testRuns = runService.findByEnvAndTestCase(1L,2L, new PageRequest(0, 10));
 		
+		for (Run run : testRuns) {
+			List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+			for (Run_TestCase_TestResult run_TestCase_TestResult : run_TestCase_TestResults) {
+				run_TestCase_TestResult.getTestResult();
+			}
+		}
+		
 		System.out.println("Before Return");
 		
 		return testRuns;
@@ -118,13 +126,59 @@ public class TestResultRestController {
 		return mapToEnvironmentDTO(environments);
 	}*/
 	
-	@RequestMapping(value = "/environments", method = RequestMethod.GET)
+	@RequestMapping(value = "/envs", method = RequestMethod.GET)
+	public List<EnvironmentWithStatisticsDTO> getEnvs() {
+		List<EnvironmentWithStatisticsDTO> environmentWithStatisticsDTOs = new ArrayList<EnvironmentWithStatisticsDTO>();
+		
+		List<Environment> environments = environmentService.findAll();
+		List<TestCase> testCases = testCaseService.findAll();
+		
+		for (Environment environment : environments) {
+			TestSuiteWithStatisticsDTOWrapper testSuiteWithStatisticsDTOWrapper = new TestSuiteWithStatisticsDTOWrapper();
+			for (TestCase testCase : testCases) {
+				List<Run> runs = runService.findByEnvAndTestCase(environment.getId(), testCase.getId(), new PageRequest(0, 2));
+				List<Long> durations = new ArrayList<Long>();
+				long totalRuns = runs.size();
+				if (runs.size() == 2) {
+					for (Run run : runs) {
+						Run_TestCase_TestResult run_TestCase_TestResult = new Run_TestCase_TestResult();
+/*						List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();*/
+						//Run_TestCase_TestResult run_TestCase_TestResult = run_TestCase_TestResultService.findByRunAndTestCase(run, testCase);
+						List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+						for (Run_TestCase_TestResult run_TestCase_TestResult2 : run_TestCase_TestResults) {
+							if (run_TestCase_TestResult2.getTestCase().getName() == testCase.getName()) {
+								run_TestCase_TestResult = run_TestCase_TestResult2;
+								break;
+							}
+						}
+						
+							long duration = run_TestCase_TestResult.getTestResult().getEndTime() - run_TestCase_TestResult.getTestResult().getStartTime();
+							
+							if(run_TestCase_TestResult.getTestResult().getResult() == Result.SUCCESS) {
+								durations.add(duration);
+							}
+
+					}						
+						TestCaseWithStatisticsDTO testCaseWithStatisticsDTO = new TestCaseWithStatisticsDTO(testCase.getTestSuite().getName(),testCase.getName(), durations, totalRuns);
+						testSuiteWithStatisticsDTOWrapper.addTestCaseWithStatisticsDTO(testCaseWithStatisticsDTO);
+						
+						
+
+				}
+			}
+			EnvironmentWithStatisticsDTO environmentWithStatisticsDTO = new EnvironmentWithStatisticsDTO(environment.getName(), testSuiteWithStatisticsDTOWrapper.getTestSuiteWithStatisticsDTOs());
+			environmentWithStatisticsDTOs.add(environmentWithStatisticsDTO);
+		}
+		return environmentWithStatisticsDTOs;
+	}
+	
+/*	@RequestMapping(value = "/environments", method = RequestMethod.GET)
 	public List<EnvironmentWithStatisticsDTO> getEnvironments() {
 		
 		List<Environment> environments = environmentService.findAll();
 		
 		return mapToEnvironmentDTOWithSuites(environments);
-	}
+	}*/
 
 
 /*	private List<EnvironmentWithResultDTO> mapToEnvironmentDTO(List<Environment> environments) {
@@ -186,7 +240,7 @@ public class TestResultRestController {
 		
 		return envWithResults;
 	}*/
-	private List<EnvironmentWithStatisticsDTO> mapToEnvironmentDTOWithSuites(List<Environment> environments) {
+/*	private List<EnvironmentWithStatisticsDTO> mapToEnvironmentDTOWithSuites(List<Environment> environments) {
 		
 		List<EnvironmentWithStatisticsDTO> envWithResults = new ArrayList<EnvironmentWithStatisticsDTO>();
 		
@@ -218,8 +272,8 @@ public class TestResultRestController {
 						++numberOfFailures;
 					}
 					
-/*					String testSuiteName = run_TestCase_TestResult.getTestCase().getTestSuite().getName();
-					TestSuiteWithStatisticsEntity testSuiteWithStatisticsEntity = new TestSuiteWithStatisticsEntity(testSuiteName, testCaseWithStatisticsDTO);*/
+					String testSuiteName = run_TestCase_TestResult.getTestCase().getTestSuite().getName();
+					TestSuiteWithStatisticsEntity testSuiteWithStatisticsEntity = new TestSuiteWithStatisticsEntity(testSuiteName, testCaseWithStatisticsDTO);
 					
 				}
 				long sum = 0;
@@ -255,7 +309,7 @@ public class TestResultRestController {
 		
 		
 		return envWithResults;
-	}
+	}*/
 
 
 	private List<TestCase> getUniqueTestCases(Environment environment) {
@@ -389,7 +443,6 @@ public class TestResultRestController {
 	public List<TestResult> getTestResultsOfRun(String builNumber) {
 		
 		//List<TestResult> testResults = testResultDao.findByRun(builNumber);
-		
 		//return testResults;
 		return null;
 	}
