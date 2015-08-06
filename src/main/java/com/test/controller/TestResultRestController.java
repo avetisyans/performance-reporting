@@ -1,7 +1,6 @@
 package com.test.controller;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -11,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -27,16 +27,13 @@ import com.test.domain.TestResult;
 import com.test.domain.TestResult.Result;
 import com.test.dto.ChildRunDTO;
 import com.test.dto.EnvironmentDTO;
-import com.test.dto.EnvironmentWithResultDTO;
 import com.test.dto.EnvironmentWithStatisticsDTO;
 import com.test.dto.ParentRunDTO;
 import com.test.dto.TestCaseWithResultDTO;
 import com.test.dto.TestCaseWithStatisticsDTO;
 import com.test.dto.TestSuiteWithResultDTO;
 import com.test.dto.TestSuiteWithResultEntity;
-import com.test.dto.TestSuiteWithStatisticsDTO;
 import com.test.dto.TestSuiteWithStatisticsDTOWrapper;
-import com.test.dto.TestSuiteWithStatisticsEntity;
 import com.test.service.BuildService;
 import com.test.service.EnvironmentService;
 import com.test.service.RunService;
@@ -117,29 +114,45 @@ public class TestResultRestController {
 		return testRuns;
 	}
 	
-	
-/*	@RequestMapping(value = "/environments", method = RequestMethod.GET)
-	public List<EnvironmentWithResultDTO> getEnvs() {
+	@RequestMapping(value = "/environments", method = RequestMethod.GET)
+	public List<EnvironmentWithStatisticsDTO> getEnvs(@RequestParam(required = false, value="numberOfRecentRuns") Integer numberOfRecentRuns) {
 		
-		List<Environment> environments = environmentService.findAll();
+/*		long startTime = 0;
+		long endTime = 0;*/
 		
-		return mapToEnvironmentDTO(environments);
-	}*/
-	
-	@RequestMapping(value = "/envs", method = RequestMethod.GET)
-	public List<EnvironmentWithStatisticsDTO> getEnvs() {
 		List<EnvironmentWithStatisticsDTO> environmentWithStatisticsDTOs = new ArrayList<EnvironmentWithStatisticsDTO>();
 		
 		List<Environment> environments = environmentService.findAll();
 		List<TestCase> testCases = testCaseService.findAll();
 		
+
+		int recentRuns = (numberOfRecentRuns == null) ? 2 : numberOfRecentRuns;
+
 		for (Environment environment : environments) {
+			
+			List<Run_TestCase_TestResult> run_TestCase_TestResultsByEnv = run_TestCase_TestResultService.findByEnvironment(environment.getId(), new PageRequest(0, 100));
+			
 			TestSuiteWithStatisticsDTOWrapper testSuiteWithStatisticsDTOWrapper = new TestSuiteWithStatisticsDTOWrapper();
+			
 			for (TestCase testCase : testCases) {
-				List<Run> runs = runService.findByEnvAndTestCase(environment.getId(), testCase.getId(), new PageRequest(0, 2));
+				
+				//List<Run> runs = runService.findByEnvAndTestCase(environment.getId(), testCase.getId(), new PageRequest(0, recentRuns));
+				List<Run> allRuns = new ArrayList<Run>();
+				List<Run> runs = null;
+				for (Run_TestCase_TestResult run_TestCase_TestResult : run_TestCase_TestResultsByEnv) {
+					if (run_TestCase_TestResult.getTestCase().getName() == testCase.getName()) {
+						allRuns.add(run_TestCase_TestResult.getRun());
+					}
+				}
+				
+				if (allRuns.size() >= recentRuns) {
+						runs = allRuns.subList(0, recentRuns);
+				}
+				
+				
 				List<Long> durations = new ArrayList<Long>();
-				long totalRuns = runs.size();
-				if (runs.size() == 2) {
+				long totalRuns = recentRuns;
+				if (runs != null) {
 					for (Run run : runs) {
 						Run_TestCase_TestResult run_TestCase_TestResult = new Run_TestCase_TestResult();
 /*						List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();*/
@@ -158,7 +171,9 @@ public class TestResultRestController {
 								durations.add(duration);
 							}
 
-					}						
+					}		
+					
+					
 						TestCaseWithStatisticsDTO testCaseWithStatisticsDTO = new TestCaseWithStatisticsDTO(testCase.getTestSuite().getName(),testCase.getName(), durations, totalRuns);
 						testSuiteWithStatisticsDTOWrapper.addTestCaseWithStatisticsDTO(testCaseWithStatisticsDTO);
 						
@@ -166,11 +181,93 @@ public class TestResultRestController {
 
 				}
 			}
+
+/*			startTime = System.currentTimeMillis();*/
+			
 			EnvironmentWithStatisticsDTO environmentWithStatisticsDTO = new EnvironmentWithStatisticsDTO(environment.getName(), testSuiteWithStatisticsDTOWrapper.getTestSuiteWithStatisticsDTOs());
 			environmentWithStatisticsDTOs.add(environmentWithStatisticsDTO);
+			
+/*			endTime = System.currentTimeMillis();
+			System.out.println("That took " + (endTime - startTime) + " milliseconds");
+			System.out.println("Finished Timing");*/
 		}
+		
+
+		
 		return environmentWithStatisticsDTOs;
 	}
+	
+
+	
+/*	@RequestMapping(value = "/environments", method = RequestMethod.GET)
+	public List<EnvironmentWithStatisticsDTO> getEnvs(@RequestParam(required = false, value="numberOfRecentRuns") Integer numberOfRecentRuns) {
+		
+		long startTime = 0;
+		long endTime = 0;
+		
+		List<EnvironmentWithStatisticsDTO> environmentWithStatisticsDTOs = new ArrayList<EnvironmentWithStatisticsDTO>();
+		
+		List<Environment> environments = environmentService.findAll();
+		List<TestCase> testCases = testCaseService.findAll();
+		
+
+		int recentRuns = (numberOfRecentRuns == null) ? 2 : numberOfRecentRuns;
+
+		for (Environment environment : environments) {
+			TestSuiteWithStatisticsDTOWrapper testSuiteWithStatisticsDTOWrapper = new TestSuiteWithStatisticsDTOWrapper();
+			
+			for (TestCase testCase : testCases) {
+				
+				List<Run> runs = runService.findByEnvAndTestCase(environment.getId(), testCase.getId(), new PageRequest(0, recentRuns));
+				
+
+				
+				List<Long> durations = new ArrayList<Long>();
+				long totalRuns = recentRuns;
+				if (runs.size() == recentRuns) {
+					for (Run run : runs) {
+						Run_TestCase_TestResult run_TestCase_TestResult = new Run_TestCase_TestResult();
+						List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+						//Run_TestCase_TestResult run_TestCase_TestResult = run_TestCase_TestResultService.findByRunAndTestCase(run, testCase);
+						List<Run_TestCase_TestResult> run_TestCase_TestResults = run.getRun_TestCase_TestResults();
+						for (Run_TestCase_TestResult run_TestCase_TestResult2 : run_TestCase_TestResults) {
+							if (run_TestCase_TestResult2.getTestCase().getName() == testCase.getName()) {
+								run_TestCase_TestResult = run_TestCase_TestResult2;
+								break;
+							}
+						}
+						
+							long duration = run_TestCase_TestResult.getTestResult().getEndTime() - run_TestCase_TestResult.getTestResult().getStartTime();
+							
+							if(run_TestCase_TestResult.getTestResult().getResult() == Result.SUCCESS) {
+								durations.add(duration);
+							}
+
+					}		
+					
+					
+						TestCaseWithStatisticsDTO testCaseWithStatisticsDTO = new TestCaseWithStatisticsDTO(testCase.getTestSuite().getName(),testCase.getName(), durations, totalRuns);
+						testSuiteWithStatisticsDTOWrapper.addTestCaseWithStatisticsDTO(testCaseWithStatisticsDTO);
+						
+						
+
+				}
+			}
+
+			startTime = System.currentTimeMillis();
+			
+			EnvironmentWithStatisticsDTO environmentWithStatisticsDTO = new EnvironmentWithStatisticsDTO(environment.getName(), testSuiteWithStatisticsDTOWrapper.getTestSuiteWithStatisticsDTOs());
+			environmentWithStatisticsDTOs.add(environmentWithStatisticsDTO);
+			
+			endTime = System.currentTimeMillis();
+			System.out.println("That took " + (endTime - startTime) + " milliseconds");
+			System.out.println("Finished Timing");
+		}
+		
+
+		
+		return environmentWithStatisticsDTOs;
+	}*/
 	
 /*	@RequestMapping(value = "/environments", method = RequestMethod.GET)
 	public List<EnvironmentWithStatisticsDTO> getEnvironments() {
