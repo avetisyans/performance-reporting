@@ -2,6 +2,9 @@ package com.test.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.query.Param;
+
 import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 
@@ -18,6 +21,8 @@ public interface TestResultService {
 	//TestResult findByTestCase(Long testCaseId);
 
 	TestResult findByTestCaseAndRun(Long testCaseId, Long runId);
+	
+	List<TestResult> findByEnvAndTestCase(Long envId, Long testCaseId, Pageable pageable);
 	
 	
 }

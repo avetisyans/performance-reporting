@@ -5,6 +5,8 @@
     <title>Performance Report</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="styles/dragtable.css" />
+
 </head>
 
 <body ng-controller="HomeController">
@@ -37,19 +39,29 @@
     </div>
     <!-- angular modules -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="scripts/jquery.dragtable.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
     <script src="scripts/ui-bootstrap-tpls-0.13.0.min.js"></script>
     <!-- main app -->
     <script src="app/app.js"></script>
+    <script src="app/services/perfFactory.js"></script> 
     <script src="app/services/sharingFactory.js"></script>
+    <script src="app/services/comparisonFactory.js"></script>
+    
     <script src="app/controllers/RunController.js"></script>
     <script src="app/controllers/EnvironmentController.js"></script>
     <script src="app/controllers/HomeController.js"></script>
+    <script src="app/controllers/CompareController.js"></script>
+    
     <script src="app/directives/sidebarMainDirective.js"></script>
     <script src="app/directives/sidebarRepeatDirective.js"></script>
-    <script src="app/services/perfFactory.js"></script> 
-    <script src="app/services/sharingFactory.js"></script>
+    <script src="app/directives/comparisonTable.js"></script>
+    <script src="app/directives/trCollapse.js"></script>
+    <script src="app/directives/comparisonCheckbox.js"></script>
+    
+
 <!--    <script src="app/services/sharingFactory.js"></script> -->
 </body>
 </html>

@@ -97,6 +97,15 @@ public class TestResultRestController {
 		return mapToParentRunDTO(runsWithResults);
 	}
 	
+	
+	@RequestMapping(value = "/testResults", method = RequestMethod.GET)
+	public List<TestResult> getTestResults() {
+		
+		List<TestResult> testResults = testResultService.findByEnvAndTestCase(1L, 1L, new PageRequest(0, 3));
+		
+		return testResults;
+	}
+	
 	@RequestMapping(value = "/testRuns", method = RequestMethod.GET)
 	public List<Run> getTestRuns() {
 		

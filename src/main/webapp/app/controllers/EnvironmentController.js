@@ -1,21 +1,62 @@
 (function() {
     
-    var EnvironmentController = function ($scope, $routeParams, perfFactory, sharingFactory) {
+    var EnvironmentController = function ($scope, $routeParams, perfFactory, sharingFactory, $cacheFactory) {
         var envName = $routeParams.envName;
         var allSuites = [];
         var tabArray = [];
-        
         $scope.numberOfRecentRuns = 3;
         
-        $scope.setParentEvironment = function(numberOfRecentRuns) {
+        $scope.setInitEvironment = function(numberOfRecentRuns) {
+            $scope.environments = sharingFactory.environments;
+            
+            $scope.environments.forEach(function(envir) {
+                if (envName === envir.name) {
+                    $scope.env = envir;
+                    return;
+                }
+            });
+            
+                    allSuites = [];
+                    tabArray = [];
+                    
+                    var i = 0;
+                    $scope.env.testSuites.forEach(function (testSuite) {
+                        if (i === 0) {
+                            tabArray.push({
+                            title: testSuite.name,
+                            content: testSuite.testCaseStats,
+                            active: true
+                            });
+                        } else {
+                            tabArray.push({
+                            title: testSuite.name,
+                            content: testSuite.testCaseStats
+                            });
+                        }
+                        ++i;
+                        allSuites.push.apply(allSuites, testSuite.testCaseStats);
+                    });
+                    
+                    tabArray.push({
+                        title: 'All Suites*',
+                        content: allSuites
+                    });
+                    
+                    $scope.tabs = tabArray;
+            
+        }
+
+        $scope.setEvironment = function(numberOfRecentRuns) {
+            
+            var httpCache = $cacheFactory.get('$http');
+            httpCache.remove('http://10.152.28.75:8080/performance-report/rest/environments');
+            console.log('removing cache ...');
+            
                 perfFactory.environments(numberOfRecentRuns)
                 .success(function(environments) {
-                $scope.$parent.environments = environments;
-                    $scope.$parent.environments.forEach(function(envir) {
-                        console.log('envName', envName);
+                $scope.environments = environments;
+                    $scope.environments.forEach(function(envir) {
                         if (envName === envir.name) {
-                            console.log('equalssssssssss');
-                            console.log('envir', envir);
                             $scope.env = envir;
                             return;
                         }
@@ -53,34 +94,20 @@
                 .error(function(data, status, headers, config) {
                     console.log('Error while getting Runs');
                     console.log(data.error + ' ' + status);
-                }); 
+                });
             
-                
-            
-              //  $scope.tabs = [{title: 'Some Title', content: 'Some Content'}];
         }
+
         
         function init() {
-            if (envName) {
-                    $scope.$parent.environments.forEach(function(env) {
-                        if (envName === env.name) {
-                            $scope.env = env;
-                            return;
-                        }
-                    });
-                
-                    $scope.env.testSuites.forEach(function (testSuite) {
-                        tabArray.push({
-                            title: testSuite.name,
-                            content: testSuite.testCaseStats
-                        });
-                        allSuites.push.apply(allSuites, testSuite.testCaseStats);
-                    });
-                }
+            console.log('init from EnvironmentController');
+            $scope.setInitEvironment(3);
          }
         
+        init();
+        
         //init();
-         $scope.setParentEvironment(3);
+        // $scope.setParentEvironment(3);
         
 /*        tabArray.push({
             title: 'All Suites*',
@@ -90,7 +117,7 @@
         $scope.tabs = tabArray;*/
     };
     
-    EnvironmentController.$inject = ['$scope', '$routeParams', 'perfFactory', 'sharingFactory'];
+    EnvironmentController.$inject = ['$scope', '$routeParams', 'perfFactory', 'sharingFactory','$cacheFactory'];
     
     angular.module('perf_reportingApp').controller('EnvironmentController', EnvironmentController);
     

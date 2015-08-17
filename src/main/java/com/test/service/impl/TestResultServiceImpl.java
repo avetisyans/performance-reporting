@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.test.dao.TestResultDao;
@@ -47,6 +48,11 @@ public class TestResultServiceImpl implements TestResultService {
 		
 		TestResult findByTestCaseAndRun = testResultDao.findByTestCaseAndRun(testCaseId, runId);
 		return findByTestCaseAndRun;
+	}
+
+	@Override
+	public List<TestResult> findByEnvAndTestCase(Long envId, Long testCaseId, Pageable pageable) {
+		return testResultDao.findByEnvAndTestCase(envId, testCaseId, pageable);
 	}
 
 	

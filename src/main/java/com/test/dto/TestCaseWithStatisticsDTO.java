@@ -32,9 +32,15 @@ public class TestCaseWithStatisticsDTO {
 		this.passed = (long) durations.size();
 		this.failed = totalRuns - this.passed;
 		//long numberOfPassed = durations.size();
-		this.successfulAvg = sum/this.passed;
-		this.successfulMax = Collections.max(durations);
-		this.successfulMin = Collections.min(durations);
+		if (this.passed == 0) {
+			this.successfulAvg = 0L;
+			this.successfulMax = 0L;
+			this.successfulMin = 0L;
+		} else {
+			this.successfulAvg = sum/this.passed;
+			this.successfulMax = Collections.max(durations);
+			this.successfulMin = Collections.min(durations);
+		}
 	}
 	
 	public String getName() {

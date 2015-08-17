@@ -1,16 +1,21 @@
 (function () {
     var app = angular.module('perf_reportingApp', ['ngRoute','ui.bootstrap']);
 
-    app.config(function($routeProvider) {
+    app.config(function($routeProvider, $httpProvider) {
         $routeProvider
             .when('/', {
-                controller: '',
+                controller: 'CompareController',
                 templateUrl: 'app/views/home.html',
                 resolve: {
                     hasSidebar: function($rootScope) { 
                             $rootScope.hasSidebar = true;
+                            $rootScope.viewSidebar = "compare_sidebar";
        //                     $rootScope.viewSidebar = "env_sidebar"
                             return true; 
+                    },
+                    perfFactory: "perfFactory",
+                    environments: function (perfFactory) {
+                        return perfFactory.environments();
                     }
         }
              })            
@@ -37,7 +42,7 @@
                 }
              })
             .when('/environments', {
-                controller: 'EnvironmentController',
+                controller: '',
           //      templateUrl: 'app/views/environment_home.html',
                 resolve: {
                     hasSidebar: function($rootScope) {
@@ -58,8 +63,9 @@
                     }
                 }
              })
-             
             .otherwise( { redirectTo: '/' });
+        
+            $httpProvider.defaults.cache = true;
     });
     
 }());

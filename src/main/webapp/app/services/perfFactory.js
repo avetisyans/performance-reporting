@@ -10,8 +10,11 @@
         };
         
         factory.environments = function(numberOfRecentRuns) {
-            numberOfRecentRuns = numberOfRecentRuns || 2;
-            return $http.get(contextPath + "rest/environments", {params: {"numberOfRecentRuns": numberOfRecentRuns}});
+            if (numberOfRecentRuns != 0) {
+                numberOfRecentRuns = numberOfRecentRuns || 3;     
+            }
+
+            return $http.get(contextPath + "rest/environments", {params: {"numberOfRecentRuns": numberOfRecentRuns}, cache: true });
         };
         
         return factory;
