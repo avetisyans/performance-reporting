@@ -1,6 +1,7 @@
 package com.test.controller;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -81,6 +82,17 @@ public class TestResultRestController {
 	
 	@Autowired
 	private BuildService buildService;
+	
+	private Long getCurrentTimeBefore(int numberOfDays) {
+		Calendar cal = Calendar.getInstance();
+	    cal.add(Calendar.DATE, -numberOfDays);
+	    cal.set(Calendar.HOUR_OF_DAY,0);
+	    cal.set(Calendar.MINUTE,0);
+	    cal.set(Calendar.SECOND,0);
+	    cal.set(Calendar.MILLISECOND,0);
+	    
+	    return cal.getTime().getTime();
+	}
 
 	@RequestMapping(value = "/testJson", method = RequestMethod.POST)
 	public JsonNode showTestClass(@RequestBody JsonNode envObj) {
@@ -99,9 +111,15 @@ public class TestResultRestController {
 	
 	
 	@RequestMapping(value = "/testResults", method = RequestMethod.GET)
-	public List<TestResult> getTestResults() {
+	public List<TestResult> getTestResults(@RequestParam(value="testCaseId") Long testCaseId, @RequestParam(value="envId") Long envId, @RequestParam(value="numberOfRecentDays") int numberOfRecentDays ) {
 		
-		List<TestResult> testResults = testResultService.findByEnvAndTestCase(1L, 1L, new PageRequest(0, 3));
+		//List<TestResult> testResults = testResultService.findByEnvAndTestCase(1L, 1L, new PageRequest(0, 3));
+		
+		List<TestResult> testResults = testResultService.findByEnvAndTestCaseForRecentDays(testCaseId, envId, getCurrentTimeBefore(numberOfRecentDays));
+		
+/*		for (TestResult testResult : testResults) {
+			
+		}*/
 		
 		return testResults;
 	}

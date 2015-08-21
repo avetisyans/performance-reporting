@@ -55,7 +55,10 @@ public class TestResultServiceImpl implements TestResultService {
 		return testResultDao.findByEnvAndTestCase(envId, testCaseId, pageable);
 	}
 
-	
+	@Override
+	public List<TestResult> findByEnvAndTestCaseForRecentDays(Long envId, Long testCaseId, Long dateBefore) {
+		return testResultDao.findByEnvAndTestCaseForRecentDays(envId, testCaseId, dateBefore);
+	}
 
 /*	@Override
 	public List<TestResult> findTestResultByName() {

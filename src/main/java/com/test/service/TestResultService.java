@@ -24,5 +24,7 @@ public interface TestResultService {
 	
 	List<TestResult> findByEnvAndTestCase(Long envId, Long testCaseId, Pageable pageable);
 	
+	List<TestResult> findByEnvAndTestCaseForRecentDays(Long envId, Long testCaseId, Long long1); 
+	
 	
 }
