@@ -45,10 +45,14 @@
 
                 if (scope.$last) {
                     $timeout(function () {
-                        $('tr.testCaseTitle').each(function (el, val) {
+/*                        $('tr.testCaseTitle').each(function (el, val) {
                             val.click();
-                        });
-                        
+                        });*/
+                         $('tr.testCaseTitle').each(function (el, val) {
+                        if (!$(val).hasClass("collapsed")) {
+                            val.click();
+                        }
+                    });
                         $('#comparisonTable').dragtable({dragaccept:'.dragAccept'});
                         
                     });

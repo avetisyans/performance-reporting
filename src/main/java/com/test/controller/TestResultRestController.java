@@ -27,11 +27,13 @@ import com.test.domain.TestCase;
 import com.test.domain.TestResult;
 import com.test.domain.TestResult.Result;
 import com.test.dto.ChildRunDTO;
+import com.test.dto.DurationsByDateWrapper;
 import com.test.dto.EnvironmentDTO;
 import com.test.dto.EnvironmentWithStatisticsDTO;
 import com.test.dto.ParentRunDTO;
 import com.test.dto.TestCaseWithResultDTO;
 import com.test.dto.TestCaseWithStatisticsDTO;
+import com.test.dto.TestResultsByDateDTO;
 import com.test.dto.TestSuiteWithResultDTO;
 import com.test.dto.TestSuiteWithResultEntity;
 import com.test.dto.TestSuiteWithStatisticsDTOWrapper;
@@ -111,17 +113,26 @@ public class TestResultRestController {
 	
 	
 	@RequestMapping(value = "/testResults", method = RequestMethod.GET)
-	public List<TestResult> getTestResults(@RequestParam(value="testCaseId") Long testCaseId, @RequestParam(value="envId") Long envId, @RequestParam(value="numberOfRecentDays") int numberOfRecentDays ) {
+	public TestResultsByDateDTO getTestResults(@RequestParam(value="testCaseId") Long testCaseId, @RequestParam(value="envId") Long envId, @RequestParam(value="numberOfRecentDays") int numberOfRecentDays ) {
 		
 		//List<TestResult> testResults = testResultService.findByEnvAndTestCase(1L, 1L, new PageRequest(0, 3));
 		
 		List<TestResult> testResults = testResultService.findByEnvAndTestCaseForRecentDays(testCaseId, envId, getCurrentTimeBefore(numberOfRecentDays));
 		
-/*		for (TestResult testResult : testResults) {
-			
-		}*/
+		DurationsByDateWrapper durationsByDateWrapper = new DurationsByDateWrapper();
+		for (TestResult testResult : testResults) {
+			durationsByDateWrapper.addDurationsByDate(testResult);
+		}
 		
-		return testResults;
+		TestResultsByDateDTO testResultsByDateDTO = new TestResultsByDateDTO();
+		testResultsByDateDTO.setEnvironmentName("env by id" + envId);
+		testResultsByDateDTO.setTestCaseName("testCase by id: " + testCaseId);
+		testResultsByDateDTO.addDurationsToStatistics(durationsByDateWrapper);
+		
+		
+		System.out.println("testResultsByDateDTO: " + testResultsByDateDTO);
+		
+		return testResultsByDateDTO;
 	}
 	
 	@RequestMapping(value = "/testRuns", method = RequestMethod.GET)

@@ -5,6 +5,7 @@
         $scope.states.activeBrand = 'home';
         $scope.sharingFactory = sharingFactory;
         $scope.hello = 'Hello from Home!';
+        $scope.chartMode = true;
         
         $scope.toggleTree = function ($event) {
             $($event.currentTarget).parent().children('ul.tree').toggle(200);
@@ -35,13 +36,14 @@
                 });           
         }
         
-/*        function init() {
-            console.log('calling init from HomeController');
-            console.log('sharingFactory.environments',sharingFactory.environments);
-            $scope.environments = sharingFactory.environments;
+        $scope.displayChartLabel = function() {
+            $scope.chartLabel = true;
         }
         
-        init();*/
+        $scope.toggleChartMode = function() {
+            $scope.chartMode = !$scope.chartMode;
+            return $scope.chartMode;
+        }
     };
     
     HomeController.$inject = ['$scope', '$routeParams', 'perfFactory', 'sharingFactory'];

@@ -27,7 +27,7 @@ public interface TestResultDao extends JpaRepository<TestResult, Long>{
 	@Query("select tr from Run_TestCase_TestResult rtt join rtt.testResult tr join rtt.run run where run.environment.id = :envId and rtt.testCase.id = :testCaseId order by run.endTime desc")
 	List<TestResult> findByEnvAndTestCase(@Param("envId") Long envId, @Param("testCaseId") Long testCaseId, Pageable pageable);
 	
-	@Query("select tr from Run_TestCase_TestResult rtt join rtt.testResult tr join rtt.run run where run.environment.id = :envId and rtt.testCase.id = :testCaseId and tr.endTime > :dateBefore  order by run.endTime desc")
+	@Query("select tr from Run_TestCase_TestResult rtt join rtt.testResult tr join rtt.run run where run.environment.id = :envId and rtt.testCase.id = :testCaseId and tr.endTime > :dateBefore order by run.endTime desc")
 	List<TestResult> findByEnvAndTestCaseForRecentDays(@Param("envId") Long envId, @Param("testCaseId") Long testCaseId, @Param("dateBefore") Long dateBefore);
 	
 }	
