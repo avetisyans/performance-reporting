@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.taglibs.standard.tag.common.core.ForEachSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,9 +31,11 @@ import com.test.dto.ChildRunDTO;
 import com.test.dto.DurationsByDateWrapper;
 import com.test.dto.EnvironmentDTO;
 import com.test.dto.EnvironmentWithStatisticsDTO;
+import com.test.dto.EnvironmentsDTO;
 import com.test.dto.ParentRunDTO;
 import com.test.dto.TestCaseWithResultDTO;
 import com.test.dto.TestCaseWithStatisticsDTO;
+import com.test.dto.TestCaseDTO;
 import com.test.dto.TestResultsByDateDTO;
 import com.test.dto.TestSuiteWithResultDTO;
 import com.test.dto.TestSuiteWithResultEntity;
@@ -110,6 +113,34 @@ public class TestResultRestController {
 		
 		return mapToParentRunDTO(runsWithResults);
 	}
+	
+	@RequestMapping(value = "/allEnvironments", method = RequestMethod.GET)
+	public List<EnvironmentsDTO> getAllEnvs() {
+		List<Environment> envs = environmentService.findAll();
+		List<EnvironmentsDTO> envsDTOs = new ArrayList<EnvironmentsDTO>();
+		for (Environment environment : envs) {
+			EnvironmentsDTO environmentsDTO = new EnvironmentsDTO();
+			environmentsDTO.setId(environment.getId());
+			environmentsDTO.setName(environment.getName());
+			envsDTOs.add(environmentsDTO);
+		}
+		return envsDTOs;
+	}
+	
+	@RequestMapping(value = "/testCases", method = RequestMethod.GET)
+	public List<TestCaseDTO> getTestCases() {
+		//List<Environment> envs = environmentService.findAll();
+		List<TestCase> testCases = testCaseService.findAll();
+		List<TestCaseDTO> testcasesDTOs = new ArrayList<TestCaseDTO>();
+		for (TestCase testCase : testCases) {
+			TestCaseDTO testCaseDTO = new TestCaseDTO();
+			testCaseDTO.setId(testCase.getId());
+			testCaseDTO.setName(testCase.getName());
+			testcasesDTOs.add(testCaseDTO);
+		}
+		return testcasesDTOs;
+	}
+	
 	
 	
 	@RequestMapping(value = "/testResults", method = RequestMethod.GET)
