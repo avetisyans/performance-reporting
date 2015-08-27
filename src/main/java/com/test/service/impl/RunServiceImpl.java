@@ -5,6 +5,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -66,10 +67,6 @@ public class RunServiceImpl implements RunService {
 		throw new RunDoesNotExistsException(runData.getBuildNumber());
 	}
 
-	@Override
-	public List<Run> findAll() {
-		return runDao.findAll();
-	}
 
 	@Override
 	public Run createRunWithParent(Run run) {
@@ -94,5 +91,16 @@ public class RunServiceImpl implements RunService {
 	public List<Run> findByEnvAndTestCase(Long envId, Long testCaseId, Pageable pageable) {
 		return runDao.findByEnvAndTestCase(envId, testCaseId, pageable);
 	}
+
+	@Override
+	public List<Run> findAll() {
+		return runDao.findAll();
+	}
+
+	@Override
+	public List<Run> findParentRuns(Pageable pageable) {
+		return runDao.findParentRuns(pageable);
+	}
+
 
 }

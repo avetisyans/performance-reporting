@@ -14,4 +14,6 @@ public interface EnvironmentService {
 
 	Environment saveToItsBuild(Environment environment);
 
+	Environment findOne(long envId);
+
 }

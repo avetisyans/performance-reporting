@@ -2,6 +2,8 @@ package com.test.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import com.test.domain.Run;
@@ -19,4 +21,6 @@ public interface RunService {
 	Run createRunWithParent(Run runData);
 	
 	List<Run> findByEnvAndTestCase(Long envId, Long testCaseId, Pageable pageable);
+
+	List<Run> findParentRuns(Pageable pageable);
 }

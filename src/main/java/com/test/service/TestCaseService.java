@@ -15,4 +15,6 @@ public interface TestCaseService {
 
 	TestCase findOneWithResults(long id);
 
+	TestCase findOne(Long testCaseId);
+
 }

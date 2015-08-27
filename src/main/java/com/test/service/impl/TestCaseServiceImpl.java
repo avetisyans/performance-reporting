@@ -93,6 +93,11 @@ public class TestCaseServiceImpl implements TestCaseService {
 		return testCase;
 	}
 
+	@Override
+	public TestCase findOne(Long testCaseId) {
+		return testCaseDao.findOne(testCaseId);
+	}
+
 	/*
 	 * public Car saveToItsGarage(Car car1) { Garage garage = car1.getGarage();
 	 * Garage garage2 = garageDao.findByName(garage.getName());

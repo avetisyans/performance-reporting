@@ -52,4 +52,9 @@ public class EnvironmentServiceImpl implements EnvironmentService {
 		
 	}
 
+	@Override
+	public Environment findOne(long envId) {
+		return environmentDao.findOne(envId);
+	}
+
 }

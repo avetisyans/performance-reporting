@@ -8,6 +8,7 @@ import java.util.Set;
 
 import org.apache.taglibs.standard.tag.common.core.ForEachSupport;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +38,7 @@ import com.test.dto.TestCaseWithResultDTO;
 import com.test.dto.TestCaseWithStatisticsDTO;
 import com.test.dto.TestCaseDTO;
 import com.test.dto.TestResultsByDateDTO;
+import com.test.dto.TestResultsByDateWrapperDTO;
 import com.test.dto.TestSuiteWithResultDTO;
 import com.test.dto.TestSuiteWithResultEntity;
 import com.test.dto.TestSuiteWithStatisticsDTOWrapper;
@@ -107,11 +109,67 @@ public class TestResultRestController {
 	
 	
 	@RequestMapping(value = "/runs", method = RequestMethod.GET)
-	public List<ParentRunDTO> getRuns() {
+	public List<ParentRunDTO> getRuns(@RequestParam(value="numberOfParentRuns", required=false) Integer numberOfParentRuns) {
 		
-		List<Run> runsWithResults = runService.findAll();
+		System.out.println("number of parent runs: " + numberOfParentRuns);
+		
+		int parentRuns = (numberOfParentRuns == null) ? 3 : numberOfParentRuns;
+		//Page<Run> runsWithResults = runService.findParents(new PageRequest(0, 5));
+		// List<Run> runsWithResults = runService.findAll();
+		List<Run> runsWithResults = runService.findParentRuns(new PageRequest(0, parentRuns));
+		
+/*		System.out.println("ParentRuns: " + runsWithResults);
+		for (Run run : runsWithResults) {
+			List<Run> children = run.getChildren();
+			System.out.println("children: " + children);
+		}*/
 		
 		return mapToParentRunDTO(runsWithResults);
+	}
+	
+	private List<ParentRunDTO> mapToParentRunDTO(List<Run> runsWithResults) {
+		List<ParentRunDTO> parentRunDTOs = new ArrayList<ParentRunDTO>();
+		for (Run run : runsWithResults) {
+			//if (run.getEndTime() == null && run.getParent() == null) {
+
+				List<ChildRunDTO> childRunDTOs = new ArrayList<ChildRunDTO>();
+				List<TestSuiteWithResultDTO> testSuiteWithResultDTOs = new ArrayList<TestSuiteWithResultDTO>();
+				
+				
+				ParentRunDTO parentRunDTO = new ParentRunDTO();
+				parentRunDTO.setBuildNumber(run.getBuildNumber());
+				parentRunDTO.setId(run.getId());
+				
+				List<Run> childRuns = run.getChildren();
+				
+				for (Run childRun : childRuns) {		
+						List<TestSuiteWithResultEntity> testSuiteWithResultEntities = new ArrayList<TestSuiteWithResultEntity>();
+						for (Run_TestCase_TestResult run_TestCase_TestResult : childRun.getRun_TestCase_TestResults()) {							
+							TestCaseWithResultDTO testCaseWithResultDTO = new TestCaseWithResultDTO(run_TestCase_TestResult.getTestCase(), run_TestCase_TestResult.getTestResult());
+							String testSuiteName = run_TestCase_TestResult.getTestCase().getTestSuite().getName();
+							TestSuiteWithResultEntity testSuiteWithResultEntity = new TestSuiteWithResultEntity(testSuiteName, testCaseWithResultDTO);
+							//testSuiteDTOs.add(new TestSuiteDTO(testSuite, testCase, testResult));
+							testSuiteWithResultEntities.add(testSuiteWithResultEntity);
+						}
+						
+					ChildRunDTO childRunDTO = new ChildRunDTO();
+					childRunDTO.setBuildNumber(childRun.getBuildNumber());
+					childRunDTO.setDuration(childRun.getDuration());
+					childRunDTO.setStartTime(childRun.getStartTime());
+					childRunDTO.setEndTime(childRun.getEndTime());
+					childRunDTO.setTag(childRun.getTag());
+					childRunDTO.setId(childRun.getId());
+					EnvironmentDTO envDTO = new EnvironmentDTO(childRun.getEnvironment());
+					childRunDTO.setEnvironment(envDTO);
+					childRunDTO.setTestSuites(TestSuiteWithResultEntity.mapToTestSuiteDTOs(testSuiteWithResultEntities));			
+					childRunDTOs.add(childRunDTO);
+				}		
+				parentRunDTO.setChildren(childRunDTOs);
+				parentRunDTOs.add(parentRunDTO);
+			//}
+		}
+		
+		return parentRunDTOs;
 	}
 	
 	@RequestMapping(value = "/allEnvironments", method = RequestMethod.GET)
@@ -144,26 +202,34 @@ public class TestResultRestController {
 	
 	
 	@RequestMapping(value = "/testResults", method = RequestMethod.GET)
-	public TestResultsByDateDTO getTestResults(@RequestParam(value="testCaseId") Long testCaseId, @RequestParam(value="envId") Long envId, @RequestParam(value="numberOfRecentDays") int numberOfRecentDays ) {
+	public TestResultsByDateWrapperDTO getTestResults(@RequestParam(value="testCaseId") Long testCaseId, @RequestParam(value="envIds") String[] envIds, @RequestParam(value="numberOfRecentDays") int numberOfRecentDays ) {
 		
 		//List<TestResult> testResults = testResultService.findByEnvAndTestCase(1L, 1L, new PageRequest(0, 3));
-		
-		List<TestResult> testResults = testResultService.findByEnvAndTestCaseForRecentDays(testCaseId, envId, getCurrentTimeBefore(numberOfRecentDays));
-		
-		DurationsByDateWrapper durationsByDateWrapper = new DurationsByDateWrapper();
-		for (TestResult testResult : testResults) {
-			durationsByDateWrapper.addDurationsByDate(testResult);
+		TestResultsByDateWrapperDTO testResultsByDateWrapperDTO = new TestResultsByDateWrapperDTO();
+		List<TestResultsByDateDTO> trDTOs = new ArrayList<TestResultsByDateDTO>();
+		TestCase tc = testCaseService.findOne(testCaseId);
+		for (String envId : envIds) {
+			long parsedEnvId = Long.parseLong(envId);
+			Environment env = environmentService.findOne(parsedEnvId);
+			
+			List<TestResult> testResults = testResultService.findByEnvAndTestCaseForRecentDays(testCaseId, parsedEnvId, getCurrentTimeBefore(numberOfRecentDays));
+			
+			DurationsByDateWrapper durationsByDateWrapper = new DurationsByDateWrapper();
+			for (TestResult testResult : testResults) {
+				durationsByDateWrapper.addDurationsByDate(testResult);
+			}
+			
+			TestResultsByDateDTO testResultsByDateDTO = new TestResultsByDateDTO();
+			testResultsByDateDTO.setEnvironmentName(env.getName());
+			testResultsByDateDTO.setTestCaseName(tc.getName());
+			testResultsByDateDTO.addDurationsToStatistics(durationsByDateWrapper);
+			
+			System.out.println("testResultsByDateDTO: " + testResultsByDateDTO);
+			trDTOs.add(testResultsByDateDTO);
 		}
+		testResultsByDateWrapperDTO.setChartData(trDTOs);
 		
-		TestResultsByDateDTO testResultsByDateDTO = new TestResultsByDateDTO();
-		testResultsByDateDTO.setEnvironmentName("env by id" + envId);
-		testResultsByDateDTO.setTestCaseName("testCase by id: " + testCaseId);
-		testResultsByDateDTO.addDurationsToStatistics(durationsByDateWrapper);
-		
-		
-		System.out.println("testResultsByDateDTO: " + testResultsByDateDTO);
-		
-		return testResultsByDateDTO;
+		return testResultsByDateWrapperDTO;
 	}
 	
 	@RequestMapping(value = "/testRuns", method = RequestMethod.GET)
@@ -496,52 +562,6 @@ public class TestResultRestController {
 		testCases.addAll(testCasesSet);
 		
 		return testCases;
-	}
-
-
-	private List<ParentRunDTO> mapToParentRunDTO(List<Run> runsWithResults) {
-		List<ParentRunDTO> parentRunDTOs = new ArrayList<ParentRunDTO>();
-		for (Run run : runsWithResults) {
-			if (run.getStartTime() == null && run.getParent() == null) {
-
-				List<ChildRunDTO> childRunDTOs = new ArrayList<ChildRunDTO>();
-				List<TestSuiteWithResultDTO> testSuiteWithResultDTOs = new ArrayList<TestSuiteWithResultDTO>();
-				
-				
-				ParentRunDTO parentRunDTO = new ParentRunDTO();
-				parentRunDTO.setBuildNumber(run.getBuildNumber());
-				parentRunDTO.setId(run.getId());
-				
-				List<Run> childRuns = run.getChildren();
-				
-				for (Run childRun : childRuns) {		
-						List<TestSuiteWithResultEntity> testSuiteWithResultEntities = new ArrayList<TestSuiteWithResultEntity>();
-						for (Run_TestCase_TestResult run_TestCase_TestResult : childRun.getRun_TestCase_TestResults()) {							
-							TestCaseWithResultDTO testCaseWithResultDTO = new TestCaseWithResultDTO(run_TestCase_TestResult.getTestCase(), run_TestCase_TestResult.getTestResult());
-							String testSuiteName = run_TestCase_TestResult.getTestCase().getTestSuite().getName();
-							TestSuiteWithResultEntity testSuiteWithResultEntity = new TestSuiteWithResultEntity(testSuiteName, testCaseWithResultDTO);
-							//testSuiteDTOs.add(new TestSuiteDTO(testSuite, testCase, testResult));
-							testSuiteWithResultEntities.add(testSuiteWithResultEntity);
-						}
-						
-					ChildRunDTO childRunDTO = new ChildRunDTO();
-					childRunDTO.setBuildNumber(childRun.getBuildNumber());
-					childRunDTO.setDuration(childRun.getDuration());
-					childRunDTO.setStartTime(childRun.getStartTime());
-					childRunDTO.setEndTime(childRun.getEndTime());
-					childRunDTO.setTag(childRun.getTag());
-					childRunDTO.setId(childRun.getId());
-					EnvironmentDTO envDTO = new EnvironmentDTO(childRun.getEnvironment());
-					childRunDTO.setEnvironment(envDTO);
-					childRunDTO.setTestSuites(TestSuiteWithResultEntity.mapToTestSuiteDTOs(testSuiteWithResultEntities));			
-					childRunDTOs.add(childRunDTO);
-				}		
-				parentRunDTO.setChildren(childRunDTOs);
-				parentRunDTOs.add(parentRunDTO);
-			}
-		}
-		
-		return parentRunDTOs;
 	}
 
 	@RequestMapping(value = "/runData", method = RequestMethod.POST)
