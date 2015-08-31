@@ -14,7 +14,8 @@
         $scope.displayRunTree = function() {
              perfFactory.runs()
                 .success(function(runs) {
-                $scope.runs = runs;
+                 sharingFactory.runs = runs;
+                 $scope.runs = runs;
                 })
                 .error(function(data, status, headers, config) {
                     console.log('Error while getting Runs');
@@ -31,7 +32,7 @@
                     console.log(sharingFactory.environments,'sharingFactory.environments');
                 })
                 .error(function(data, status, headers, config) {
-                    console.log('Error while getting Runs');
+                    console.log('Error while getting Environments');
                     console.log(data.error + ' ' + status);
                 });           
         }
@@ -43,6 +44,19 @@
         $scope.toggleChartMode = function() {
             $scope.chartMode = !$scope.chartMode;
             return $scope.chartMode;
+        }
+        
+        $scope.getParentRuns = function(numberOfParentRuns) {
+            perfFactory.parentRuns(numberOfParentRuns)
+            .success(function(runs) {
+                console.log('runs are_______________________+++++++++++____________', runs);
+                    sharingFactory.runs = runs;
+                    $scope.runs = runs;
+            })
+            .error(function(data, status, headers, config) {
+                console.log('Error while getting ParentRuns');
+                console.log(data.error + ' ' + status);
+            });  
         }
     };
     

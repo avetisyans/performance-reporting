@@ -25,6 +25,26 @@
             return $http.get(contextPath + "rest/environments", {params: {"numberOfRecentRuns": numberOfRecentRuns}, cache: myCache });
         };
         
+        factory.parentRuns = function(numberOfParentRuns) {
+            if (numberOfParentRuns != 0) {
+                numberOfParentRuns = numberOfParentRuns || 3;
+            }
+            
+            return $http.get(contextPath + "rest/runs", {params: {"numberOfParentRuns": numberOfParentRuns}});
+        }
+        
+        factory.allEnvironments = function() {
+            return $http.get(contextPath + "rest/allEnvironments");
+        }
+        
+        factory.testCases = function() {
+            return $http.get(contextPath + "rest/testCases");
+        }
+        
+        factory.testResults = function(envIds, testCaseId, numberOfRecentDays) {
+            return $http.get(contextPath + "rest/testResults", {params: {"envIds": envIds, "testCaseId": testCaseId, "numberOfRecentDays": numberOfRecentDays}})
+        }
+        
         return factory;
     };
     
@@ -34,3 +54,11 @@
     
     
 }());
+
+
+
+
+
+
+
+//perfFactory.parentRuns(numberOfParentRuns)
